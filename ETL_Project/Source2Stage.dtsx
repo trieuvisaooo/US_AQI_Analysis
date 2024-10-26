@@ -7,15 +7,244 @@
   DTS:CreatorName="LAPTOP-QHS1R0BJ\trieu"
   DTS:DTSID="{1D478698-A776-4A76-A9D0-A938F6E48D39}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{213E347C-442E-4DAF-8171-E9F4C212AE6E}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{C9FE0840-3D1C-4A7A-AFB9-E179327CA2EC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local)]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9F946DA3-AB84-49E3-88C1-AC65B44EFA31}"
+      DTS:ObjectName="(local)">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{9F946DA3-AB84-49E3-88C1-AC65B44EFA31}(local);Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).US_AQI_METADATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+      DTS:ObjectName="(local).US_AQI_METADATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=US_AQI_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{19314DF8-BB96-4ECA-961A-2C9A672B14FF}(local).US_AQI_METADATA;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B0400147-151C-4C0A-B033-40E2E003D00F}"
+      DTS:ObjectName="(local).US_AQI_STAGE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=US_AQI_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B0400147-151C-4C0A-B033-40E2E003D00F}(local).US_AQI_STAGE;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[10_state_aqi]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2B282792-83FC-4566-9C8B-C86A727CA838}"
+      DTS:ObjectName="10_state_aqi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\BI\Project\US_AQI_Analysis\ETL_Project\10_state_aqi_2021.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State Name"
+              DTS:DTSID="{C6288FCD-BF17-425C-971E-D1D445138356}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="county Name"
+              DTS:DTSID="{5E7B2BB5-4E2F-4F63-9F81-D698BF5F95BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State Code"
+              DTS:DTSID="{8AC83332-5920-402B-AC27-9287F9AE4159}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="County Code"
+              DTS:DTSID="{9FBD00FD-8815-4008-BBE5-686B9EB54E6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{A722AA3F-8DBA-445A-AE8A-3F7FA890E404}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AQI"
+              DTS:DTSID="{F620516C-A99C-45D4-AE83-01F97EF87A26}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Category"
+              DTS:DTSID="{F4F856ED-9D6B-437A-93D9-4DFD1A78D816}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Defining Parameter"
+              DTS:DTSID="{709DCBF2-34FE-41DC-9423-9C3C9A24B602}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Defining Site"
+              DTS:DTSID="{7724FA46-615E-4A67-B3A8-BFAEB4229284}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Number of Sites Reporting"
+              DTS:DTSID="{EA50A201-AF7E-4764-AA96-FED46CF1A07C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Created"
+              DTS:DTSID="{A8D539BC-DF01-43FC-8091-27EC78BC022E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Updated"
+              DTS:DTSID="{B726F10C-0BC6-4909-B5AD-5687DE6C3D55}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[aqi_category]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E34B4A0D-8221-4DB9-9B64-CF218D8A6E60}"
+      DTS:ObjectName="aqi_category">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="D:\BI\Project\US_AQI_Analysis\ETL_Project\aqi_category.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Daily AQI Color"
+              DTS:DTSID="{F33841F2-8672-4780-B07A-0BD8C4DC053E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Levels of Concern"
+              DTS:DTSID="{C12B6EA3-1AA1-4D43-84D7-C2F075BEAC29}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AQIFrom"
+              DTS:DTSID="{9B527232-A9EC-4500-A188-3D346B2E6ACE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AQITo"
+              DTS:DTSID="{1D10EF11-CD61-4991-AA3A-5AB899D0A83C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description of Air Quality"
+              DTS:DTSID="{0F2A1070-4FF0-433B-8308-925A24881F49}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
       DTS:CreationName="FLATFILE"
@@ -118,10 +347,10 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:refId="Package.ConnectionManagers[us_counties]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{34B59236-077E-42C8-A231-2C7D67E886E4}"
-      DTS:ObjectName="Flat File Connection Manager 1">
+      DTS:ObjectName="us_counties">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -129,9 +358,9 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\BI\US_AQI_Analysis\ETL_Project\(2B)uscounties.csv">
+          DTS:ConnectionString="D:\BI\Project\US_AQI_Analysis\ETL_Project\(2B)uscounties.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +369,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;county&quot;"
-              DTS:DTSID="{6A54A8CF-EDC2-47C6-BCC2-4D4093FF7BE6}"
+              DTS:DTSID="{F6201F18-AECF-491F-A1E3-F90D0E90EDAE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -149,7 +378,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;county_ascii&quot;"
-              DTS:DTSID="{20518AEA-B0D9-498D-B56B-A15AA20B91D1}"
+              DTS:DTSID="{736C3F34-8D3F-4AFD-B829-E631562AAF05}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -158,7 +387,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;county_full&quot;"
-              DTS:DTSID="{66F2CD01-F1A4-4D23-A2F7-79A83CBDDC9B}"
+              DTS:DTSID="{D977B158-0DBE-4447-A1B9-CCEE47672B27}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -167,7 +396,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;county_fips&quot;"
-              DTS:DTSID="{D7606BFF-8978-4C05-89EE-16D7CB13C802}"
+              DTS:DTSID="{5078B7A0-6D10-43CD-9753-BC9D05D2669B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -176,7 +405,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;state_id&quot;"
-              DTS:DTSID="{A5CBC87A-4EEA-45EB-9AF8-99BF194011FE}"
+              DTS:DTSID="{682793D6-221A-4C56-B052-C82FAECC637F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -185,7 +414,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;state_name&quot;"
-              DTS:DTSID="{83BD6CE0-B6D0-459E-BD4A-809664473766}"
+              DTS:DTSID="{E204F069-B342-40CC-ABD6-6BAF2155885F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -194,7 +423,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;lat&quot;"
-              DTS:DTSID="{389CC756-2FAB-4F1B-BA7B-1DB529284F17}"
+              DTS:DTSID="{2B1401E1-EC80-4660-94DF-417E8C7697CF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -203,7 +432,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;lng&quot;"
-              DTS:DTSID="{F2DE6C7E-4A0B-43F4-A8B4-5523C74DEA52}"
+              DTS:DTSID="{0EFEA02D-0ECE-438B-8566-B2F6E503F2BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -212,350 +441,2058 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="&quot;population&quot;"
-              DTS:DTSID="{2C535493-24C3-444F-BBD4-766616EB4249}"
+              DTS:DTSID="{523FBA26-08C2-474C-88A6-CC4A1D088222}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
-  <DTS:Variables />
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{272FBD30-DF80-4B9C-9642-56FA8DDDA4F2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CET1">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2000</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F056C860-D438-4383-A1D7-3C79E52E5C44}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="LSET1">
+      <DTS:VariableValue
+        DTS:DataType="7">1/1/2000</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{2E09F89B-5AC9-46C1-826D-EAE6606C99C8}"
-      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:refId="Package\AQI_CATEGORY"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{C249D9F5-A118-4F1E-A7CA-B9FC1A10F576}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task">
+      DTS:ObjectName="AQI_CATEGORY">
       <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Data Flow Task\Flat File Source"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Source"
-              localeId="1033"
-              name="Flat File Source"
-              usesDispositions="true"
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\AQI_CATEGORY\Get LSET 2 from Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{728da673-9ba8-484c-a945-ebde3d9552fe}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LSET 2 from Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="select LSET, CET from DATA_FLOW where name = 'AQI_CATEGORY'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="CET"
+                SQLTask:DtsVariableName="User::CET1" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="LSET"
+                SQLTask:DtsVariableName="User::LSET1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\AQI_CATEGORY\Import data from Source to Stage 2"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{7d5be998-948f-4668-a203-b2aaf5fb4a2c}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import data from Source to Stage 2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
               version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether zero-length columns are treated as null."
-                  name="RetainNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
-                  name="Flat File Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
+              <components>
+                <component
+                  refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="AQI_CATEGORY_STAGE"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AQI_CATEGORY_STAGE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county&quot;]"
-                      name="&quot;county&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_ascii&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].Columns[Daily AQI Color]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Daily AQI Color"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi_color]"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Daily AQI Color]" />
+                        <inputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].Columns[Levels of Concern]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Levels of Concern"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[level_of_concern]"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Levels of Concern]" />
+                        <inputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].Columns[AQIFrom]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AQIFrom"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi_from]"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[AQIFrom]" />
+                        <inputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].Columns[AQITo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AQITo"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi_to]"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[AQITo]" />
+                        <inputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].Columns[Description of Air Quality]"
+                          cachedCodepage="1252"
+                          cachedDataType="text"
+                          cachedName="Description of Air Quality"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[description_of_air_quality]"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Description of Air Quality]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi_color]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="aqi_color" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[level_of_concern]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="level_of_concern" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi_from]"
+                          dataType="i4"
+                          name="aqi_from" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi_to]"
+                          dataType="i4"
+                          name="aqi_to" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[description_of_air_quality]"
+                          codePage="1252"
+                          dataType="text"
+                          name="description_of_air_quality" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[aqi_category]"
+                      connectionManagerRefId="Package.ConnectionManagers[aqi_category]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Daily AQI Color]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Daily AQI Color]"
+                          length="50"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Daily AQI Color]"
+                          name="Daily AQI Color"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Levels of Concern]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Levels of Concern]"
+                          length="50"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Levels of Concern]"
+                          name="Levels of Concern"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[AQIFrom]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AQIFrom]"
+                          length="50"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[AQIFrom]"
+                          name="AQIFrom"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[AQITo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AQITo]"
+                          length="50"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[AQITo]"
+                          name="AQITo"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Description of Air Quality]"
+                          codePage="1252"
+                          dataType="text"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Description of Air Quality]"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].Columns[Description of Air Quality]"
+                          name="Description of Air Quality"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Daily AQI Color]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Daily AQI Color" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Levels of Concern]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Levels of Concern" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AQIFrom]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AQIFrom" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AQITo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AQITo" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Description of Air Quality]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Description of Air Quality" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\AQI_CATEGORY\Import data from Source to Stage 2.Paths[Flat File Source Output]"
+                  endId="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\AQI_CATEGORY\Set CET to Metadata 2"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{25f2fca9-3bc8-4be5-80c8-ff75fe95e7f7}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set CET to Metadata 2"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="update DATA_FLOW set CET=GETDATE() where name='AQI_CATEGORY'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\AQI_CATEGORY\Set LSET 2 to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a1fab779-f10f-4e17-b4c1-5b557ecec54d}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set LSET 2 to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="update DATA_FLOW set LSET=GETDATE() where name='AQI_CATEGORY'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\AQI_CATEGORY\Truncate table AQI_CATEGORY_STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6c525074-620d-4927-966b-f02bc156e6bd}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate table AQI_CATEGORY_STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B0400147-151C-4C0A-B033-40E2E003D00F}"
+              SQLTask:SqlStatementSource="truncate table AQI_CATEGORY_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A138D850-5861-4EE5-99E9-20EA5F5F2E1B}"
+          DTS:From="Package\AQI_CATEGORY\Set CET to Metadata 2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\AQI_CATEGORY\Truncate table AQI_CATEGORY_STAGE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7169F0E9-686D-462F-B080-F0C7BFD1E98C}"
+          DTS:From="Package\AQI_CATEGORY\Truncate table AQI_CATEGORY_STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\AQI_CATEGORY\Get LSET 2 from Metadata" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{6309C277-6618-4471-92B2-CE539635EE17}"
+          DTS:From="Package\AQI_CATEGORY\Get LSET 2 from Metadata"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\AQI_CATEGORY\Import data from Source to Stage 2" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{51896991-1F48-4D87-8945-AD8C99A81FDD}"
+          DTS:From="Package\AQI_CATEGORY\Import data from Source to Stage 2"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\AQI_CATEGORY\Set LSET 2 to Metadata" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\COUNTY"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{40508995-8C25-4FE3-9CD2-EBA524D5DBF8}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COUNTY">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY\Get LSET from Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4C5756E5-D238-4D77-96DE-D6A01E41EFB3}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LSET from Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="select LSET, CET from DATA_FLOW where name = 'COUNTY'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="CET"
+                SQLTask:DtsVariableName="User::CET1" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="LSET"
+                SQLTask:DtsVariableName="User::LSET1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY\Import data from Source to Stage"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2E09F89B-5AC9-46C1-826D-EAE6606C99C8}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import data from Source to Stage">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="COUNTY_STAGE"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[COUNTY_STAGE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_ascii&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_ascii&quot;]"
-                      name="&quot;county_ascii&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_full&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;county&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county_ascii&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;county_ascii&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_ascii]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_ascii&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county_full&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;county_full&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_full]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_full&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county_fips&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;county_fips&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_fips]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_fips&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;state_id&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;state_id&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_id&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;state_name&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;state_name&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_name&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;lat&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;lat&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lat&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;lng&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;lng&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lng&quot;]" />
+                        <inputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].Columns[&quot;population&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;population&quot;"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[population]"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;population&quot;]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="county" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_ascii]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="county_ascii" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_full]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="county_full" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_fips]"
+                          dataType="i4"
+                          name="county_fips" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="state_id" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="state_name" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                          dataType="r8"
+                          name="lat" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
+                          dataType="r8"
+                          name="lng" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[population]"
+                          dataType="i4"
+                          name="population" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\COUNTY\Import data from Source to Stage\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[us_counties]"
+                      connectionManagerRefId="Package.ConnectionManagers[us_counties]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county&quot;]"
+                          name="&quot;county&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_ascii&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_ascii&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_ascii&quot;]"
+                          name="&quot;county_ascii&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_full&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_full&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_full&quot;]"
+                          name="&quot;county_full&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_fips&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_fips&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_fips&quot;]"
+                          name="&quot;county_fips&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_id&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_id&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_id&quot;]"
+                          name="&quot;state_id&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_name&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_name&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_name&quot;]"
+                          name="&quot;state_name&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lat&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lat&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lat&quot;]"
+                          name="&quot;lat&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lng&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lng&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lng&quot;]"
+                          name="&quot;lng&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;population&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;population&quot;]"
+                          length="50"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;population&quot;]"
+                          name="&quot;population&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;county&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_ascii&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;county_ascii&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_full&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;county_full&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_fips&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;county_fips&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_id&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;state_id&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_name&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;state_name&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lat&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;lat&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lng&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;lng&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;population&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;population&quot;" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\COUNTY\Import data from Source to Stage.Paths[Flat File Source Output]"
+                  endId="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\COUNTY\Import data from Source to Stage\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY\Set CET to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{E9736F9B-6C2E-4BA5-9C2A-58CF27EFE341}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set CET to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="update DATA_FLOW set CET=GETDATE() where name='COUNTY'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY\Set LSET to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{17C852AE-AAAD-4B54-A6A5-172D9F053920}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set LSET to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="update DATA_FLOW set LSET=GETDATE() where name='COUNTY'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY\Truncate table COUNTY_STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A98A8454-F9D3-422E-A163-AF5DF24DF10B}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate table COUNTY_STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B0400147-151C-4C0A-B033-40E2E003D00F}"
+              SQLTask:SqlStatementSource="truncate table COUNTY_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{4D9EDD8B-6D0D-4C22-A61F-566E940868F0}"
+          DTS:From="Package\COUNTY\Set CET to Metadata"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\COUNTY\Truncate table COUNTY_STAGE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{DFFDB06D-225C-42FA-849A-DF5E7D838828}"
+          DTS:From="Package\COUNTY\Truncate table COUNTY_STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\COUNTY\Get LSET from Metadata" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{27ACC7C6-4476-451A-8FCF-44371393C730}"
+          DTS:From="Package\COUNTY\Get LSET from Metadata"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\COUNTY\Import data from Source to Stage" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{FEFB1952-1438-431E-8BA9-4472DCD21C52}"
+          DTS:From="Package\COUNTY\Import data from Source to Stage"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\COUNTY\Set LSET to Metadata" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\COUNTY_AQI"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{21117A28-0CE4-4489-BDB9-9170BA31B331}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="COUNTY_AQI">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY_AQI\Get LSET 1 from Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0a32d6c8-7e3c-459a-bc9a-048b9ba43863}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get LSET 1 from Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="select LSET, CET from DATA_FLOW where name = 'COUNTY_AQI'"
+              SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="CET"
+                SQLTask:DtsVariableName="User::CET1" />
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="LSET"
+                SQLTask:DtsVariableName="User::LSET1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY_AQI\Import data from Source to Stage 1"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{69f2b19b-4b06-4456-b262-3c90890ebf50}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import data from Source to Stage 1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="COUNTY_AQI_STAGE"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[COUNTY_AQI_STAGE]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+                      connectionManagerRefId="Package.ConnectionManagers[(local).US_AQI_STAGE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_full&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_full&quot;]"
-                      name="&quot;county_full&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_fips&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_fips&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;county_fips&quot;]"
-                      name="&quot;county_fips&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_id&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_id&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_id&quot;]"
-                      name="&quot;state_id&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_name&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_name&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;state_name&quot;]"
-                      name="&quot;state_name&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lat&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lat&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lat&quot;]"
-                      name="&quot;lat&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lng&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lng&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;lng&quot;]"
-                      name="&quot;lng&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;population&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;population&quot;]"
-                      length="50"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;population&quot;]"
-                      name="&quot;population&quot;"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;county&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_ascii&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;county_ascii&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_full&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;county_full&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;county_fips&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;county_fips&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_id&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;state_id&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;state_name&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;state_name&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lat&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;lat&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;lng&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;lng&quot;" />
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;population&quot;]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="&quot;population&quot;" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
-                  isErrorOut="true"
-                  name="Flat File Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Flat File Source Error Output Column"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
-                      name="Flat File Source Error Output Column" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-        </pipeline>
-      </DTS:ObjectData>
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[county Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="county Name"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_name]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[county Name]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[State Code]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="State Code"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_code]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[State Code]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[County Code]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="County Code"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_code]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[County Code]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Date]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Date"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Date]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[AQI]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="AQI"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[AQI]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Category]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Category"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Category]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Defining Parameter]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Defining Parameter"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[defining_parameter]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Defining Parameter]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Defining Site]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Defining Site"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[defining_site]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Defining Site]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Number of Sites Reporting]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Number of Sites Reporting"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[number_of_sites_rep]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Number of Sites Reporting]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Created]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Created"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[created]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Created]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[Last Updated]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Last Updated"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[last_updated]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Last Updated]" />
+                        <inputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].Columns[State Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="State Name"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[State Name]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="state_name" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="county_name" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_code]"
+                          dataType="i4"
+                          name="state_code" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_code]"
+                          dataType="i4"
+                          name="county_code" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[date]"
+                          dataType="dbDate"
+                          name="date" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[aqi]"
+                          dataType="i4"
+                          name="aqi" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="category" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[defining_parameter]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="defining_parameter" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[defining_site]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="defining_site" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[number_of_sites_rep]"
+                          dataType="i4"
+                          name="number_of_sites_rep" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[created]"
+                          dataType="dbTimeStamp"
+                          name="created" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[last_updated]"
+                          dataType="dbTimeStamp"
+                          name="last_updated" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[10_state_aqi]"
+                      connectionManagerRefId="Package.ConnectionManagers[10_state_aqi]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[State Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State Name]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[State Name]"
+                          name="State Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[county Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[county Name]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[county Name]"
+                          name="county Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[State Code]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State Code]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[State Code]"
+                          name="State Code"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[County Code]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[County Code]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[County Code]"
+                          name="County Code"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Date]"
+                          name="Date"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[AQI]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AQI]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[AQI]"
+                          name="AQI"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
+                          name="Category"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Defining Parameter]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Defining Parameter]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Defining Parameter]"
+                          name="Defining Parameter"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Defining Site]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Defining Site]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Defining Site]"
+                          name="Defining Site"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Number of Sites Reporting]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Number of Sites Reporting]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Number of Sites Reporting]"
+                          name="Number of Sites Reporting"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Created]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Created]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Created]"
+                          name="Created"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Last Updated]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Last Updated]"
+                          length="50"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].Columns[Last Updated]"
+                          name="Last Updated"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="State Name" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[county Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="county Name" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="State Code" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[County Code]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="County Code" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Date" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AQI]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="AQI" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Category" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Defining Parameter]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Defining Parameter" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Defining Site]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Defining Site" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Number of Sites Reporting]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Number of Sites Reporting" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Created]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Created" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Last Updated]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Last Updated" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\COUNTY_AQI\Import data from Source to Stage 1.Paths[Flat File Source Output]"
+                  endId="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY_AQI\Set CET to Metadata 1"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0a58cc30-eded-4479-b4b3-41cdc969311a}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set CET to Metadata 1"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="update DATA_FLOW set CET=GETDATE() where name='COUNTY_AQI'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY_AQI\Set LSET 1 to Metadata"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{590d4eca-ca4a-4e95-9d28-5268a3f60ef8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Set LSET 1 to Metadata"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{19314DF8-BB96-4ECA-961A-2C9A672B14FF}"
+              SQLTask:SqlStatementSource="update DATA_FLOW set LSET=GETDATE() where name='COUNTY_AQI'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY_AQI\Truncate table COUNTY_AQI_STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{36fc67cb-4fee-4a85-a39c-61bd6f103717}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate table COUNTY_AQI_STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{B0400147-151C-4C0A-B033-40E2E003D00F}"
+              SQLTask:SqlStatementSource="truncate table COUNTY_AQI_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY_AQI.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{BA793CC6-A68D-4FD1-9367-035D889E9C5C}"
+          DTS:From="Package\COUNTY_AQI\Set CET to Metadata 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\COUNTY_AQI\Truncate table COUNTY_AQI_STAGE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY_AQI.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{92764F94-1531-434B-99CA-DE10EBA41B23}"
+          DTS:From="Package\COUNTY_AQI\Truncate table COUNTY_AQI_STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\COUNTY_AQI\Get LSET 1 from Metadata" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY_AQI.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{37817D60-2C02-4F37-A9D4-C15529920E1C}"
+          DTS:From="Package\COUNTY_AQI\Get LSET 1 from Metadata"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\COUNTY_AQI\Import data from Source to Stage 1" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY_AQI.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{82FAA374-B99A-48C9-BA7E-873B1E6F74B1}"
+          DTS:From="Package\COUNTY_AQI\Import data from Source to Stage 1"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\COUNTY_AQI\Set LSET 1 to Metadata" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{51F0FBE5-BF4A-4DCC-8AD9-12CAE96FA0F5}"
+      DTS:From="Package\COUNTY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\COUNTY_AQI" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{50BED09D-1160-4395-9046-9C0CFAC6CCB9}"
+      DTS:From="Package\COUNTY_AQI"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\AQI_CATEGORY" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -567,25 +2504,551 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="5.5,5.5" />
+          Size="202.4,41.6"
+          Id="Package\AQI_CATEGORY\Get LSET 2 from Metadata"
+          TopLeft="23.0496883002426,147.481479977487" />
+        <NodeLayout
+          Size="240,41.6"
+          Id="Package\AQI_CATEGORY\Import data from Source to Stage 2"
+          TopLeft="8.71637877979208,213.648146222285" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\AQI_CATEGORY\Set CET to Metadata 2"
+          TopLeft="31.0999586120267,11.940743478198" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\AQI_CATEGORY\Set LSET 2 to Metadata"
+          TopLeft="27.2163547392527,282.874071628577" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\AQI_CATEGORY\Truncate table AQI_CATEGORY_STAGE"
+          TopLeft="17.957095985897,82.5777767251156" />
+        <EdgeLayout
+          Id="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint]"
+          TopLeft="123.328527298962,53.540743478198">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.0370332469176"
+              Start="0,0"
+              End="0,21.5370332469176">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5370332469176" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint 1]"
+          TopLeft="123.90339214307,124.177776725116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.3037032523715"
+              Start="0,0"
+              End="0,15.8037032523715">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.8037032523715" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint 2]"
+          TopLeft="126.483033540017,189.081479977487">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.566666244798"
+              Start="0,0"
+              End="0,17.066666244798">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.066666244798" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQI_CATEGORY.PrecedenceConstraints[Constraint 3]"
+          TopLeft="125.166366759522,255.248146222285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.6259254062915"
+              Start="0,0"
+              End="0,20.1259254062915">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1259254062915" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="253.6,366.4"
+          Size="253.6,409.6"
+          Id="Package\AQI_CATEGORY"
+          TopLeft="726.19043651318,25.9999998191992" />
+        <NodeLayout
+          Size="193.6,41.6"
+          Id="Package\COUNTY\Get LSET from Metadata"
+          TopLeft="32.7999639391916,144.333331784473" />
+        <NodeLayout
+          Size="231.2,41.6"
+          Id="Package\COUNTY\Import data from Source to Stage"
+          TopLeft="15.4999994536239,216.855553540631" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\COUNTY\Set CET to Metadata"
+          TopLeft="44.4666299684195,9.99999938527749" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\COUNTY\Set LSET to Metadata"
+          TopLeft="36.8740377906678,285.31110858191" />
+        <NodeLayout
+          Size="232.8,41.6"
+          Id="Package\COUNTY\Truncate table COUNTY_STAGE"
+          TopLeft="13.4666318807348,77.5999989151956" />
+        <EdgeLayout
+          Id="Package\COUNTY.PrecedenceConstraints[Constraint]"
+          TopLeft="130.966630924577,51.5999993852775">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9999995299181"
+              Start="0,0"
+              End="0,18.4999995299181">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4999995299181" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY.PrecedenceConstraints[Constraint 1]"
+          TopLeft="129.733297909963,119.199998915196">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.1333328692774"
+              Start="0,0"
+              End="0,17.6333328692774">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6333328692774" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY.PrecedenceConstraints[Constraint 2]"
+          TopLeft="130.349981696408,185.933331784473">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.9222217561581"
+              Start="0,0"
+              End="0,23.4222217561581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4222217561581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY.PrecedenceConstraints[Constraint 3]"
+          TopLeft="128.987018622146,258.455553540631">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.8555550412789"
+              Start="0,0"
+              End="0,19.3555550412789">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.3555550412789" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="262.4,368.8"
+          Size="262.4,412"
+          Id="Package\COUNTY"
+          TopLeft="74.166662614379,24.4666664798391" />
+        <NodeLayout
+          Size="202.4,41.6"
+          Id="Package\COUNTY_AQI\Get LSET 1 from Metadata"
+          TopLeft="30.6666422618769,144.199998752475" />
+        <NodeLayout
+          Size="240,41.6"
+          Id="Package\COUNTY_AQI\Import data from Source to Stage 1"
+          TopLeft="16.3333327414264,215.181479778606" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\COUNTY_AQI\Set CET to Metadata 1"
+          TopLeft="39.8333084276992,11.5999996745583" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\COUNTY_AQI\Set LSET 1 to Metadata"
+          TopLeft="34.8333087008871,286.33333109743" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\COUNTY_AQI\Truncate table COUNTY_AQI_STAGE"
+          TopLeft="34.8333087008871,78.3333325438366" />
+        <EdgeLayout
+          Id="Package\COUNTY_AQI.PrecedenceConstraints[Constraint]"
+          TopLeft="130.533308564293,53.1999996745583">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.1333328692783"
+              Start="0,0"
+              End="0,17.6333328692783">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.6333328692783" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY_AQI.PrecedenceConstraints[Constraint 1]"
+          TopLeft="130.549975481382,119.933332543837">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.2666662086382"
+              Start="0,0"
+              End="0,16.7666662086382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7666662086382" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY_AQI.PrecedenceConstraints[Constraint 2]"
+          TopLeft="134.099987501652,185.799998752475">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.381481026131"
+              Start="0,0"
+              End="0,21.881481026131">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.881481026131" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY_AQI.PrecedenceConstraints[Constraint 3]"
+          TopLeft="132.783320721157,256.781479778606">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.5518513188244"
+              Start="0,0"
+              End="0,22.0518513188244">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0518513188244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="273.6,368"
+          Size="273.6,411.2"
+          Id="Package\COUNTY_AQI"
+          TopLeft="388.633315803773,24.2666664979193" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="336.566662614379,230.166666488879">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.066653189394,0"
+              Start="0,0"
+              End="44.566653189394,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.566653189394,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="662.233315803773,230.333333158559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.9571207094073,0"
+              Start="0,0"
+              End="56.4571207094073,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.4571207094073,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\AQI_CATEGORY\Import data from Source to Stage 2">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="151.2,41.6"
-          Id="Package\Data Flow Task\Flat File Source"
-          TopLeft="374.999994412065,108.999998375773" />
+          Id="Package\AQI_CATEGORY\Import data from Source to Stage 2\Flat File Source"
+          TopLeft="301.666665085488,66.5333320044142" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE"
+          TopLeft="275.99999588728,197.99999704957" />
+        <EdgeLayout
+          Id="Package\AQI_CATEGORY\Import data from Source to Stage 2.Paths[Flat File Source Output]"
+          TopLeft="377.033330486384,108.133332004414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89.8666650451559"
+              Start="0,0"
+              End="0,82.3666650451559">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.3666650451559" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\COUNTY\Import data from Source to Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\COUNTY\Import data from Source to Stage\Flat File Source"
+          TopLeft="301.666665085488,66.5333320044142" />
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE"
+          TopLeft="297.499983745317,223.599998445113" />
+        <EdgeLayout
+          Id="Package\COUNTY\Import data from Source to Stage.Paths[Flat File Source Output]"
+          TopLeft="378.183324415403,108.133332004414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,115.466666440699"
+              Start="0,0"
+              End="0,107.966666440699">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,107.966666440699" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\COUNTY_AQI\Import data from Source to Stage 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE"
+          TopLeft="290.833317442901,194.133331983354" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\COUNTY_AQI\Import data from Source to Stage 1\Flat File Source"
+          TopLeft="301.666665085488,66.5333320044142" />
+        <EdgeLayout
+          Id="Package\COUNTY_AQI\Import data from Source to Stage 1.Paths[Flat File Source Output]"
+          TopLeft="380.849991264194,108.133332004414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,85.9999999789398"
+              Start="0,0"
+              End="0,78.4999999789398">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.4999999789398" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\COUNTY_AQI\Import data from Source to Stage 1\COUNTY_AQI_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\COUNTY\Import data from Source to Stage\COUNTY_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQI_CATEGORY\Import data from Source to Stage 2\AQI_CATEGORY_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

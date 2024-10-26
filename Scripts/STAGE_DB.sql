@@ -7,7 +7,7 @@ USE MASTER
 GO
 
 -- Action: drop table when creating new database
-IF DB_ID('US_AQI_NDS') IS NOT NULL DROP DATABASE US_AQI_NDS;
+IF DB_ID('US_AQI_STAGE') IS NOT NULL DROP DATABASE US_AQI_STAGE;
 
 CREATE DATABASE US_AQI_STAGE;
 GO
@@ -56,6 +56,6 @@ CREATE TABLE "AQI_CATEGORY_STAGE" (
 	level_of_concern VARCHAR(50),
 	aqi_from INT,
 	aqi_to INT,
-	description_of_air_quality VARCHAR(255),
+	description_of_air_quality TEXT,
 );
 GO
