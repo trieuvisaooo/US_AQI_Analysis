@@ -7,6 +7,6 @@
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=(local);Initial Catalog=US_AQI_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ETL_Project-{EC1EA178-C304-48B5-ACB1-A1493E0F6621}(local).US_AQI_STAGE;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=(local);Initial Catalog=US_AQI_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-ETL_Project-{EC1EA178-C304-48B5-ACB1-A1493E0F6621}(local).US_AQI_STAGE;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
