@@ -83,9 +83,10 @@ DECLARE @lset DATETIME, @cet DATETIME
 SET @lset = '2020-1-1 00:00:00'
 SET @cet = '2020-1-2 00:00:00'
 
-INSERT INTO DATA_FLOW(name, LSET, CET) VALUES ('COUNTY_STAGE', @LSET, @CET)
-INSERT INTO DATA_FLOW(name, LSET, CET) VALUES ('COUNTY_AQI_STAGE', @LSET, @CET)
-INSERT INTO DATA_FLOW(name, LSET, CET) VALUES ('AQI_CATEGORY_STAGE', @LSET, @CET)
+INSERT INTO DATA_FLOW (name, description, source, target, status, lset, cet) VALUES
+('COUNTY_STAGE', 'ETL county table from source file (2B)uscounties.csv to county table on STAGE_DB', 'Source1', 'STAGE', 2, @LSET, @CET),
+('COUNTY_AQI_STAGE', 'ETL county table from source files 10_state_aqi_*.csv to county_aqi table on STAGE_DB', 'Source1', 'STAGE', 2, @LSET, @CET),
+('AQI_CATEGORY_STAGE', 'ETL county table from source file aqi_category.csv to aqi_category table on STAGE_DB', 'Source1', 'STAGE', 2, @LSET, @CET);
 
 INSERT INTO DATA_FLOW_STATUS (status_name) VALUES ('In Progress');
 INSERT INTO DATA_FLOW_STATUS (status_name) VALUES ('Completed');
@@ -100,4 +101,3 @@ REFERENCES SOURCE_INFORMATION(source_id);
 ALTER TABLE DATA_FLOW 
 ADD CONSTRAINT fk_flow_status FOREIGN KEY (status)
 REFERENCES DATA_FLOW_STATUS(status_id);
-
