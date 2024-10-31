@@ -9,8 +9,9 @@ GO
 -- Action: drop table when creating new database
 IF DB_ID('US_AQI_STAGE') IS NOT NULL DROP DATABASE US_AQI_STAGE;
 
-CREATE DATABASE US_AQI_STAGE;
+CREATE DATABASE US_AQI_STAGE COLLATE SQL_Latin1_General_CP1_CI_AS;
 GO
+
 
 USE US_AQI_STAGE;
 GO
@@ -59,3 +60,4 @@ CREATE TABLE "AQI_CATEGORY_STAGE" (
 	description_of_air_quality TEXT,
 );
 GO
+
