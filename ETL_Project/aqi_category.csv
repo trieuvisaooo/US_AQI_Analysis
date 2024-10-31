@@ -1,6 +1,6 @@
 Daily AQI Color,Levels of Concern,AQIFrom,AQITo,Description of Air Quality
-Green,Good,0,50,Air quality is satisfactory, and air pollution poses little or no risk.
-Yellow,Moderate,51,100,Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution.
+Green,Good,0,50,"Air quality is satisfactory, and air pollution poses little or no risk."
+Yellow,Moderate,51,100,"Air quality is acceptable. However, there may be a risk for some people, particularly those who are unusually sensitive to air pollution."
 Orange,Unhealthy for Sensitive Groups,101,150,Members of sensitive groups may experience health effects. The general public is less likely to be affected.
 Red,Unhealthy,151,200,Some members of the general public may experience health effects; members of sensitive groups may experience more serious health effects.
 Purple,Very Unhealthy,201,300,Health alert: The risk of health effects is increased for everyone.
