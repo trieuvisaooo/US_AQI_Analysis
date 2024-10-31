@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="(local).US_AQI_METADATA"
+  DTS:DTSID="{2DF49E90-CC03-4E81-B0CE-EE4235E5BEBC}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=(local);Initial Catalog=US_AQI_METADATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-ETL_Project-{2DF49E90-CC03-4E81-B0CE-EE4235E5BEBC}(local).US_AQI_METADATA;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
