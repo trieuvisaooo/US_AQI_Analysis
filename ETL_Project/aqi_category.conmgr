@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project\aqi_category.csv">
+      DTS:ConnectionString="D:\BI\US_AQI_Analysis\ETL_Project\aqi_category.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Daily AQI Color"
-          DTS:DTSID="{8796D68B-7481-4617-A5E6-8F2C60D64658}"
+          DTS:DTSID="{1B9AC5BF-1397-4FA0-A5B0-1D2875962217}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Levels of Concern"
-          DTS:DTSID="{18EFB0CB-E792-475C-AA8D-A9C03A927663}"
+          DTS:DTSID="{D8F3C601-C9BB-4B94-88DC-6AC64B1106BB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="AQIFrom"
-          DTS:DTSID="{AC4D59E0-322E-4031-90EE-ABE3F14E903D}"
+          DTS:DTSID="{0D40B7AA-0AD8-4897-9B40-06E7934A5B18}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,7 +46,7 @@
           DTS:DataType="3"
           DTS:TextQualified="True"
           DTS:ObjectName="AQITo"
-          DTS:DTSID="{E093E881-5468-4978-9240-093DF68FA6E8}"
+          DTS:DTSID="{31A820D9-2453-47C9-843B-857CF831D81A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -54,7 +54,7 @@
           DTS:DataType="302"
           DTS:TextQualified="True"
           DTS:ObjectName="Description of Air Quality"
-          DTS:DTSID="{8AE9FFF6-27BC-44CB-9351-20A8E501E0B1}"
+          DTS:DTSID="{D8D72020-F502-481B-9DDD-C93B966D1EF7}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="149"
-  DTS:VersionGUID="{51EB7DD2-D25E-4610-9771-DF7B1D92DA6D}">
+  DTS:VersionBuild="154"
+  DTS:VersionGUID="{364B256E-4BDB-4A35-A760-38D70C4F211F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State Name"
-              DTS:DTSID="{DA0CD9F4-EFDF-4A00-A38F-185BB01339A9}"
+              DTS:DTSID="{82A8CD03-59D8-4BBC-AEF3-EBE6EC92F5E4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="county Name"
-              DTS:DTSID="{B977A45B-F592-433B-9C45-1FD1ECF47D9F}"
+              DTS:DTSID="{C1562017-3BF4-40F1-9F6D-7D921A0AE45C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State Code"
-              DTS:DTSID="{1B8BC60D-C672-476D-A3EF-C2EBFA280804}"
+              DTS:DTSID="{8F071AD1-8FE1-4466-BDC8-411C11B2ADF3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="County Code"
-              DTS:DTSID="{A0A92098-4686-4FB2-AF1F-5234FA5F7225}"
+              DTS:DTSID="{681507C0-DD47-4B3A-A627-B117608F2B2D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{71B98545-0839-4C5D-AC43-AB0C4EE60F80}"
+              DTS:DTSID="{9DD99008-7605-4A8A-BFBD-C2596921D02D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AQI"
-              DTS:DTSID="{7073069E-3663-405D-999A-5E4E952F6AD8}"
+              DTS:DTSID="{78FE2EBE-62C1-4FC1-AE8C-12010BD4F789}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Category"
-              DTS:DTSID="{94B151BD-A19C-4EF9-8517-9D508BA0AD62}"
+              DTS:DTSID="{481FEE03-8877-4A0D-A528-5D057615159A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Defining Parameter"
-              DTS:DTSID="{2A23E365-9E62-4C1F-824E-7E5921B96D21}"
+              DTS:DTSID="{1677AE90-72BE-4A3F-9F45-CB50A032E21A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Defining Site"
-              DTS:DTSID="{50952688-B381-4024-8796-BEED3764409C}"
+              DTS:DTSID="{76A941A6-F417-46A7-94AD-9C370D511EFA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Number of Sites Reporting"
-              DTS:DTSID="{C2B6EC94-CCEA-4B0A-8661-9608983D4BE8}"
+              DTS:DTSID="{4F1239A9-2AAB-414F-8A1E-43F018B25BF3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -131,7 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Created"
-              DTS:DTSID="{85648518-CBD1-4D61-AB2C-9CBA1288C500}"
+              DTS:DTSID="{06973CB0-62C9-4476-8B96-3551204EFB45}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Last Updated"
-              DTS:DTSID="{874E1267-6CF4-4D95-A810-73F264F30FA1}"
+              DTS:DTSID="{F83A8465-C0FA-4250-AEB0-38B71E1598A5}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -769,7 +769,7 @@ WHERE name='COUNTY_AQI_STAGE'
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project" />
+                  Folder="D:\BI\US_AQI_Analysis\ETL_Project" />
                 <FEFEProperty
                   FileSpec="10_state_aqi_*.csv" />
                 <FEFEProperty
@@ -1953,8 +1953,8 @@ WHERE
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{21CBAB66-93BE-4A35-BB76-64D970288ED4}"
-              DTS:ObjectName="{21CBAB66-93BE-4A35-BB76-64D970288ED4}"
+              DTS:DTSID="{04565973-D234-4944-A79A-E6A10E0721C2}"
+              DTS:ObjectName="{04565973-D234-4944-A79A-E6A10E0721C2}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FilePath" />
           </DTS:ForEachVariableMappings>
@@ -2729,19 +2729,19 @@ WHERE
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="297.333333333334,42.6666666666667"
+          Size="297.6,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage"
           TopLeft="29.1851278647686,162.135648678593" />
         <NodeLayout
-          Size="237.333333333334,42.6666666666667"
+          Size="237.6,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Set CET 2 and status to Metadata"
           TopLeft="55.0062075433342,8.36574364866728" />
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
+          Size="242.4,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Set LSET 2 and status to Metadata"
           TopLeft="53.5556392760812,256.920501437567" />
         <NodeLayout
-          Size="267.333333333334,41.3333333333334"
+          Size="267.2,41.6"
           Id="Package\AQI_CATEGORY_STAGE\Truncate table AQI_CATEGORY_STAGE"
           TopLeft="43.4258448473554,80.302776833596" />
         <EdgeLayout
@@ -2813,31 +2813,31 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="374.666666666667,380"
-          Size="374.666666666667,422.666666666667"
+          PanelSize="374.4,380"
+          Size="374.4,422.4"
           Id="Package\AQI_CATEGORY_STAGE"
           TopLeft="936.584772130675,55.9154760304616" />
         <NodeLayout
-          Size="290.666666666667,42.6666666666667"
+          Size="290.4,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage"
           TopLeft="14.4285710294333,27.8481461447989" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316.666666666667,126.666666666667"
-          Size="316.666666666667,170"
+          PanelSize="316.8,127.2"
+          Size="316.8,169.6"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container"
           TopLeft="29.8309296019864,222.057140908923" />
         <NodeLayout
-          Size="238.666666666667,42.6666666666667"
+          Size="238.4,42.4"
           Id="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata"
           TopLeft="66.9166404675288,123.399999744297" />
         <NodeLayout
-          Size="185.333333333334,42.6666666666667"
+          Size="185.6,42.4"
           Id="Package\COUNTY_AQI_STAGE\Set CET 1 to Metadata"
           TopLeft="89.833306018678,10.9499997055528" />
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
+          Size="242.4,42.4"
           Id="Package\COUNTY_AQI_STAGE\Set LSET 1 and status to Metadata"
           TopLeft="74.2975925516409,437.567255750402" />
         <EdgeLayout
@@ -2909,24 +2909,24 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="369.333333333334,532"
-          Size="369.333333333334,574.666666666667"
+          PanelSize="369.6,532"
+          Size="369.6,574.4"
           Id="Package\COUNTY_AQI_STAGE"
           TopLeft="497.093132383813,54.8863078950038" />
         <NodeLayout
-          Size="262.666666666667,42.6666666666667"
+          Size="262.4,42.4"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage"
           TopLeft="31.1249987551319,186.388889725451" />
         <NodeLayout
-          Size="229.333333333334,42.6666666666667"
+          Size="229.6,42.4"
           Id="Package\COUNTY_STAGE\Set CET and status to Metadata"
           TopLeft="53.2166295772642,8.0499994782607" />
         <NodeLayout
-          Size="233.333333333334,42.6666666666667"
+          Size="233.6,42.4"
           Id="Package\COUNTY_STAGE\Set LSET and status to Metadata"
           TopLeft="43.4687461792491,308.183323756059" />
         <NodeLayout
-          Size="229.333333333334,42.6666666666667"
+          Size="229.6,42.4"
           Id="Package\COUNTY_STAGE\Truncate table COUNTY_STAGE"
           TopLeft="49.0916302881734,102.949997706414" />
         <EdgeLayout
@@ -2998,8 +2998,8 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="364,406"
-          Size="364,448.666666666667"
+          PanelSize="364,406.4"
+          Size="364,448.8"
           Id="Package\COUNTY_STAGE"
           TopLeft="72.5520793615019,54.2583332437937" />
         <EdgeLayout
@@ -3133,7 +3133,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3158,19 +3160,19 @@ WHERE
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="249.333333333334,42.6666666666667"
+          Size="249.6,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\INSERT INTO COUNTY_AQI_STAGE"
           TopLeft="97.9999970793727,264.999992817641" />
         <NodeLayout
-          Size="151.333333333334,41.3333333333334"
+          Size="151.2,41.6"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\Flat File Source"
           TopLeft="307.291664834031,65.8833320354086" />
         <NodeLayout
-          Size="224,42.6666666666667"
+          Size="224,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\UPDATE COUNTY_AQI_STAGE"
           TopLeft="487.999985456468,266.333326091369" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\Conditional Split"
           TopLeft="306.999990850687,146.849995751381" />
         <EdgeLayout
@@ -3211,18 +3213,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage.Paths[Flat File Source Output]"
-          TopLeft="383.979161175692,107.216665368742">
+          TopLeft="383.945827842359,107.483332035409">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.6333303826386"
+              EndConnector="0,39.3666637159724"
               Start="0,0"
-              End="0,32.1333303826386">
+              End="0,31.8666637159724">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.1333303826386" />
+                    End="0,31.8666637159724" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3276,11 +3278,11 @@ WHERE
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="141.333333333334,42.6666666666667"
+          Size="141.6,42.4"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage"
           TopLeft="292.499986924232,156.549994823933" />
         <NodeLayout
-          Size="129.333333333334,42.6666666666667"
+          Size="129.6,42.4"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src"
           TopLeft="301.666665085488,66.5333320044142" />
         <EdgeLayout
