@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="136"
-  DTS:VersionGUID="{7138D305-37BC-48D5-B380-3E66873327AC}">
+  DTS:VersionBuild="140"
+  DTS:VersionGUID="{7CB62612-9EA4-46DE-99EC-CEF2894B5F23}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4740,7 +4740,7 @@ WHERE state_sk = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[AQI_CATEGORY_NDS]) [refTable]
-where [refTable].[aqi_color] = ?</property>
+where [refTable].[level_of_concern] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -4776,7 +4776,7 @@ where [refTable].[aqi_color] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\AQI_Category_NDS\AQI_Category_Stage.Outputs[OLE DB Source Output].Columns[aqi_color]};</property>
+                  name="ParameterMap">#{Package\AQI_Category_NDS\AQI_Category_Stage.Outputs[OLE DB Source Output].Columns[level_of_concern]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4800,17 +4800,17 @@ where [refTable].[aqi_color] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\AQI_Category_NDS\Lookup.Inputs[Lookup Input].Columns[aqi_color]"
+                      refId="Package\AQI_Category_NDS\Lookup.Inputs[Lookup Input].Columns[level_of_concern]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
-                      cachedName="aqi_color"
-                      lineageId="Package\AQI_Category_NDS\AQI_Category_Stage.Outputs[OLE DB Source Output].Columns[aqi_color]">
+                      cachedLength="50"
+                      cachedName="level_of_concern"
+                      lineageId="Package\AQI_Category_NDS\AQI_Category_Stage.Outputs[OLE DB Source Output].Columns[level_of_concern]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">aqi_color</property>
+                          name="JoinToReferenceColumn">level_of_concern</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -6282,7 +6282,7 @@ where [refTable].[parameter_name] = ?</property>
                   dataType="System.Int32"
                   description="Specifies the cache type of the lookup table."
                   name="CacheType"
-                  typeConverter="CacheType">0</property>
+                  typeConverter="CacheType">2</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
@@ -7946,33 +7946,33 @@ where [refTable].[parameter_name] = ?</property>
         <NodeLayout
           Size="97.6,41.6"
           Id="Package\10_state_api_StateNDS\Sort"
-          TopLeft="515.999992311001,80.999998793006" />
+          TopLeft="499.99999254942,67.9999989867211" />
         <EdgeLayout
           Id="Package\10_state_api_StateNDS.Paths[Sort Output]"
-          TopLeft="515.999992311001,107.399998793006">
+          TopLeft="499.99999254942,94.3999989867211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-121.966673775348,19.133333805071"
+              EndConnector="-105.966674013767,32.1333336113559"
               Start="0,0"
-              End="-114.466673775348,19.133333805071">
+              End="-98.4666740137666,32.1333336113559">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-47.4970400384803,0" />
+                    End="-40.7414845835903,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="-47.4970400384803,0"
-                    Point2="-51.4970400384803,0"
-                    Point3="-51.4970400384803,4" />
+                    Point1="-40.7414845835903,0"
+                    Point2="-44.7414845835903,0"
+                    Point3="-44.7414845835903,4" />
                   <mssgle:LineSegment
-                    End="-51.4970400384803,15.133333805071" />
+                    End="-44.7414845835903,28.1333336113559" />
                   <mssgle:CubicBezierSegment
-                    Point1="-51.4970400384803,15.133333805071"
-                    Point2="-51.4970400384803,19.133333805071"
-                    Point3="-55.4970400384803,19.133333805071" />
+                    Point1="-44.7414845835903,28.1333336113559"
+                    Point2="-44.7414845835903,32.1333336113559"
+                    Point3="-48.7414845835903,32.1333336113559" />
                   <mssgle:LineSegment
-                    End="-114.466673775348,19.133333805071" />
+                    End="-98.4666740137666,32.1333336113559" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7987,26 +7987,26 @@ where [refTable].[parameter_name] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.8000059703979,59.3333322770066"
+              EndConnector="62.8000062088166,40.7333324707217"
               Start="0,0"
-              End="71.3000059703979,59.3333322770066">
+              End="55.3000062088166,40.7333324707217">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.400002985199,0" />
+                    End="32.2844480317607,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="35.400002985199,0"
-                    Point2="39.400002985199,0"
-                    Point3="39.400002985199,4" />
+                    Point1="32.2844480317607,0"
+                    Point2="36.2844480317607,0"
+                    Point3="36.2844480317607,4" />
                   <mssgle:LineSegment
-                    End="39.400002985199,55.3333322770066" />
+                    End="36.2844480317607,36.7333324707217" />
                   <mssgle:CubicBezierSegment
-                    Point1="39.400002985199,55.3333322770066"
-                    Point2="39.400002985199,59.3333322770066"
-                    Point3="43.400002985199,59.3333322770066" />
+                    Point1="36.2844480317607,36.7333324707217"
+                    Point2="36.2844480317607,40.7333324707217"
+                    Point3="40.2844480317607,40.7333324707217" />
                   <mssgle:LineSegment
-                    End="71.3000059703979,59.3333322770066" />
+                    End="55.3000062088166,40.7333324707217" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8903,44 +8903,44 @@ where [refTable].[parameter_name] = ?</property>
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\AQI_REPORT_NDS\COUNTY_AQI_STAGE"
-          TopLeft="401.999994009733,64.9999990314245" />
+          TopLeft="432.999993547797,56.9999991506338" />
         <NodeLayout
           Size="141.6,41.6"
           Id="Package\AQI_REPORT_NDS\updated_date"
           TopLeft="161.249997597187,437.949994117766" />
         <EdgeLayout
           Id="Package\AQI_REPORT_NDS.Paths[OLE DB Source Output]"
-          TopLeft="495.599994009733,106.599999031424">
+          TopLeft="526.599993547797,98.5999991506338">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="65.9999995827681,44.3999987185005"
+              EndConnector="35.0000000447041,52.3999985992912"
               Start="0,0"
-              End="65.9999995827681,36.8999987185005">
+              End="35.0000000447041,44.8999985992912">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.1999993592503" />
+                    End="0,22.1999992996456" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.1999993592503"
-                    Point2="0,22.1999993592503"
-                    Point3="4,22.1999993592503" />
+                    Point1="0,22.1999992996456"
+                    Point2="0,26.1999992996456"
+                    Point3="4,26.1999992996456" />
                   <mssgle:LineSegment
-                    End="61.9999995827681,22.1999993592503" />
+                    End="31.0000000447041,26.1999992996456" />
                   <mssgle:CubicBezierSegment
-                    Point1="61.9999995827681,22.1999993592503"
-                    Point2="65.9999995827681,22.1999993592503"
-                    Point3="65.9999995827681,26.1999993592503" />
+                    Point1="31.0000000447041,26.1999992996456"
+                    Point2="35.0000000447041,26.1999992996456"
+                    Point3="35.0000000447041,30.1999992996456" />
                   <mssgle:LineSegment
-                    End="65.9999995827681,36.8999987185005" />
+                    End="35.0000000447041,44.8999985992912" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="24.999999791384,27.1999993592503,16,16"
+              BoundingBox="9.50000002235203,31.1999992996456,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
