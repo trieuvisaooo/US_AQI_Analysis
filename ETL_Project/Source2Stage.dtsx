@@ -7,12 +7,12 @@
   DTS:CreatorName="LAPTOP-QHS1R0BJ\trieu"
   DTS:DTSID="{1D478698-A776-4A76-A9D0-A938F6E48D39}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="154"
-  DTS:VersionGUID="{364B256E-4BDB-4A35-A760-38D70C4F211F}">
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{B2F4F3A5-5346-4AF3-9928-3D9B08E89EF4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -345,6 +345,10 @@
                           codePage="1252"
                           dataType="text"
                           name="description_of_air_quality" />
+                        <externalMetadataColumn
+                          refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -568,87 +572,6 @@
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status"
-                  componentClassID="Microsoft.OLEDBCommand"
-                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-                  name="Update LSET and Status"
-                  usesDispositions="true"
-                  version="2">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                      name="CommandTimeout">0</property>
-                    <property
-                      dataType="System.String"
-                      description="The SQL command to be executed."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE DATA_FLOW 
-SET status = (SELECT status_id 
-	FROM DATA_FLOW_STATUS 
-	WHERE status_name = 'Failed'),
-    lset = GETDATE()
-WHERE name='COUNTY_AQI_STAGE'
-</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Connections[OleDbConnection]"
-                      connectionManagerID="{2DF49E90-CC03-4E81-B0CE-EE4235E5BEBC}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_METADATA]"
-                      description="The OLE DB runtime connection used to access the database."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Inputs[OLE DB Command Input]"
-                      errorOrTruncationOperation="Command Execution"
-                      errorRowDisposition="FailComponent"
-                      hasSideEffects="true"
-                      name="OLE DB Command Input">
-                      <externalMetadataColumns
-                        isUsed="True" />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Outputs[OLE DB Command Output]"
-                      exclusionGroup="1"
-                      name="OLE DB Command Output"
-                      synchronousInputId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Inputs[OLE DB Command Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Outputs[OLE DB Command Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="OLE DB Command Error Output"
-                      synchronousInputId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Inputs[OLE DB Command Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
@@ -656,11 +579,6 @@ WHERE name='COUNTY_AQI_STAGE'
                   endId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\AQI_CATEGORY_STAGE.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Output"
                   startId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Flat File Source.Outputs[Flat File Source Output]" />
-                <path
-                  refId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage.Paths[OLE DB Destination Error Output]"
-                  endId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status.Inputs[OLE DB Command Input]"
-                  name="OLE DB Destination Error Output"
-                  startId="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\AQI_CATEGORY_STAGE.Outputs[OLE DB Destination Error Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1985,13 +1903,13 @@ WHERE
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\COUNTY_AQI_STAGE\Set CET 1 to Metadata"
+          DTS:refId="Package\COUNTY_AQI_STAGE\Set CET 1 and status to Metadata"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{0a58cc30-eded-4479-b4b3-41cdc969311a}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Set CET 1 to Metadata"
+          DTS:ObjectName="Set CET 1 and status to Metadata"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -2024,7 +1942,7 @@ WHERE
           DTS:refId="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{E768ABE5-4231-4B2E-80BD-07BE25DCEF7F}"
-          DTS:From="Package\COUNTY_AQI_STAGE\Set CET 1 to Metadata"
+          DTS:From="Package\COUNTY_AQI_STAGE\Set CET 1 and status to Metadata"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
           DTS:To="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata" />
@@ -2387,11 +2305,11 @@ WHERE
                   </outputs>
                 </component>
                 <component
-                  refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage"
+                  refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
-                  name="County stage"
+                  name="COUNTY STAGE"
                   usesDispositions="true"
                   version="4">
                   <properties>
@@ -2444,7 +2362,7 @@ WHERE
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Connections[OleDbConnection]"
+                      refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Connections[OleDbConnection]"
                       connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
                       connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                       description="The OLE DB runtime connection used to access the database."
@@ -2452,154 +2370,158 @@ WHERE
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input]"
+                      refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;county&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;county&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;county&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;county_ascii&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county_ascii&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;county_ascii&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county_ascii]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_ascii]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;county_ascii&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;county_full&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county_full&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;county_full&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county_full]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_full]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;county_full&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;county_fips&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;county_fips&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;county_fips&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county_fips]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_fips]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;county_fips&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;state_id&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;state_id&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;state_id&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;state_id&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;state_name&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;state_name&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;state_name&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;state_name&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;lat&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;lat&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;lat&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;lat&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;lng&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;lng&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;lng&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;lng&quot;]" />
                         <inputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].Columns[&quot;population&quot;]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].Columns[&quot;population&quot;]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="&quot;population&quot;"
-                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[population]"
+                          externalMetadataColumnId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[population]"
                           lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output].Columns[&quot;population&quot;]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="county" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county_ascii]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_ascii]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="county_ascii" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county_full]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_full]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="county_full" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[county_fips]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[county_fips]"
                           dataType="i4"
                           name="county_fips" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_id]"
                           codePage="1252"
                           dataType="str"
                           length="5"
                           name="state_id" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[state_name]"
                           codePage="1252"
                           dataType="str"
                           length="255"
                           name="state_name" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lat]"
                           dataType="r8"
                           name="lat" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[lng]"
                           dataType="r8"
                           name="lng" />
                         <externalMetadataColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input].ExternalColumns[population]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[population]"
                           dataType="i4"
                           name="population" />
+                        <externalMetadataColumn
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -2611,7 +2533,7 @@ WHERE
               <paths>
                 <path
                   refId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage.Paths[Flat File Source Output]"
-                  endId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage.Inputs[OLE DB Destination Input]"
+                  endId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Output"
                   startId="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src.Outputs[Flat File Source Output]" />
               </paths>
@@ -2731,33 +2653,33 @@ WHERE
         <NodeLayout
           Size="297.6,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage"
-          TopLeft="29.1851278647686,162.135648678593" />
+          TopLeft="29.1851278647686,214.135648316991" />
         <NodeLayout
           Size="237.6,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Set CET 2 and status to Metadata"
-          TopLeft="55.0062075433342,8.36574364866728" />
+          TopLeft="59.1728739823442,13.5657436125071" />
         <NodeLayout
           Size="242.4,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Set LSET 2 and status to Metadata"
-          TopLeft="53.5556392760812,256.920501437567" />
+          TopLeft="53.5556392760812,301.987167790846" />
         <NodeLayout
-          Size="267.2,41.6"
+          Size="243.2,41.6"
           Id="Package\AQI_CATEGORY_STAGE\Truncate table AQI_CATEGORY_STAGE"
-          TopLeft="43.4258448473554,80.302776833596" />
+          TopLeft="57.5925107399894,113.236109937915" />
         <EdgeLayout
           Id="Package\AQI_CATEGORY_STAGE.PrecedenceConstraints[Constraint]"
-          TopLeft="175.382692862011,51.0324103153339">
+          TopLeft="178.582692361167,55.9657436125071">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.2703665182621"
+              EndConnector="0,57.2703663254079"
               Start="0,0"
-              End="0,21.7703665182621">
+              End="0,49.7703663254079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.7703665182621" />
+                    End="0,49.7703663254079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2768,18 +2690,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQI_CATEGORY_STAGE.PrecedenceConstraints[Constraint 1]"
-          TopLeft="177.472153022729,121.636110166929">
+          TopLeft="178.588819302379,154.836109937915">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.4995385116631"
+              EndConnector="0,59.299538379076"
               Start="0,0"
-              End="0,32.9995385116631">
+              End="0,51.799538379076">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.9995385116631" />
+                    End="0,51.799538379076" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2790,18 +2712,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQI_CATEGORY_STAGE.PrecedenceConstraints[Constraint 3]"
-          TopLeft="176.370383570425,204.802315345259">
+          TopLeft="176.370383570425,256.535648316991">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.1181860923082"
+              EndConnector="0,45.4515194738543"
               Start="0,0"
-              End="0,44.6181860923082">
+              End="0,37.9515194738543">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.6181860923082" />
+                    End="0,37.9515194738543" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2813,10 +2735,10 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="374.4,380"
-          Size="374.4,422.4"
+          PanelSize="374.4,458.4"
+          Size="374.4,501.6"
           Id="Package\AQI_CATEGORY_STAGE"
-          TopLeft="936.584772130675,55.9154760304616" />
+          TopLeft="923.043106203892,82.5654758451408" />
         <NodeLayout
           Size="290.4,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage"
@@ -2824,36 +2746,36 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316.8,127.2"
-          Size="316.8,169.6"
+          PanelSize="316.8,105.6"
+          Size="316.8,148.8"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container"
-          TopLeft="29.8309296019864,222.057140908923" />
+          TopLeft="29.6457444269193,174.101585686844" />
         <NodeLayout
           Size="238.4,42.4"
           Id="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata"
-          TopLeft="66.9166404675288,123.399999744297" />
+          TopLeft="66.9166404675289,90.8518518224845" />
         <NodeLayout
-          Size="185.6,42.4"
-          Id="Package\COUNTY_AQI_STAGE\Set CET 1 to Metadata"
-          TopLeft="89.833306018678,10.9499997055528" />
+          Size="234.4,41.6"
+          Id="Package\COUNTY_AQI_STAGE\Set CET 1 and status to Metadata"
+          TopLeft="69.4629367612956,11.9129626618195" />
         <NodeLayout
           Size="242.4,42.4"
           Id="Package\COUNTY_AQI_STAGE\Set LSET 1 and status to Metadata"
-          TopLeft="74.2975925516409,437.567255750402" />
+          TopLeft="65.038333798285,365.922811804164" />
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint]"
-          TopLeft="184.374973243103,53.6166663722195">
+          TopLeft="186.389788614412,53.5129626618195">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69.7833333720775"
+              EndConnector="0,37.338889160665"
               Start="0,0"
-              End="0,62.2833333720775">
+              End="0,29.838889160665">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.2833333720775" />
+                    End="0,29.838889160665" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2864,18 +2786,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 2]"
-          TopLeft="187.207118368091,166.066666410964">
+          TopLeft="187.081192447224,133.251851822484">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55.9904744979593"
+              EndConnector="0,40.8497338643595"
               Start="0,0"
-              End="0,48.4904744979593">
+              End="0,33.3497338643595">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.4904744979593" />
+                    End="0,33.3497338643595" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2886,18 +2808,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 3]"
-          TopLeft="191.897594410147,391.390474242256">
+          TopLeft="187.142039112602,322.901585686844">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.1767815081457"
+              EndConnector="0,43.02122611732"
               Start="0,0"
-              End="0,38.6767815081457">
+              End="0,35.52122611732">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.6767815081457" />
+                    End="0,35.52122611732" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2909,40 +2831,40 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="369.6,532"
-          Size="369.6,574.4"
+          PanelSize="369.6,463.2"
+          Size="369.6,506.4"
           Id="Package\COUNTY_AQI_STAGE"
-          TopLeft="497.093132383813,54.8863078950038" />
+          TopLeft="480.843133271674,80.2363077187231" />
         <NodeLayout
-          Size="262.4,42.4"
+          Size="256.8,41.6"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage"
-          TopLeft="31.1249987551319,186.388889725451" />
+          TopLeft="33.9027763811387,208.537037719584" />
         <NodeLayout
           Size="229.6,42.4"
           Id="Package\COUNTY_STAGE\Set CET and status to Metadata"
-          TopLeft="53.2166295772642,8.0499994782607" />
+          TopLeft="53.2166295772642,9.78333279954064" />
         <NodeLayout
           Size="233.6,42.4"
           Id="Package\COUNTY_STAGE\Set LSET and status to Metadata"
-          TopLeft="43.4687461792491,308.183323756059" />
+          TopLeft="49.0243014312625,305.294434967615" />
         <NodeLayout
-          Size="229.6,42.4"
+          Size="241.6,42.4"
           Id="Package\COUNTY_STAGE\Truncate table COUNTY_STAGE"
-          TopLeft="49.0916302881734,102.949997706414" />
+          TopLeft="49.0916302881734,104.683331027694" />
         <EdgeLayout
           Id="Package\COUNTY_STAGE.PrecedenceConstraints[Constraint]"
-          TopLeft="165.820796599385,50.7166661449274">
+          TopLeft="168.954129932719,52.1833327995406">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,52.2333315614862"
+              EndConnector="0,52.4999982281533"
               Start="0,0"
-              End="0,44.7333315614862">
+              End="0,44.9999982281533">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.7333315614862" />
+                    End="0,44.9999982281533" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2953,18 +2875,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\COUNTY_STAGE.PrecedenceConstraints[Constraint 1]"
-          TopLeft="163.108314521653,145.61666437308">
+          TopLeft="166.097203334656,147.083331027694">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.7722253523708"
+              EndConnector="0,61.4537066918899"
               Start="0,0"
-              End="0,33.2722253523708">
+              End="0,53.9537066918899">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.2722253523708" />
+                    End="0,53.9537066918899" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2975,18 +2897,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\COUNTY_STAGE.PrecedenceConstraints[Constraint 2]"
-          TopLeft="161.29687246719,229.055556392118">
+          TopLeft="164.063538906201,250.137037719584">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,79.127767363941"
+              EndConnector="0,55.1573972480312"
               Start="0,0"
-              End="0,71.627767363941">
+              End="0,47.6573972480312">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71.627767363941" />
+                    End="0,47.6573972480312" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2998,36 +2920,24 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="364,406.4"
-          Size="364,448.8"
+          PanelSize="339.2,463.2"
+          Size="339.2,506.4"
           Id="Package\COUNTY_STAGE"
-          TopLeft="72.5520793615019,54.2583332437937" />
+          TopLeft="72.5520793615019,81.9916663842728" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="436.552079361502,278.591666577127">
+          TopLeft="411.752079361502,334.313987051498">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="60.5410530223111,63.6279746512101"
+              EndConnector="69.091053910172,0"
               Start="0,0"
-              End="53.0410530223111,63.6279746512101">
+              End="61.591053910172,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="26.2705265111555,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="26.2705265111555,0"
-                    Point2="30.2705265111555,0"
-                    Point3="30.2705265111555,4" />
-                  <mssgle:LineSegment
-                    End="30.2705265111555,59.6279746512101" />
-                  <mssgle:CubicBezierSegment
-                    Point1="30.2705265111555,59.6279746512101"
-                    Point2="30.2705265111555,63.6279746512101"
-                    Point3="34.2705265111555,63.6279746512101" />
-                  <mssgle:LineSegment
-                    End="53.0410530223111,63.6279746512101" />
+                    End="61.591053910172,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3038,30 +2948,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="866.426465717146,342.219641228337">
+          TopLeft="850.443133271674,333.400891781932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="70.1583064135285,-74.9708318645422"
+              EndConnector="72.5999729322184,0"
               Start="0,0"
-              End="62.6583064135285,-74.9708318645422">
+              End="65.0999729322184,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31.0791532067643,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.0791532067643,0"
-                    Point2="35.0791532067643,0"
-                    Point3="35.0791532067643,-4" />
-                  <mssgle:LineSegment
-                    End="35.0791532067643,-70.9708318645422" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.0791532067643,-70.9708318645422"
-                    Point2="35.0791532067643,-74.9708318645422"
-                    Point3="39.0791532067643,-74.9708318645422" />
-                  <mssgle:LineSegment
-                    End="62.6583064135285,-74.9708318645422" />
+                    End="65.0999729322184,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3077,65 +2975,35 @@ WHERE
     design-time-name="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="193.333333333334,42"
-          Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Update LSET and Status"
-          TopLeft="642.249984953554,211.883332502443" />
-        <NodeLayout
-          Size="193.333333333334,42.6666666666667"
+          Size="208,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\AQI_CATEGORY_STAGE"
           TopLeft="277.249995831401,208.549996188878" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.4"
           Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage\Flat File Source"
           TopLeft="304.166664973729,76.9333315085036" />
         <EdgeLayout
-          Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage.Paths[OLE DB Destination Error Output]"
-          TopLeft="470.583329164734,231.383331012327">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="171.666655788819,0"
-              Start="0,0"
-              End="164.166655788819,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="164.166655788819,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="8.87442164440965,5,146.4178125,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage.Paths[Flat File Source Output]"
-          TopLeft="377.041663735898,119.59999817517">
+          TopLeft="380.708330402565,119.333331508504">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,88.9499980137082"
+              EndConnector="0,89.2166646803744"
               Start="0,0"
-              End="0,81.4499980137082">
+              End="0,81.7166646803744">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,81.4499980137082" />
+                    End="0,81.7166646803744" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3278,27 +3146,27 @@ WHERE
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="141.6,42.4"
-          Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage"
-          TopLeft="292.499986924232,156.549994823933" />
+          Size="160,41.6"
+          Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE"
+          TopLeft="288.65383313539,156.549994823933" />
         <NodeLayout
           Size="129.6,42.4"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County src"
           TopLeft="301.666665085488,66.5333320044142" />
         <EdgeLayout
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage.Paths[Flat File Source Output]"
-          TopLeft="364.749992671527,109.199998671081">
+          TopLeft="367.560249110439,108.933332004414">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.3499961528516"
+              EndConnector="0,47.6166628195188"
               Start="0,0"
-              End="0,39.8499961528516">
+              End="0,40.1166628195188">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8499961528516" />
+                    End="0,40.1166628195188" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3311,7 +3179,7 @@ WHERE
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\County stage">
+    design-time-name="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
