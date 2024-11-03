@@ -11,95 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="124"
-  DTS:VersionGUID="{7CF540CC-843F-41DA-AC2C-56D5CD089B63}">
+  DTS:VersionBuild="136"
+  DTS:VersionGUID="{7138D305-37BC-48D5-B380-3E66873327AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.21120360_ETL_NDS]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{01C27922-4AC6-4AEF-BEEF-B35CEAC5F304}"
-      DTS:ObjectName="DESKTOP-G10OGTN.21120360_ETL_NDS">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=21120360_ETL_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{01C27922-4AC6-4AEF-BEEF-B35CEAC5F304}DESKTOP-G10OGTN.21120360_ETL_NDS;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.21120360_ETL_NDS 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{30A5D42C-E91D-47B7-A046-DB81A2F553CE}"
-      DTS:ObjectName="DESKTOP-G10OGTN.21120360_ETL_NDS 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=21120360_ETL_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{30A5D42C-E91D-47B7-A046-DB81A2F553CE}DESKTOP-G10OGTN.21120360_ETL_NDS 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{0E20936A-230C-4FB9-BC32-63E1B030F96D}"
-      DTS:ObjectName="DESKTOP-G10OGTN.US_AQI_NDS">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=US_AQI_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0E20936A-230C-4FB9-BC32-63E1B030F96D}DESKTOP-G10OGTN.US_AQI_NDS;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{FB93380F-7002-4897-9B24-4D4F35ADCB61}"
-      DTS:ObjectName="DESKTOP-G10OGTN.US_AQI_NDS 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=US_AQI_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{FB93380F-7002-4897-9B24-4D4F35ADCB61}DESKTOP-G10OGTN.US_AQI_NDS 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 2]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{47EBA99C-962C-4A5C-9FF3-8B95AF983BE8}"
-      DTS:ObjectName="DESKTOP-G10OGTN.US_AQI_NDS 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=US_AQI_NDS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{47EBA99C-962C-4A5C-9FF3-8B95AF983BE8}DESKTOP-G10OGTN.US_AQI_NDS 2;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{27A5F5E9-B256-4978-A57F-CB1508873753}"
-      DTS:ObjectName="DESKTOP-G10OGTN.US_AQI_STAGE">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=US_AQI_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{27A5F5E9-B256-4978-A57F-CB1508873753}DESKTOP-G10OGTN.US_AQI_STAGE;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE 1]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{60BF8F2B-0E30-43E1-956B-786D8CA227ED}"
-      DTS:ObjectName="DESKTOP-G10OGTN.US_AQI_STAGE 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-G10OGTN;Initial Catalog=US_AQI_STAGE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{60BF8F2B-0E30-43E1-956B-786D8CA227ED}DESKTOP-G10OGTN.US_AQI_STAGE 1;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
       DTS:CreationName="FLATFILE"
@@ -269,8 +185,8 @@
               <connections>
                 <connection
                   refId="Package\10_state_api_CountyNDS\COUNTY_AQI_STAGE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
+                  connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -629,8 +545,8 @@
               <connections>
                 <connection
                   refId="Package\10_state_api_CountyNDS\Insert into State_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -810,8 +726,8 @@ where [refTable].[county_name] = ? and [refTable].[state_sk] = ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_CountyNDS\Lookup State name in NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -985,8 +901,8 @@ where [refTable].[state_code] = ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_CountyNDS\Lookup State SK in NDS 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -1583,8 +1499,8 @@ WHERE county_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_CountyNDS\Update State_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1770,8 +1686,8 @@ WHERE county_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_StateNDS\COUNTY_AQI_STAGE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
+                  connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1974,8 +1890,8 @@ WHERE county_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_StateNDS\Insert into State_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2133,8 +2049,8 @@ where [refTable].[state_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_StateNDS\Lookup State name in NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -2455,8 +2371,8 @@ WHERE state_sk= ?</property>
               <connections>
                 <connection
                   refId="Package\10_state_api_StateNDS\Update State_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2636,8 +2552,8 @@ WHERE state_sk= ?</property>
               <connections>
                 <connection
                   refId="Package\2B_US_County_CountyNDS\CountyStage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
+                  connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3001,8 +2917,8 @@ WHERE state_sk= ?</property>
               <connections>
                 <connection
                   refId="Package\2B_US_County_CountyNDS\Insert.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3201,8 +3117,8 @@ where [refTable].[county_fips] = ?</property>
               <connections>
                 <connection
                   refId="Package\2B_US_County_CountyNDS\Lookup County.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3360,8 +3276,8 @@ where [refTable].[state_id] = ?</property>
               <connections>
                 <connection
                   refId="Package\2B_US_County_CountyNDS\Lookup State.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -3578,8 +3494,8 @@ WHERE county_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\2B_US_County_CountyNDS\Update.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4264,8 +4180,8 @@ where [refTable].[state_id] = ?</property>
               <connections>
                 <connection
                   refId="Package\2B_US_County_StateNDS\Lookup Stafe_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4642,8 +4558,8 @@ WHERE state_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_Category_NDS\AQI_Category_Stage.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE 1]"
+                  connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4873,8 +4789,8 @@ where [refTable].[aqi_color] = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_Category_NDS\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 2]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -4991,8 +4907,8 @@ WHERE category_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_Category_NDS\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5194,8 +5110,8 @@ WHERE category_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_Category_NDS\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5390,8 +5306,8 @@ WHERE category_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\COUNTY_AQI_STAGE.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
+                  connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5700,8 +5616,8 @@ WHERE category_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\Insert into AQI_REPORT_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5916,8 +5832,8 @@ where [refTable].[level_of_concern] = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\Lookup AQI_CATEGORY_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -6075,8 +5991,8 @@ where [refTable].[date] = ? and [refTable].[county_sk] = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\Lookup AQI_REPORT_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -6248,8 +6164,8 @@ where [refTable].[county_code] = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\Lookup COUNTY_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -6405,8 +6321,8 @@ where [refTable].[parameter_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\Lookup DEFINING_PARAMETER_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -6523,8 +6439,8 @@ WHERE report_sk = ?</property>
               <connections>
                 <connection
                   refId="Package\AQI_REPORT_NDS\Update AQI_REPORT_NDS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6982,7 +6898,7 @@ where [refTable].[parameter_name] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[defining_parameter]};</property>
+                  name="ParameterMap">#{Package\DEFINING_PARAMETER_NDS\Sort.Outputs[Sort Output].Columns[defining_parameter]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6995,8 +6911,8 @@ where [refTable].[parameter_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\DEFINING_PARAMETER_NDS\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -7144,8 +7060,8 @@ where [refTable].[parameter_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\DEFINING_PARAMETER_NDS\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_NDS 1]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7258,8 +7174,8 @@ where [refTable].[parameter_name] = ?</property>
               <connections>
                 <connection
                   refId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-G10OGTN.US_AQI_STAGE]"
+                  connectionManagerID="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_STAGE]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7278,6 +7194,15 @@ where [refTable].[parameter_name] = ?</property>
                       length="255"
                       lineageId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[defining_parameter]"
                       name="defining_parameter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -7340,6 +7265,10 @@ where [refTable].[parameter_name] = ?</property>
                       refId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_updated]"
                       dataType="dbTimeStamp"
                       name="last_updated" />
+                    <externalMetadataColumn
+                      refId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -7347,6 +7276,11 @@ where [refTable].[parameter_name] = ?</property>
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
                     <outputColumn
                       refId="Package\DEFINING_PARAMETER_NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -7696,13 +7630,9 @@ where [refTable].[parameter_name] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="204,41.6"
-          Id="Package\10_state_api_CountyNDS\Lookup State name in NDS"
-          TopLeft="301.083322257218,312.783331192053" />
-        <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\10_state_api_CountyNDS\source_id"
-          TopLeft="346.833322668242,107.066666633421" />
+          Size="200,41.6"
+          Id="Package\10_state_api_CountyNDS\Lookup State SK in NDS 1"
+          TopLeft="303.499995477498,192.749997127801" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\10_state_api_CountyNDS\Update State_NDS"
@@ -7712,13 +7642,89 @@ where [refTable].[parameter_name] = ?</property>
           Id="Package\10_state_api_CountyNDS\Insert into State_NDS"
           TopLeft="561.166646019453,418.616663809303" />
         <NodeLayout
-          Size="200,41.6"
-          Id="Package\10_state_api_CountyNDS\Lookup State SK in NDS 1"
-          TopLeft="303.499995477498,192.749997127801" />
+          Size="97.6,41.6"
+          Id="Package\10_state_api_CountyNDS\Sort"
+          TopLeft="573.84614529518,83.307691066311" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\10_state_api_CountyNDS\COUNTY_AQI_STAGE"
           TopLeft="317.999990592401,23.0000005513429" />
+        <NodeLayout
+          Size="204,41.6"
+          Id="Package\10_state_api_CountyNDS\Lookup State name in NDS"
+          TopLeft="301.083322257218,312.783331192053" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\10_state_api_CountyNDS\source_id"
+          TopLeft="346.833322668242,107.066666633421" />
+        <EdgeLayout
+          Id="Package\10_state_api_CountyNDS.Paths[Sort Output]"
+          TopLeft="573.84614529518,109.707691066311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-103.812822626938,18.15897556711"
+              Start="0,0"
+              End="-96.3128226269379,18.15897556711">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-39.8320806647071,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.8320806647071,0"
+                    Point2="-43.8320806647071,0"
+                    Point3="-43.8320806647071,4" />
+                  <mssgle:LineSegment
+                    End="-43.8320806647071,14.15897556711" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.8320806647071,14.15897556711"
+                    Point2="-43.8320806647071,18.15897556711"
+                    Point3="-47.8320806647071,18.15897556711" />
+                  <mssgle:LineSegment
+                    End="-96.3128226269379,18.15897556711" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\10_state_api_CountyNDS.Paths[OLE DB Source Output]"
+          TopLeft="505.199990592401,43.8000005513429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.6461547027789,54.7076905149681"
+              Start="0,0"
+              End="61.1461547027789,54.7076905149681">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.6622227171611,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.6622227171611,0"
+                    Point2="39.6622227171611,0"
+                    Point3="39.6622227171611,4" />
+                  <mssgle:LineSegment
+                    End="39.6622227171611,50.7076905149681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.6622227171611,50.7076905149681"
+                    Point2="39.6622227171611,54.7076905149681"
+                    Point3="43.6622227171611,54.7076905149681" />
+                  <mssgle:LineSegment
+                    End="61.1461547027789,54.7076905149681" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\10_state_api_CountyNDS.Paths[Lookup No Match Output]"
           TopLeft="435.749988923884,354.383331192053">
@@ -7837,83 +7843,11 @@ where [refTable].[parameter_name] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\10_state_api_CountyNDS\Sort"
-          TopLeft="573.84614529518,83.307691066311" />
-        <EdgeLayout
-          Id="Package\10_state_api_CountyNDS.Paths[OLE DB Source Output]"
-          TopLeft="505.199990592401,43.8000005513429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="68.6461547027789,54.7076905149681"
-              Start="0,0"
-              End="61.1461547027789,54.7076905149681">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="35.6622227171611,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.6622227171611,0"
-                    Point2="39.6622227171611,0"
-                    Point3="39.6622227171611,4" />
-                  <mssgle:LineSegment
-                    End="39.6622227171611,50.7076905149681" />
-                  <mssgle:CubicBezierSegment
-                    Point1="39.6622227171611,50.7076905149681"
-                    Point2="39.6622227171611,54.7076905149681"
-                    Point3="43.6622227171611,54.7076905149681" />
-                  <mssgle:LineSegment
-                    End="61.1461547027789,54.7076905149681" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\10_state_api_CountyNDS.Paths[Sort Output]"
-          TopLeft="573.84614529518,109.707691066311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-103.812822626938,18.15897556711"
-              Start="0,0"
-              End="-96.3128226269379,18.15897556711">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-39.8320806647071,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.8320806647071,0"
-                    Point2="-43.8320806647071,0"
-                    Point3="-43.8320806647071,4" />
-                  <mssgle:LineSegment
-                    End="-43.8320806647071,14.15897556711" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-43.8320806647071,14.15897556711"
-                    Point2="-43.8320806647071,18.15897556711"
-                    Point3="-47.8320806647071,18.15897556711" />
-                  <mssgle:LineSegment
-                    End="-96.3128226269379,18.15897556711" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\10_state_api_CountyNDS\Lookup State name in NDS">
+    design-time-name="Package\10_state_api_CountyNDS\Lookup State SK in NDS 1">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -7923,7 +7857,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[COUNTY_NDS]</Value>
+          type="q3:string">[dbo].[STATE_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -7949,29 +7883,6 @@ where [refTable].[parameter_name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\10_state_api_CountyNDS\Lookup State SK in NDS 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[STATE_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\10_state_api_CountyNDS\COUNTY_AQI_STAGE">
     <Properties>
       <Property>
@@ -7984,65 +7895,124 @@ where [refTable].[parameter_name] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\10_state_api_CountyNDS\Lookup State name in NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[COUNTY_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\10_state_api_StateNDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="178.4,41.6"
-          Id="Package\10_state_api_StateNDS\Insert into State_NDS"
-          TopLeft="441.666642535065,334.53333100703" />
-        <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\10_state_api_StateNDS\source_id"
-          TopLeft="270.833318535653,105.733332598077" />
-        <NodeLayout
-          Size="204,41.6"
-          Id="Package\10_state_api_StateNDS\Lookup State name in NDS"
-          TopLeft="298.333317033119,226.199998427033" />
+          Size="187.2,41.6"
+          Id="Package\10_state_api_StateNDS\COUNTY_AQI_STAGE"
+          TopLeft="249.999986340603,21.6666665159994" />
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\10_state_api_StateNDS\Update State_NDS"
           TopLeft="109.999993989865,327.599997721911" />
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\10_state_api_StateNDS\COUNTY_AQI_STAGE"
-          TopLeft="249.999986340603,21.6666665159994" />
+          Size="204,41.6"
+          Id="Package\10_state_api_StateNDS\Lookup State name in NDS"
+          TopLeft="298.333317033119,226.199998427033" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\10_state_api_StateNDS\source_id"
+          TopLeft="270.833318535653,105.733332598077" />
+        <NodeLayout
+          Size="178.4,41.6"
+          Id="Package\10_state_api_StateNDS\Insert into State_NDS"
+          TopLeft="441.666642535065,334.53333100703" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\10_state_api_StateNDS\Sort"
+          TopLeft="515.999992311001,80.999998793006" />
         <EdgeLayout
-          Id="Package\10_state_api_StateNDS.Paths[Derived Column Output]"
-          TopLeft="332.433318535653,147.333332598077">
+          Id="Package\10_state_api_StateNDS.Paths[Sort Output]"
+          TopLeft="515.999992311001,107.399998793006">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67.8999984974662,78.8666658289565"
+              EndConnector="-121.966673775348,19.133333805071"
               Start="0,0"
-              End="67.8999984974662,71.3666658289565">
+              End="-114.466673775348,19.133333805071">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.4333329144782" />
+                    End="-47.4970400384803,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.4333329144782"
-                    Point2="0,39.4333329144782"
-                    Point3="4,39.4333329144782" />
+                    Point1="-47.4970400384803,0"
+                    Point2="-51.4970400384803,0"
+                    Point3="-51.4970400384803,4" />
                   <mssgle:LineSegment
-                    End="63.8999984974662,39.4333329144782" />
+                    End="-51.4970400384803,15.133333805071" />
                   <mssgle:CubicBezierSegment
-                    Point1="63.8999984974662,39.4333329144782"
-                    Point2="67.8999984974662,39.4333329144782"
-                    Point3="67.8999984974662,43.4333329144782" />
+                    Point1="-51.4970400384803,15.133333805071"
+                    Point2="-51.4970400384803,19.133333805071"
+                    Point3="-55.4970400384803,19.133333805071" />
                   <mssgle:LineSegment
-                    End="67.8999984974662,71.3666658289565" />
+                    End="-114.466673775348,19.133333805071" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.9499992487331,44.4333329144782,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\10_state_api_StateNDS.Paths[OLE DB Source Output]"
+          TopLeft="437.199986340603,42.4666665159994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="78.8000059703979,59.3333322770066"
+              Start="0,0"
+              End="71.3000059703979,59.3333322770066">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="35.400002985199,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.400002985199,0"
+                    Point2="39.400002985199,0"
+                    Point3="39.400002985199,4" />
+                  <mssgle:LineSegment
+                    End="39.400002985199,55.3333322770066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="39.400002985199,55.3333322770066"
+                    Point2="39.400002985199,59.3333322770066"
+                    Point3="43.400002985199,59.3333322770066" />
+                  <mssgle:LineSegment
+                    End="71.3000059703979,59.3333322770066" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8117,94 +8087,45 @@ where [refTable].[parameter_name] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\10_state_api_StateNDS\Sort"
-          TopLeft="515.999992311001,80.999998793006" />
         <EdgeLayout
-          Id="Package\10_state_api_StateNDS.Paths[OLE DB Source Output]"
-          TopLeft="437.199986340603,42.4666665159994">
+          Id="Package\10_state_api_StateNDS.Paths[Derived Column Output]"
+          TopLeft="332.433318535653,147.333332598077">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="78.8000059703979,59.3333322770066"
+              EndConnector="67.8999984974662,78.8666658289565"
               Start="0,0"
-              End="71.3000059703979,59.3333322770066">
+              End="67.8999984974662,71.3666658289565">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.400002985199,0" />
+                    End="0,35.4333329144782" />
                   <mssgle:CubicBezierSegment
-                    Point1="35.400002985199,0"
-                    Point2="39.400002985199,0"
-                    Point3="39.400002985199,4" />
+                    Point1="0,35.4333329144782"
+                    Point2="0,39.4333329144782"
+                    Point3="4,39.4333329144782" />
                   <mssgle:LineSegment
-                    End="39.400002985199,55.3333322770066" />
+                    End="63.8999984974662,39.4333329144782" />
                   <mssgle:CubicBezierSegment
-                    Point1="39.400002985199,55.3333322770066"
-                    Point2="39.400002985199,59.3333322770066"
-                    Point3="43.400002985199,59.3333322770066" />
+                    Point1="63.8999984974662,39.4333329144782"
+                    Point2="67.8999984974662,39.4333329144782"
+                    Point3="67.8999984974662,43.4333329144782" />
                   <mssgle:LineSegment
-                    End="71.3000059703979,59.3333322770066" />
+                    End="67.8999984974662,71.3666658289565" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\10_state_api_StateNDS.Paths[Sort Output]"
-          TopLeft="515.999992311001,107.399998793006">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-121.966673775348,19.133333805071"
-              Start="0,0"
-              End="-114.466673775348,19.133333805071">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-47.4970400384803,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-47.4970400384803,0"
-                    Point2="-51.4970400384803,0"
-                    Point3="-51.4970400384803,4" />
-                  <mssgle:LineSegment
-                    End="-51.4970400384803,15.133333805071" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-51.4970400384803,15.133333805071"
-                    Point2="-51.4970400384803,19.133333805071"
-                    Point3="-55.4970400384803,19.133333805071" />
-                  <mssgle:LineSegment
-                    End="-114.466673775348,19.133333805071" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="25.9499992487331,44.4333329144782,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\10_state_api_StateNDS\Insert into State_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\10_state_api_StateNDS\COUNTY_AQI_STAGE">
     <Properties>
@@ -8241,11 +8162,36 @@ where [refTable].[parameter_name] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\10_state_api_StateNDS\Insert into State_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\2B_US_County_CountyNDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112,41.6"
+          Id="Package\2B_US_County_CountyNDS\Update"
+          TopLeft="134.999997988343,411.999993860722" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\2B_US_County_CountyNDS\Data Conversion"
+          TopLeft="204.999988799294,104.866665937437" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\2B_US_County_CountyNDS\Lookup State"
+          TopLeft="397.999994069338,230.999996557832" />
         <NodeLayout
           Size="123.2,41.6"
           Id="Package\2B_US_County_CountyNDS\source_id"
@@ -8259,55 +8205,35 @@ where [refTable].[parameter_name] = ?</property>
           Id="Package\2B_US_County_CountyNDS\Lookup County"
           TopLeft="395.99999409914,331.999995052815" />
         <NodeLayout
-          Size="139.2,41.6"
-          Id="Package\2B_US_County_CountyNDS\Lookup State"
-          TopLeft="397.999994069338,230.999996557832" />
-        <NodeLayout
           Size="138.4,41.6"
           Id="Package\2B_US_County_CountyNDS\CountyStage"
           TopLeft="390.166660885844,47.2666659485631" />
-        <NodeLayout
-          Size="112,41.6"
-          Id="Package\2B_US_County_CountyNDS\Update"
-          TopLeft="134.999997988343,411.999993860722" />
         <EdgeLayout
-          Id="Package\2B_US_County_CountyNDS.Paths[Lookup Match Output]"
-          TopLeft="468.799994084239,272.599996557832">
+          Id="Package\2B_US_County_CountyNDS.Paths[OLE DB Source Output]"
+          TopLeft="390.166660885844,68.0666659485631">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59.3999984949828"
+              EndConnector="-29.1666720865496,57.5999999888738"
               Start="0,0"
-              End="0,51.8999984949828">
+              End="-21.6666720865496,57.5999999888738">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8999984949828" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,20.1453117474914,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\2B_US_County_CountyNDS.Paths[Derived Column Output]"
-          TopLeft="463.599994069338,182.599997898936">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.399998658896"
-              Start="0,0"
-              End="0,40.899998658896">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="-10.5833360432748,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.5833360432748,0"
+                    Point2="-14.5833360432748,0"
+                    Point3="-14.5833360432748,4" />
                   <mssgle:LineSegment
-                    End="0,40.899998658896" />
+                    End="-14.5833360432748,53.5999999888738" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.5833360432748,53.5999999888738"
+                    Point2="-14.5833360432748,57.5999999888738"
+                    Point3="-18.5833360432748,57.5999999888738" />
+                  <mssgle:LineSegment
+                    End="-21.6666720865496,57.5999999888738" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8388,36 +8314,44 @@ where [refTable].[parameter_name] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\2B_US_County_CountyNDS\Data Conversion"
-          TopLeft="204.999988799294,104.866665937437" />
         <EdgeLayout
-          Id="Package\2B_US_County_CountyNDS.Paths[OLE DB Source Output]"
-          TopLeft="390.166660885844,68.0666659485631">
+          Id="Package\2B_US_County_CountyNDS.Paths[Lookup Match Output]"
+          TopLeft="468.799994084239,272.599996557832">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-29.1666720865496,57.5999999888738"
+              EndConnector="0,59.3999984949828"
               Start="0,0"
-              End="-21.6666720865496,57.5999999888738">
+              End="0,51.8999984949828">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-10.5833360432748,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.5833360432748,0"
-                    Point2="-14.5833360432748,0"
-                    Point3="-14.5833360432748,4" />
+                    End="0,51.8999984949828" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.1453117474914,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\2B_US_County_CountyNDS.Paths[Derived Column Output]"
+          TopLeft="463.599994069338,182.599997898936">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.399998658896"
+              Start="0,0"
+              End="0,40.899998658896">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-14.5833360432748,53.5999999888738" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14.5833360432748,53.5999999888738"
-                    Point2="-14.5833360432748,57.5999999888738"
-                    Point3="-18.5833360432748,57.5999999888738" />
-                  <mssgle:LineSegment
-                    End="-21.6666720865496,57.5999999888738" />
+                    End="0,40.899998658896" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8464,6 +8398,29 @@ where [refTable].[parameter_name] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\2B_US_County_CountyNDS\Lookup State">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[STATE_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\2B_US_County_CountyNDS\Insert">
     <Properties>
       <Property>
@@ -8488,29 +8445,6 @@ where [refTable].[parameter_name] = ?</property>
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[COUNTY_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\2B_US_County_CountyNDS\Lookup State">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[STATE_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -8724,7 +8658,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8734,7 +8668,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8760,6 +8694,14 @@ where [refTable].[parameter_name] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\AQI_Category_NDS\OLE DB Command"
+          TopLeft="97.9999985396863,345.999994844198" />
+        <NodeLayout
+          Size="176.8,41.6"
+          Id="Package\AQI_Category_NDS\AQI_Category_Stage"
+          TopLeft="349.999994784594,54.9999991804361" />
+        <NodeLayout
           Size="171.2,41.6"
           Id="Package\AQI_Category_NDS\OLE DB Destination"
           TopLeft="478.999992862344,358.999994650483" />
@@ -8767,14 +8709,40 @@ where [refTable].[parameter_name] = ?</property>
           Size="112.8,41.6"
           Id="Package\AQI_Category_NDS\Lookup"
           TopLeft="359.999994635582,181.999997287989" />
-        <NodeLayout
-          Size="176.8,41.6"
-          Id="Package\AQI_Category_NDS\AQI_Category_Stage"
-          TopLeft="349.999994784594,54.9999991804361" />
-        <NodeLayout
-          Size="167.2,41.6"
-          Id="Package\AQI_Category_NDS\OLE DB Command"
-          TopLeft="97.9999985396863,345.999994844198" />
+        <EdgeLayout
+          Id="Package\AQI_Category_NDS.Paths[OLE DB Source Output]"
+          TopLeft="438.399994784594,96.5999991804361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-22.0000001490117,85.3999981075525"
+              Start="0,0"
+              End="-22.0000001490117,77.8999981075525">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.6999990537763" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.6999990537763"
+                    Point2="0,42.6999990537763"
+                    Point3="-4,42.6999990537763" />
+                  <mssgle:LineSegment
+                    End="-18.0000001490117,42.6999990537763" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.0000001490117,42.6999990537763"
+                    Point2="-22.0000001490117,42.6999990537763"
+                    Point3="-22.0000001490117,46.6999990537763" />
+                  <mssgle:LineSegment
+                    End="-22.0000001490117,77.8999981075525" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\AQI_Category_NDS.Paths[Lookup No Match Output]"
           TopLeft="433.866661302249,223.599997287989">
@@ -8847,43 +8815,22 @@ where [refTable].[parameter_name] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\AQI_Category_NDS.Paths[OLE DB Source Output]"
-          TopLeft="438.399994784594,96.5999991804361">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-22.0000001490117,85.3999981075525"
-              Start="0,0"
-              End="-22.0000001490117,77.8999981075525">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.6999990537763" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.6999990537763"
-                    Point2="0,42.6999990537763"
-                    Point3="-4,42.6999990537763" />
-                  <mssgle:LineSegment
-                    End="-18.0000001490117,42.6999990537763" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-18.0000001490117,42.6999990537763"
-                    Point2="-22.0000001490117,42.6999990537763"
-                    Point3="-22.0000001490117,46.6999990537763" />
-                  <mssgle:LineSegment
-                    End="-22.0000001490117,77.8999981075525" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQI_Category_NDS\AQI_Category_Stage">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\AQI_Category_NDS\OLE DB Destination">
     <Properties>
@@ -8903,7 +8850,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8913,23 +8860,10 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQI_Category_NDS\AQI_Category_Stage">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8938,14 +8872,6 @@ where [refTable].[parameter_name] = ?</property>
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="224.8,41.6"
-          Id="Package\AQI_REPORT_NDS\Lookup AQI_CATEGORY_NDS"
-          TopLeft="421.99999371171,251.999996244907" />
-        <NodeLayout
-          Size="141.6,41.6"
-          Id="Package\AQI_REPORT_NDS\updated_date"
-          TopLeft="161.249997597187,437.949994117766" />
         <NodeLayout
           Size="221.6,41.6"
           Id="Package\AQI_REPORT_NDS\Insert into AQI_REPORT_NDS"
@@ -8963,9 +8889,9 @@ where [refTable].[parameter_name] = ?</property>
           Id="Package\AQI_REPORT_NDS\updated_date, inserted_date"
           TopLeft="704.249989505857,461.299995283782" />
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\AQI_REPORT_NDS\COUNTY_AQI_STAGE"
-          TopLeft="401.999994009733,64.9999990314245" />
+          Size="224.8,41.6"
+          Id="Package\AQI_REPORT_NDS\Lookup AQI_CATEGORY_NDS"
+          TopLeft="421.99999371171,251.999996244907" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\AQI_REPORT_NDS\Lookup COUNTY_NDS"
@@ -8974,6 +8900,14 @@ where [refTable].[parameter_name] = ?</property>
           Size="209.6,41.6"
           Id="Package\AQI_REPORT_NDS\Update AQI_REPORT_NDS"
           TopLeft="50.4999992474914,537.199992638826" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\AQI_REPORT_NDS\COUNTY_AQI_STAGE"
+          TopLeft="401.999994009733,64.9999990314245" />
+        <NodeLayout
+          Size="141.6,41.6"
+          Id="Package\AQI_REPORT_NDS\updated_date"
+          TopLeft="161.249997597187,437.949994117766" />
         <EdgeLayout
           Id="Package\AQI_REPORT_NDS.Paths[OLE DB Source Output]"
           TopLeft="495.599994009733,106.599999031424">
@@ -9262,29 +9196,6 @@ where [refTable].[parameter_name] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\AQI_REPORT_NDS\Lookup AQI_CATEGORY_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[AQI_CATEGORY_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\AQI_REPORT_NDS\Insert into AQI_REPORT_NDS">
     <Properties>
       <Property>
@@ -9303,7 +9214,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -9313,7 +9224,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9344,15 +9255,25 @@ where [refTable].[parameter_name] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\AQI_REPORT_NDS\COUNTY_AQI_STAGE">
+    design-time-name="Package\AQI_REPORT_NDS\Lookup AQI_CATEGORY_NDS">
     <Properties>
       <Property>
-        <Name>DataSourceViewID</Name>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[AQI_CATEGORY_NDS]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q2:string">Table</Value>
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9379,6 +9300,19 @@ where [refTable].[parameter_name] = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQI_REPORT_NDS\COUNTY_AQI_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\DEFINING_PARAMETER_NDS">
     <LayoutInfo>
@@ -9396,6 +9330,78 @@ where [refTable].[parameter_name] = ?</property>
           Size="112.8,41.6"
           Id="Package\DEFINING_PARAMETER_NDS\Lookup"
           TopLeft="374.999994412065,201.999996989965" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\DEFINING_PARAMETER_NDS\Sort"
+          TopLeft="628.99999062717,138.999997928739" />
+        <EdgeLayout
+          Id="Package\DEFINING_PARAMETER_NDS.Paths[Sort Output]"
+          TopLeft="628.99999062717,165.399997928739">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-141.199996215105,57.3999990612264"
+              Start="0,0"
+              End="-133.699996215105,57.3999990612264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-55.6177761797109,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.6177761797109,0"
+                    Point2="-59.6177761797109,0"
+                    Point3="-59.6177761797109,4" />
+                  <mssgle:LineSegment
+                    End="-59.6177761797109,53.3999990612264" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-59.6177761797109,53.3999990612264"
+                    Point2="-59.6177761797109,57.3999990612264"
+                    Point3="-63.6177761797109,57.3999990612264" />
+                  <mssgle:LineSegment
+                    End="-133.699996215105,57.3999990612264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DEFINING_PARAMETER_NDS.Paths[OLE DB Source Output]"
+          TopLeft="501.999994784594,99.7999988228083">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.999995842576,59.9999991059303"
+              Start="0,0"
+              End="119.499995842576,59.9999991059303">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="59.4999979212879,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.4999979212879,0"
+                    Point2="63.4999979212879,0"
+                    Point3="63.4999979212879,4" />
+                  <mssgle:LineSegment
+                    End="63.4999979212879,55.9999991059303" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.4999979212879,55.9999991059303"
+                    Point2="63.4999979212879,59.9999991059303"
+                    Point3="67.4999979212879,59.9999991059303" />
+                  <mssgle:LineSegment
+                    End="119.499995842576,59.9999991059303" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DEFINING_PARAMETER_NDS.Paths[Lookup No Match Output]"
           TopLeft="431.399994412065,243.599996989965">
@@ -9439,78 +9445,6 @@ where [refTable].[parameter_name] = ?</property>
           Size="28.8,40"
           Id="3fc39ba3-7cc1-4d66-aa9b-a87d0ad25be5"
           TopLeft="878.99998690188,275.99999588728" />
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\DEFINING_PARAMETER_NDS\Sort"
-          TopLeft="628.99999062717,138.999997928739" />
-        <EdgeLayout
-          Id="Package\DEFINING_PARAMETER_NDS.Paths[OLE DB Source Output]"
-          TopLeft="501.999994784594,99.7999988228083">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="126.999995842576,59.9999991059303"
-              Start="0,0"
-              End="119.499995842576,59.9999991059303">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="59.4999979212879,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.4999979212879,0"
-                    Point2="63.4999979212879,0"
-                    Point3="63.4999979212879,4" />
-                  <mssgle:LineSegment
-                    End="63.4999979212879,55.9999991059303" />
-                  <mssgle:CubicBezierSegment
-                    Point1="63.4999979212879,55.9999991059303"
-                    Point2="63.4999979212879,59.9999991059303"
-                    Point3="67.4999979212879,59.9999991059303" />
-                  <mssgle:LineSegment
-                    End="119.499995842576,59.9999991059303" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DEFINING_PARAMETER_NDS.Paths[Sort Output]"
-          TopLeft="628.99999062717,165.399997928739">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-141.199996215105,57.3999990612264"
-              Start="0,0"
-              End="-133.699996215105,57.3999990612264">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-55.6177761797109,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.6177761797109,0"
-                    Point2="-59.6177761797109,0"
-                    Point3="-59.6177761797109,4" />
-                  <mssgle:LineSegment
-                    End="-59.6177761797109,53.3999990612264" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-59.6177761797109,53.3999990612264"
-                    Point2="-59.6177761797109,57.3999990612264"
-                    Point3="-63.6177761797109,57.3999990612264" />
-                  <mssgle:LineSegment
-                    End="-133.699996215105,57.3999990612264" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -9546,7 +9480,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -9556,7 +9490,7 @@ where [refTable].[parameter_name] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
