@@ -9,7 +9,7 @@ GO
 -- Action: drop table when creating new database
 IF DB_ID('US_AQI_NDS') IS NOT NULL DROP DATABASE US_AQI_NDS;
 
-CREATE DATABASE US_AQI_NDS;
+CREATE DATABASE US_AQI_NDS COLLATE SQL_Latin1_General_CP1_CI_AS;
 GO
 
 USE US_AQI_NDS;
@@ -82,6 +82,7 @@ CREATE TABLE AQI_CATEGORY_NDS (
 	aqi_from INT,
 	aqi_to INT,
 	description_of_air_quality VARCHAR(255),
+	source_id INT,
 
 	CONSTRAINT pk_category_nds PRIMARY KEY(category_sk)
 );
@@ -107,9 +108,3 @@ ALTER TABLE AQI_REPORT_NDS
 ADD CONSTRAINT fk_report_parameter FOREIGN KEY(defining_parameter_sk)
 REFERENCES DEFINING_PARAMETER_NDS(parameter_sk);
 GO
-
-
-
-
-
-
