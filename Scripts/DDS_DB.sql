@@ -86,11 +86,17 @@ CREATE TABLE dbo."fact_air_quality" (
 	category_id INT,
 	defining_parameter_id INT,
 
-
 	aqi_value INT,
 	defining_site VARCHAR(50),
 	number_of_sites_report INT,
 
-	source_id INT
+	source_id INT,
+
+	PRIMARY KEY (date_id, county_id, category_id, defining_parameter_id),
+	FOREIGN KEY (date_id) REFERENCES dbo."dim_date"(date_id),
+	FOREIGN KEY (county_id) REFERENCES dbo."dim_county"(county_id),
+	FOREIGN KEY (category_id) REFERENCES dbo."dim_category"(category_id),
+	FOREIGN KEY (defining_parameter_id) REFERENCES dbo."dim_parameter"(parameter_id),
+	FOREIGN KEY (source_id) REFERENCES dbo."source"(source_id)
 )
 GO
