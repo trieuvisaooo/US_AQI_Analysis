@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="162"
-  DTS:VersionGUID="{1246A2EC-4706-4B43-8FE3-C806DDFD1E97}">
+  DTS:VersionBuild="164"
+  DTS:VersionGUID="{1ACF70D7-4C37-474D-9F7E-FB58C8D068BB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1871,8 +1871,8 @@ WHERE
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{6C359AEB-7BE8-405F-A8BC-E0A45C55236C}"
-              DTS:ObjectName="{6C359AEB-7BE8-405F-A8BC-E0A45C55236C}"
+              DTS:DTSID="{4DAAF1E7-361C-428B-8AF8-0CAD5B20985D}"
+              DTS:ObjectName="{4DAAF1E7-361C-428B-8AF8-0CAD5B20985D}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FilePath" />
           </DTS:ForEachVariableMappings>
@@ -2619,23 +2619,6 @@ WHERE
           DTS:To="Package\COUNTY_STAGE\Set LSET and status to Metadata" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Execute Stage2NDS"
-      DTS:CreationName="Microsoft.ExecutePackageTask"
-      DTS:Description="Execute Package Task"
-      DTS:DTSID="{7FE99954-9F1C-488F-95F2-F39E7D083C1A}"
-      DTS:ExecutableType="Microsoft.ExecutePackageTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Stage2NDS"
-      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecutePackageTask>
-          <UseProjectReference>True</UseProjectReference>
-          <PackageName>Stage2NDS.dtsx</PackageName>
-        </ExecutePackageTask>
-      </DTS:ObjectData>
-    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -2654,14 +2637,6 @@ WHERE
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\AQI_CATEGORY_STAGE" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{17D9C17E-AA8B-47A7-80E4-86A1CFF49E98}"
-      DTS:From="Package\AQI_CATEGORY_STAGE"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Execute Stage2NDS" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -2856,7 +2831,7 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="369.333333333334,463.333333333334"
+          PanelSize="369.333333333334,464"
           Size="369.333333333334,506.666666666667"
           Id="Package\COUNTY_AQI_STAGE"
           TopLeft="480.843133271674,80.2363077187231" />
@@ -2945,7 +2920,7 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="339.333333333334,463.333333333334"
+          PanelSize="339.333333333334,464"
           Size="339.333333333334,506.666666666667"
           Id="Package\COUNTY_STAGE"
           TopLeft="72.5520793615019,81.9916663842728" />
@@ -2985,32 +2960,6 @@ WHERE
                   Capacity="5">
                   <mssgle:LineSegment
                     End="65.0999729322184,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\Execute Stage2NDS"
-          TopLeft="1382.49993819744,310.69998518467" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="1297.70977287056,332.632730514905">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="84.7901653268777,0"
-              Start="0,0"
-              End="77.2901653268777,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="77.2901653268777,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

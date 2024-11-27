@@ -93,6 +93,11 @@ INSERT INTO DATA_FLOW_STATUS (status_name) VALUES ('Completed');
 INSERT INTO DATA_FLOW_STATUS (status_name) VALUES ('Failed');
 INSERT INTO DATA_FLOW_STATUS (status_name) VALUES ('Cancelled');
 
+INSERT INTO SOURCE_INFORMATION(source_name, source_description)  VALUES
+('Source1', 'County information from (2B)uscounties.csv'),
+('Source2', 'AQI report from csv files'),
+('Source3', 'Category information');
+
 
 ALTER TABLE TABLE_INFORMATION 
 ADD CONSTRAINT fk_table_source FOREIGN KEY (source_id)

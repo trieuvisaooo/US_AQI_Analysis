@@ -88,3 +88,4 @@ node_modules/
 *_backup.*
 *_staging.*
 
+Scripts/TEST.sql
