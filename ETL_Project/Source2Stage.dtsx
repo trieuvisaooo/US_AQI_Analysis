@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="164"
-  DTS:VersionGUID="{1ACF70D7-4C37-474D-9F7E-FB58C8D068BB}">
+  DTS:VersionBuild="168"
+  DTS:VersionGUID="{0DB6E5AC-AC33-44B8-9DD6-0BE6ED849FFB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project">
+          DTS:ConnectionString="D:\BI\LabProject\US_AQI_Analysis\ETL_Project">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State Name"
-              DTS:DTSID="{82A8CD03-59D8-4BBC-AEF3-EBE6EC92F5E4}"
+              DTS:DTSID="{5ABCF0A2-2CAA-4F1A-81E7-F6F723BC5392}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="county Name"
-              DTS:DTSID="{C1562017-3BF4-40F1-9F6D-7D921A0AE45C}"
+              DTS:DTSID="{3111F0B5-E8F1-4392-AA70-831512F35712}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State Code"
-              DTS:DTSID="{8F071AD1-8FE1-4466-BDC8-411C11B2ADF3}"
+              DTS:DTSID="{C2061770-8602-4B96-9D1A-DC04C1E5A28F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="County Code"
-              DTS:DTSID="{681507C0-DD47-4B3A-A627-B117608F2B2D}"
+              DTS:DTSID="{8198F506-E7C4-4C36-8C26-C16377EDC3A7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{9DD99008-7605-4A8A-BFBD-C2596921D02D}"
+              DTS:DTSID="{B1006443-9A2B-4B16-89D8-F60A3662AEBB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AQI"
-              DTS:DTSID="{78FE2EBE-62C1-4FC1-AE8C-12010BD4F789}"
+              DTS:DTSID="{0628E74F-25BC-442E-A2A0-3D81DE1F177D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Category"
-              DTS:DTSID="{481FEE03-8877-4A0D-A528-5D057615159A}"
+              DTS:DTSID="{5C6A091C-2D85-4B0C-9581-064804C30AFE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Defining Parameter"
-              DTS:DTSID="{1677AE90-72BE-4A3F-9F45-CB50A032E21A}"
+              DTS:DTSID="{A7C14974-9C8D-4555-BFF1-0EC134B993A3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Defining Site"
-              DTS:DTSID="{76A941A6-F417-46A7-94AD-9C370D511EFA}"
+              DTS:DTSID="{1D6631A8-004C-4F21-9085-B00FC031757D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Number of Sites Reporting"
-              DTS:DTSID="{4F1239A9-2AAB-414F-8A1E-43F018B25BF3}"
+              DTS:DTSID="{5745A9BF-2935-4D36-8865-06850A539B21}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -131,7 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Created"
-              DTS:DTSID="{06973CB0-62C9-4476-8B96-3551204EFB45}"
+              DTS:DTSID="{D00CCAD6-DB68-40EE-917C-EC7B05E83450}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Last Updated"
-              DTS:DTSID="{F83A8465-C0FA-4250-AEB0-38B71E1598A5}"
+              DTS:DTSID="{14C92C9C-301D-475F-881B-0046F13758C1}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -174,7 +174,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project</DTS:VariableValue>
+        DTS:DataType="8">D:\BI\LabProject\US_AQI_Analysis\ETL_Project</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -687,7 +687,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project" />
+                  Folder="D:\BI\LabProject\US_AQI_Analysis\ETL_Project" />
                 <FEFEProperty
                   FileSpec="10_state_aqi_*.csv" />
                 <FEFEProperty
@@ -1871,8 +1871,8 @@ WHERE
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{4DAAF1E7-361C-428B-8AF8-0CAD5B20985D}"
-              DTS:ObjectName="{4DAAF1E7-361C-428B-8AF8-0CAD5B20985D}"
+              DTS:DTSID="{DB6FD387-556E-4100-BE43-DAE932DD6B16}"
+              DTS:ObjectName="{DB6FD387-556E-4100-BE43-DAE932DD6B16}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FilePath" />
           </DTS:ForEachVariableMappings>
@@ -1936,6 +1936,23 @@ WHERE
               SQLTask:SqlStatementSource="UPDATE DATA_FLOW &#xA;SET status = (SELECT status_id &#xA;&#x9;FROM DATA_FLOW_STATUS &#xA;&#x9;WHERE status_name = 'Completed'),&#xA;    lset = GETDATE()&#xA;WHERE name='COUNTY_AQI_STAGE'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0BDEFBD8-E887-42ED-933B-5E794C3F21E8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate table COUNTY_AQI_STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EC1EA178-C304-48B5-ACB1-A1493E0F6621}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE COUNTY_AQI_STAGE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -1947,10 +1964,18 @@ WHERE
           DTS:ObjectName="Constraint"
           DTS:To="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{A9E7C8D3-6EA9-4B34-8836-E6B491AE5304}"
+          DTS:From="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{82D296F5-0B74-4F53-A141-F6FD6C250D5A}"
-          DTS:From="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata"
+          DTS:DTSID="{D5569044-26CF-4F76-BCCE-DF91A0BC344C}"
+          DTS:From="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
           DTS:To="Package\COUNTY_AQI_STAGE\Foreach Loop Container" />
@@ -2746,10 +2771,10 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316.666666666667,106"
-          Size="316.666666666667,148.666666666667"
+          PanelSize="316.666666666667,125.333333333334"
+          Size="316.666666666667,168"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container"
-          TopLeft="29.6457444269193,174.101585686844" />
+          TopLeft="24.6457446504367,243.651582370442" />
         <NodeLayout
           Size="238.666666666667,42.6666666666667"
           Id="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata"
@@ -2761,7 +2786,7 @@ WHERE
         <NodeLayout
           Size="242.666666666667,42.6666666666667"
           Id="Package\COUNTY_AQI_STAGE\Set LSET 1 and status to Metadata"
-          TopLeft="65.038333798285,365.922811804164" />
+          TopLeft="64.4133338262244,460.822807278979" />
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint]"
           TopLeft="186.389788614412,53.5129626618195">
@@ -2785,19 +2810,45 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 2]"
-          TopLeft="187.081192447224,133.251851822484">
+          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 3]"
+          TopLeft="184.362872571664,411.651582370442">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.8497338643595"
+              EndConnector="0,49.1712249085379"
               Start="0,0"
-              End="0,33.3497338643595">
+              End="0,41.6712249085379">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.3497338643595" />
+                    End="0,41.6712249085379" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE"
+          TopLeft="56.4999815598137,169.349991352559" />
+        <EdgeLayout
+          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 1]"
+          TopLeft="184.708311013671,133.518518489151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.8314728634074"
+              Start="0,0"
+              End="0,28.3314728634074">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.3314728634074" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2807,19 +2858,19 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 3]"
-          TopLeft="187.142039112602,322.901585686844">
+          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 2]"
+          TopLeft="183.072863105125,212.016658019225">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.02122611732"
+              EndConnector="0,31.6349243512164"
               Start="0,0"
-              End="0,35.52122611732">
+              End="0,24.1349243512164">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.52122611732" />
+                    End="0,24.1349243512164" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2831,8 +2882,8 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="369.333333333334,464"
-          Size="369.333333333334,506.666666666667"
+          PanelSize="369.333333333334,558.666666666667"
+          Size="369.333333333334,601.333333333334"
           Id="Package\COUNTY_AQI_STAGE"
           TopLeft="480.843133271674,80.2363077187231" />
         <NodeLayout
@@ -2926,18 +2977,30 @@ WHERE
           TopLeft="72.5520793615019,81.9916663842728" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="411.752079361502,334.313987051498">
+          TopLeft="411.885412694835,335.324999717606">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="69.091053910172,0"
+              EndConnector="68.9577205768388,45.5779746677836"
               Start="0,0"
-              End="61.591053910172,0">
+              End="61.4577205768388,45.5779746677836">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="61.591053910172,0" />
+                    End="30.4788602884194,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.4788602884194,0"
+                    Point2="34.4788602884194,0"
+                    Point3="34.4788602884194,4" />
+                  <mssgle:LineSegment
+                    End="34.4788602884194,41.5779746677836" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.4788602884194,41.5779746677836"
+                    Point2="34.4788602884194,45.5779746677836"
+                    Point3="38.4788602884194,45.5779746677836" />
+                  <mssgle:LineSegment
+                    End="61.4577205768388,45.5779746677836" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2948,18 +3011,30 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="850.443133271674,333.400891781932">
+          TopLeft="850.176466605007,380.90297438539">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72.5999729322184,0"
+              EndConnector="72.8666395988845,-47.6708318735823"
               Start="0,0"
-              End="65.0999729322184,0">
+              End="65.3666395988845,-47.6708318735823">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="65.0999729322184,0" />
+                    End="32.4333197994422,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.4333197994422,0"
+                    Point2="36.4333197994422,0"
+                    Point3="36.4333197994422,-4" />
+                  <mssgle:LineSegment
+                    End="36.4333197994422,-43.6708318735823" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.4333197994422,-43.6708318735823"
+                    Point2="36.4333197994422,-47.6708318735823"
+                    Point3="40.4333197994422,-47.6708318735823" />
+                  <mssgle:LineSegment
+                    End="65.3666395988845,-47.6708318735823" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

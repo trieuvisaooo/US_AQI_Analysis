@@ -70,7 +70,7 @@ GO
 
 CREATE TABLE dbo.DIM_STATE (
 	state_key INT PRIMARY KEY,
-	state_id CHAR(2) UNIQUE,
+	state_id VARCHAR(2) UNIQUE,
 	state_name VARCHAR(50)
 );
 GO
@@ -110,8 +110,8 @@ CREATE TABLE dbo.FACT_AIR_QUALITY (
 	category_key INT,
 	defining_parameter_key INT,
 	aqi_value INT,
-	defining_site VARCHAR(50),
 	number_of_sites_report INT,
+	defining_site VARCHAR(20),
 	FOREIGN KEY (date_key) REFERENCES dbo.DIM_DATE(date_key),
 	FOREIGN KEY (county_key) REFERENCES dbo.DIM_COUNTY(county_key),
 	FOREIGN KEY (category_key) REFERENCES dbo.DIM_CATEGORY(category_key),

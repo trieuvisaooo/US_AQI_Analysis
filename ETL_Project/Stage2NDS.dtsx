@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="167"
-  DTS:VersionGUID="{2D1C1BDC-431F-4FB7-A2E3-AFF12278559E}">
+  DTS:VersionBuild="170"
+  DTS:VersionGUID="{52DD100E-2C6C-4E0D-AB08-CE32D77B8F35}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -232,7 +232,10 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select county_code, date, aqi, category,defining_parameter, defining_site, number_of_sites_rep
+from COUNTY_AQI_STAGE
+group by county_code, date, aqi, category,defining_parameter, defining_site, number_of_sites_rep
+having count(*) = 1;</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -249,7 +252,7 @@
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -329,24 +332,6 @@
                       name="number_of_sites_rep"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[created]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[created]"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[created]"
-                      name="created"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[last_updated]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[last_updated]"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[last_updated]"
-                      name="last_updated"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_code]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -355,34 +340,9 @@
                       lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_code]"
                       name="county_code"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[id]"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[id]"
-                      name="id"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[state_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="state_name" />
-                    <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[county_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
-                      name="county_name" />
-                    <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[state_code]"
-                      dataType="i4"
-                      name="state_code" />
                     <externalMetadataColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[county_code]"
                       dataType="i4"
@@ -417,18 +377,6 @@
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[number_of_sites_rep]"
                       dataType="i4"
                       name="number_of_sites_rep" />
-                    <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[created]"
-                      dataType="dbTimeStamp"
-                      name="created" />
-                    <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[last_updated]"
-                      dataType="dbTimeStamp"
-                      name="last_updated" />
-                    <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[id]"
-                      dataType="i4"
-                      name="id" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -436,11 +384,6 @@
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[id]"
-                      dataType="i4"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[id]"
-                      name="id" />
                     <outputColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -489,16 +432,6 @@
                       dataType="i4"
                       lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[number_of_sites_rep]"
                       name="number_of_sites_rep" />
-                    <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[created]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[created]"
-                      name="created" />
-                    <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[last_updated]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[last_updated]"
-                      name="last_updated" />
                     <outputColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[county_code]"
                       dataType="i4"
@@ -7668,7 +7601,7 @@ WHERE state_sk = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="200,41.3333333333334"
+          Size="200,42.6666666666667"
           Id="Package\AQIStage_AQIReportNDS"
           TopLeft="366.666646632884,147.333332308796" />
         <NodeLayout
@@ -7807,18 +7740,18 @@ WHERE state_sk = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="465.433313891458,241.799998318553">
+          TopLeft="465.499980558125,241.799998318553">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-52.866666009757"
+              EndConnector="0,-51.7999993430903"
               Start="0,0"
-              End="0,-45.366666009757">
+              End="0,-44.2999993430903">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-45.366666009757" />
+                    End="0,-44.2999993430903" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7836,25 +7769,9 @@ WHERE state_sk = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="221.333333333334,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS"
-          TopLeft="778.63635183058,527.840901954269" />
-        <NodeLayout
-          Size="263.333333333334,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS"
-          TopLeft="387.090903336352,146.545452145013" />
-        <NodeLayout
-          Size="209.333333333334,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS"
-          TopLeft="427.999993622303,436.381811992417" />
-        <NodeLayout
-          Size="256,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\updated_date, inserted_date"
-          TopLeft="769.249988537282,431.481813937018" />
-        <NodeLayout
-          Size="224.666666666667,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS"
-          TopLeft="408.999993905425,250.181814480911" />
+          Size="146,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\updated_date"
+          TopLeft="156.704543187198,436.13181235377" />
         <NodeLayout
           Size="187.333333333334,41.3333333333334"
           Id="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS"
@@ -7864,13 +7781,55 @@ WHERE state_sk = ?</property>
           Id="Package\AQIStage_AQIReportNDS\Update AQI_REPORT_NDS"
           TopLeft="123.499998159707,527.381810994039" />
         <NodeLayout
+          Size="224.666666666667,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS"
+          TopLeft="408.999993905425,250.181814480911" />
+        <NodeLayout
           Size="187.333333333334,41.3333333333334"
           Id="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE"
           TopLeft="433.909084429795,7.00000064074989" />
         <NodeLayout
-          Size="146,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\updated_date"
-          TopLeft="156.704543187198,436.13181235377" />
+          Size="221.333333333334,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS"
+          TopLeft="778.63635183058,527.840901954269" />
+        <NodeLayout
+          Size="263.333333333334,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS"
+          TopLeft="387.090903336352,146.545452145013" />
+        <NodeLayout
+          Size="256,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\updated_date, inserted_date"
+          TopLeft="769.249988537282,431.481813937018" />
+        <NodeLayout
+          Size="209.333333333334,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS"
+          TopLeft="427.999993622303,436.381811992417" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\AQIStage_AQIReportNDS\Add source_id column"
+          TopLeft="429.090896303004,79.9999976158142" />
+        <EdgeLayout
+          Id="Package\AQIStage_AQIReportNDS.Paths[OLE DB Source Output]"
+          TopLeft="524.333323699733,48.3333339740832">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.666663641731"
+              Start="0,0"
+              End="0,24.166663641731">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.166663641731" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Lookup No Match Output]"
           TopLeft="637.333326955636,454.598479631384">
@@ -7939,7 +7898,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.245311948657,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,16.2453119486571,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7992,6 +7951,28 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output2]"
+          TopLeft="519.924233153011,122.666664282481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.8787878625323"
+              Start="0,0"
+              End="0,16.3787878625323">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3787878625323" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output1]"
           TopLeft="893.276503517264,472.815147270352">
           <EdgeLayout.Curve>
@@ -8035,57 +8016,68 @@ WHERE state_sk = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\AQIStage_AQIReportNDS\Add source_id column"
-          TopLeft="429.090896303004,79.9999976158142" />
-        <EdgeLayout
-          Id="Package\AQIStage_AQIReportNDS.Paths[OLE DB Source Output]"
-          TopLeft="524.333323699733,48.3333339740832">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.666663641731"
-              Start="0,0"
-              End="0,24.166663641731">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.166663641731" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output2]"
-          TopLeft="519.924233153011,122.666664282481">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,23.8787878625323"
-              Start="0,0"
-              End="0,16.3787878625323">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.3787878625323" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[COUNTY_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[AQI_CATEGORY_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS">
     <Properties>
@@ -8128,7 +8120,7 @@ WHERE state_sk = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8138,69 +8130,10 @@ WHERE state_sk = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[AQI_CATEGORY_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[COUNTY_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8313,7 +8246,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="47.7908305242078,35.0944013948162,111.6127734375,11.609375"
+              BoundingBox="47.790830524208,35.0944013948162,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8337,7 +8270,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.7953128803609,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,28.7953128803608,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8727,7 +8660,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="15.8602756348588,38.9031858684106,111.6127734375,11.609375"
+              BoundingBox="15.860275634859,38.9031858684106,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8847,10 +8780,6 @@ WHERE state_sk = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="255.333333333334,41.3333333333334"
-          Id="Package\CategoryStage_CategoryNDS\Lookup Category_SK in CategoryNDS"
-          TopLeft="303.999995470047,177.999997347594" />
-        <NodeLayout
           Size="182.666666666667,41.3333333333334"
           Id="Package\CategoryStage_CategoryNDS\Update CatergoryNDS"
           TopLeft="166.999996483326,346.999994814396" />
@@ -8862,6 +8791,36 @@ WHERE state_sk = ?</property>
           Size="210,41.3333333333334"
           Id="Package\CategoryStage_CategoryNDS\Insert into CategoryNDS"
           TopLeft="493.272719709711,352.727267564698" />
+        <NodeLayout
+          Size="255.333333333334,41.3333333333334"
+          Id="Package\CategoryStage_CategoryNDS\Lookup Category_SK in CategoryNDS"
+          TopLeft="303.999995470047,177.999997347594" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\CategoryStage_CategoryNDS\Add source_id column"
+          TopLeft="343.636353395202,105.454542311755" />
+        <EdgeLayout
+          Id="Package\CategoryStage_CategoryNDS.Paths[OLE DB Source Output]"
+          TopLeft="432.151507616947,69.7878787594311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.6666635523242"
+              Start="0,0"
+              End="0,28.1666635523242">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.1666635523242" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\CategoryStage_CategoryNDS.Paths[Lookup No Match Output]"
           TopLeft="472.888884358936,219.333330680927">
@@ -8894,7 +8853,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.88553095663735,58.8559848965092,111.6127734375,11.609375"
+              BoundingBox="6.8855309566375,58.8559848965092,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8932,32 +8891,6 @@ WHERE state_sk = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-114.246941767666,56.5436765416909,96.3827734375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\CategoryStage_CategoryNDS\Add source_id column"
-          TopLeft="343.636353395202,105.454542311755" />
-        <EdgeLayout
-          Id="Package\CategoryStage_CategoryNDS.Paths[OLE DB Source Output]"
-          TopLeft="432.151507616947,69.7878787594311">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.6666635523242"
-              Start="0,0"
-              End="0,28.1666635523242">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.1666635523242" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9181,7 +9114,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.2786451702318,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.2786451702319,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
