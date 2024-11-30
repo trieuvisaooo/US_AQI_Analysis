@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{A4F7B998-362C-46FE-B263-CABACFEECD5A}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{8CE380BE-B9D2-4794-9EA2-366514C32387}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3093,11 +3093,6 @@ where [refTable].[parameter_name] = ?</property>
                       cachedLength="50"
                       cachedName="state_name"
                       lineageId="Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_name]" />
-                    <inputColumn
-                      refId="Package\ETL DIM_STATE\Check null value.Inputs[Conditional Split Input].Columns[state_code]"
-                      cachedDataType="i4"
-                      cachedName="state_code"
-                      lineageId="Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_code]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3145,13 +3140,13 @@ where [refTable].[parameter_name] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_id]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_name]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_code]})</property>
+                      name="Expression">![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_id]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_name]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(state_id) &amp;&amp; !ISNULL(state_name) &amp;&amp; !ISNULL(state_code)</property>
+                      name="FriendlyExpression">!ISNULL(state_id) &amp;&amp; !ISNULL(state_name)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -7491,17 +7486,17 @@ WHERE fact_air_quality_sk = ?
               name="Data Conversion Output"
               startId="Package\ETL FACT_AIR_QUALITY\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\Lookup.Inputs[Lookup Input]"
               name="Data Conversion Output"
               startId="Package\ETL FACT_AIR_QUALITY\Converted date_key.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
               endId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
               endId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Output]" />
@@ -7536,22 +7531,22 @@ WHERE fact_air_quality_sk = ?
               name="invalid conclusion"
               startId="Package\ETL FACT_AIR_QUALITY\Check AQI conclusion.Outputs[invalid conclusion]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
-              endId="Package\ETL FACT_AIR_QUALITY\UPDATE FACT.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Match Output]" />
-            <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\category_key sorted.Inputs[Sort Input]"
               name="Lookup Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
+              endId="Package\ETL FACT_AIR_QUALITY\UPDATE FACT.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
               endId="Package\ETL FACT_AIR_QUALITY\INSERT INTO FACT.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup No Match Output]" />
@@ -8547,9 +8542,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8667,9 +8660,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8691,9 +8682,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8855,7 +8844,7 @@ WHERE fact_air_quality_sk = ?
           Id="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information"
           TopLeft="520.99998447299,257.666661332051" />
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
           TopLeft="397.333325346311,278.499993935227">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9051,7 +9040,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
           TopLeft="474.166654671232,995.333314259848">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9073,7 +9062,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
           TopLeft="1146.37497263961,716.98332921346">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9299,7 +9288,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
           TopLeft="492.222209764851,1074.99997791648">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9359,7 +9348,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
           TopLeft="946.458309694505,279.999997615814">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9384,32 +9373,6 @@ WHERE fact_air_quality_sk = ?
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\ETL FACT_AIR_QUALITY\INSERT INTO FACT">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\ETL FACT_AIR_QUALITY\DIM_CATEGORY">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\ETL FACT_AIR_QUALITY\Lookup">
     <Properties>
       <Property>
@@ -9433,7 +9396,20 @@ WHERE fact_air_quality_sk = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\ETL FACT_AIR_QUALITY\EVENT_LOG">
+    design-time-name="Package\ETL FACT_AIR_QUALITY\AQI_REPORT NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL FACT_AIR_QUALITY\DIM_CATEGORY">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9469,7 +9445,20 @@ WHERE fact_air_quality_sk = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\ETL FACT_AIR_QUALITY\AQI_REPORT NDS">
+    design-time-name="Package\ETL FACT_AIR_QUALITY\EVENT_LOG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL FACT_AIR_QUALITY\INSERT INTO FACT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
