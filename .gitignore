@@ -76,15 +76,15 @@ dlldata.c
 node_modules/
 
 # OLAP project
-*.cube
-*.dsv
-*.dim
-*.ds
-*.bim
-*.abf
+!*.cube
+!*.dsv
+!*.dim
+!*.ds
+!*.bim
+
 
 *.log
-
+*.bak
 *_backup.*
 *_staging.*
 
