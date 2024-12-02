@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{A4F7B998-362C-46FE-B263-CABACFEECD5A}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{124DEABF-387F-40F8-8D5D-4A1DC0E8481B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3093,11 +3093,6 @@ where [refTable].[parameter_name] = ?</property>
                       cachedLength="50"
                       cachedName="state_name"
                       lineageId="Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_name]" />
-                    <inputColumn
-                      refId="Package\ETL DIM_STATE\Check null value.Inputs[Conditional Split Input].Columns[state_code]"
-                      cachedDataType="i4"
-                      cachedName="state_code"
-                      lineageId="Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_code]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -3145,13 +3140,13 @@ where [refTable].[parameter_name] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_id]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_name]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_code]})</property>
+                      name="Expression">![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_id]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_STATE\STATE NDS.Outputs[OLE DB Source Output].Columns[state_name]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(state_id) &amp;&amp; !ISNULL(state_name) &amp;&amp; !ISNULL(state_code)</property>
+                      name="FriendlyExpression">!ISNULL(state_id) &amp;&amp; !ISNULL(state_name)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -5370,19 +5365,19 @@ where [refTable].[state_name] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1"
+              refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
-              name="Data Conversion 1 1"
+              name="Data Conversion 2"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Inputs[Data Conversion Input]"
+                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Inputs[Data Conversion Input].Columns[event_name]"
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Inputs[Data Conversion Input].Columns[event_name]"
                       cachedDataType="wstr"
                       cachedLength="29"
                       cachedName="event_name"
@@ -5393,19 +5388,19 @@ where [refTable].[state_name] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Output]"
+                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Output].Columns[event_name]"
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Output].Columns[event_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="29"
-                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Output].Columns[event_name]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Output].Columns[event_name]"
                       name="event_name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -5424,22 +5419,100 @@ where [refTable].[state_name] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Error Output]"
+                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion 3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Inputs[Data Conversion Input].Columns[event_name]"
+                      cachedDataType="wstr"
+                      cachedLength="29"
+                      cachedName="event_name"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Output].Columns[event_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="29"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Output].Columns[event_name]"
+                      name="event_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -5993,11 +6066,11 @@ where [refTable].[state_name] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1"
+              refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="EVENT_LOG 1 1"
+              name="EVENT_LOG 2"
               usesDispositions="true"
               version="4">
               <properties>
@@ -6050,7 +6123,7 @@ where [refTable].[state_name] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Connections[OleDbConnection]"
+                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Connections[OleDbConnection]"
                   connectionManagerID="{2DF49E90-CC03-4E81-B0CE-EE4235E5BEBC}:external"
                   connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_METADATA]"
                   description="The OLE DB runtime connection used to access the database."
@@ -6058,52 +6131,52 @@ where [refTable].[state_name] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input]"
+                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].Columns[event_time]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].Columns[event_time]"
                       cachedDataType="dbTimeStamp"
                       cachedName="event_time"
-                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_time]"
+                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_time]"
                       lineageId="Package\ETL FACT_AIR_QUALITY\AQI Conclusion Log Information.Outputs[Derived Column Output].Columns[event_time]" />
                     <inputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].Columns[event_error_msg]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].Columns[event_error_msg]"
                       cachedDataType="wstr"
                       cachedLength="104"
                       cachedName="event_error_msg"
-                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_error_msg]"
+                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_error_msg]"
                       lineageId="Package\ETL FACT_AIR_QUALITY\AQI Conclusion Log Information.Outputs[Derived Column Output].Columns[event_error_msg]" />
                     <inputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].Columns[event_name]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].Columns[event_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="29"
                       cachedName="event_name"
-                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_name]"
-                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Output].Columns[event_name]" />
+                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_name]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Output].Columns[event_name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_id]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_id]"
                       dataType="i4"
                       name="event_id" />
                     <externalMetadataColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_name]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_name]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="event_name" />
                     <externalMetadataColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_time]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_time]"
                       dataType="dbTimeStamp"
                       name="event_time" />
                     <externalMetadataColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input].ExternalColumns[event_error_msg]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input].ExternalColumns[event_error_msg]"
                       dataType="wstr"
                       length="1000"
                       name="event_error_msg" />
@@ -6112,22 +6185,165 @@ where [refTable].[state_name] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="EVENT_LOG 3"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[EVENT_LOG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Connections[OleDbConnection]"
+                  connectionManagerID="{2DF49E90-CC03-4E81-B0CE-EE4235E5BEBC}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_METADATA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].Columns[event_time]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="event_time"
+                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_time]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_time]" />
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].Columns[event_error_msg]"
+                      cachedDataType="wstr"
+                      cachedLength="75"
+                      cachedName="event_error_msg"
+                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_error_msg]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_error_msg]" />
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].Columns[event_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="29"
+                      cachedName="event_name"
+                      externalMetadataColumnId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_name]"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Output].Columns[event_name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_id]"
+                      dataType="i4"
+                      name="event_id" />
+                    <externalMetadataColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="event_name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_time]"
+                      dataType="dbTimeStamp"
+                      name="event_time" />
+                    <externalMetadataColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input].ExternalColumns[event_error_msg]"
+                      dataType="wstr"
+                      length="1000"
+                      name="event_error_msg" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -6259,6 +6475,138 @@ where [refTable].[state_name] = ?</property>
                       refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="FK Constraint Log Information 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Inputs[Derived Column Input].Columns[report_sk]"
+                      cachedDataType="i4"
+                      cachedName="report_sk"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Merge Join.Outputs[Merge Join Output].Columns[report_sk]" />
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Inputs[Derived Column Input].Columns[date_key]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="date_key"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\date_key column.Outputs[Derived Column Output].Columns[date_key]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="29"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_name]"
+                      name="event_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Load data to FACT_AIR_QUALITY"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Load data to FACT_AIR_QUALITY"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_time]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_time]"
+                      name="event_time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_error_msg]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="75"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output].Columns[event_error_msg]"
+                      name="event_error_msg"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"Invalid FK - date_key: row with report_sk = " + (DT_WSTR,10)#{Package\ETL FACT_AIR_QUALITY\Merge Join.Outputs[Merge Join Output].Columns[report_sk]} + "  and date = " + #{Package\ETL FACT_AIR_QUALITY\date_key column.Outputs[Derived Column Output].Columns[date_key]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Invalid FK - date_key: row with report_sk = " + (DT_WSTR,10)report_sk + "  and date = " + date_key</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -6614,6 +6962,147 @@ where [refTable].[county_key] = ? and [refTable].[date_key] = ?</property>
                       refId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup date_key"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT date_key FROM DIM_DATE</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT date_key FROM DIM_DATE) [refTable]
+where [refTable].[date_key] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="date_key" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\ETL FACT_AIR_QUALITY\Converted date_key.Outputs[Data Conversion Output].Columns[date_key_int]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Connections[OleDbConnection]"
+                  connectionManagerID="{2CC3C530-8454-4579-9E42-B23DED5A777E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_DDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Inputs[Lookup Input].Columns[date_key_int]"
+                      cachedDataType="i4"
+                      cachedName="date_key_int"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Converted date_key.Outputs[Data Conversion Output].Columns[date_key_int]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">date_key</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -7491,20 +7980,25 @@ WHERE fact_air_quality_sk = ?
               name="Data Conversion Output"
               startId="Package\ETL FACT_AIR_QUALITY\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
-              endId="Package\ETL FACT_AIR_QUALITY\Lookup.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\ETL FACT_AIR_QUALITY\Converted date_key.Outputs[Data Conversion Output]" />
-            <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
-              endId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1.Inputs[OLE DB Destination Input]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
+              endId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Outputs[Data Conversion Output]" />
+              startId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
+              endId="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output4]"
+              endId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Inputs[Lookup Input]"
+              name="Data Conversion Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Converted date_key.Outputs[Data Conversion Output]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output]"
               endId="Package\ETL FACT_AIR_QUALITY\Data Conversion.Inputs[Data Conversion Input]"
@@ -7522,9 +8016,14 @@ WHERE fact_air_quality_sk = ?
               startId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Outputs[Derived Column Output]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output3]"
-              endId="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1.Inputs[Data Conversion Input]"
+              endId="Package\ETL FACT_AIR_QUALITY\Data Conversion 2.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\ETL FACT_AIR_QUALITY\AQI Conclusion Log Information.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output4]"
+              endId="Package\ETL FACT_AIR_QUALITY\Data Conversion 3.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Outputs[Derived Column Output]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[invalid]"
               endId="Package\ETL FACT_AIR_QUALITY\Value Log Information.Inputs[Derived Column Input]"
@@ -7536,25 +8035,35 @@ WHERE fact_air_quality_sk = ?
               name="invalid conclusion"
               startId="Package\ETL FACT_AIR_QUALITY\Check AQI conclusion.Outputs[invalid conclusion]" />
             <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output2]"
+              endId="Package\ETL FACT_AIR_QUALITY\Lookup.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Match Output]" />
+            <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
+              endId="Package\ETL FACT_AIR_QUALITY\category_key sorted.Inputs[Sort Input]"
+              name="Lookup Match Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\UPDATE FACT.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
-              endId="Package\ETL FACT_AIR_QUALITY\category_key sorted.Inputs[Sort Input]"
-              name="Lookup Match Output"
-              startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup Match Output]" />
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
+              endId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\INSERT INTO FACT.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
-              endId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Inputs[Derived Column Input]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output2]"
+              endId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
-              startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup No Match Output]" />
+              startId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Merge Join Output]"
               endId="Package\ETL FACT_AIR_QUALITY\Check AQI conclusion.Inputs[Conditional Split Input]"
@@ -7792,9 +8301,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7993,9 +8500,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8017,9 +8522,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8065,9 +8568,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8233,9 +8734,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8257,9 +8756,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8386,9 +8883,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8481,21 +8976,17 @@ WHERE fact_air_quality_sk = ?
           Id="Package\ETL DIM_STATE\EVENT_LOG"
           TopLeft="962.999971300364,153.999995410442" />
         <NodeLayout
-          Size="113.333333333334,42.6666666666667"
-          Id="Package\ETL DIM_STATE\Lookup"
-          TopLeft="252.999992460013,242.999992758036" />
+          Size="177.333333333334,50"
+          Id="Package\ETL DIM_STATE\UPDATE DIM_STATE"
+          TopLeft="51.9999984502792,375.999988794327" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\ETL DIM_STATE\Log Information"
           TopLeft="517.999984562398,156.999995321036" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\ETL DIM_STATE\Data Conversion"
-          TopLeft="747.999977707863,153.999995410442" />
-        <NodeLayout
-          Size="177.333333333334,50"
-          Id="Package\ETL DIM_STATE\UPDATE DIM_STATE"
-          TopLeft="51.9999984502792,375.999988794327" />
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\ETL DIM_STATE\Lookup"
+          TopLeft="252.999992460013,242.999992758036" />
         <NodeLayout
           Size="202.666666666667,42.6666666666667"
           Id="Package\ETL DIM_STATE\INSERT INTO DIM_STATE"
@@ -8504,6 +8995,10 @@ WHERE fact_air_quality_sk = ?
           Size="156,42.6666666666667"
           Id="Package\ETL DIM_STATE\Check null value"
           TopLeft="237.999992907047,150.999995499849" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\ETL DIM_STATE\Data Conversion"
+          TopLeft="747.999977707863,153.999995410442" />
         <EdgeLayout
           Id="Package\ETL DIM_STATE.Paths[valid row]"
           TopLeft="312.833326016863,193.666662166516">
@@ -8547,9 +9042,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8667,9 +9160,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8691,9 +9182,7 @@ WHERE fact_air_quality_sk = ?
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8767,96 +9256,610 @@ WHERE fact_air_quality_sk = ?
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\INSERT INTO FACT"
-          TopLeft="596.999982208014,1134.33330820998" />
-        <NodeLayout
-          Size="159.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1 1"
-          TopLeft="1182.3333008041,694.999995911121" />
-        <NodeLayout
-          Size="136,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Check value"
-          TopLeft="264.999992102385,135.999995946884" />
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information 1"
+          TopLeft="550.2222005013,998.038884569675" />
         <NodeLayout
           Size="167.333333333334,42.6666666666667"
           Id="Package\ETL FACT_AIR_QUALITY\Data Conversion 1"
-          TopLeft="779.124976361172,258.666664282481" />
+          TopLeft="645.097204574906,257.222219906913" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\DIM_CATEGORY"
-          TopLeft="522.999984413386,379.999996125698" />
-        <NodeLayout
-          Size="113.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Lookup"
-          TopLeft="417.999987542629,1032.33331124981" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Data Conversion"
-          TopLeft="756.999977439643,137.999998867512" />
-        <NodeLayout
-          Size="131.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Merge Join"
-          TopLeft="410.999987751246,566.666661361853" />
+          Size="160,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Lookup date_key"
+          TopLeft="259.097210639674,994.738883099821" />
         <NodeLayout
           Size="98.6666666666667,42.6666666666667"
           Id="Package\ETL FACT_AIR_QUALITY\Sort"
-          TopLeft="553.999983489514,471.999993383885" />
+          TopLeft="419.972211703246,470.555549008317" />
         <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG"
-          TopLeft="1032.9999692142,136.999998897314" />
-        <NodeLayout
-          Size="160,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\date_key column"
-          TopLeft="394.999988228082,866.083316495021" />
-        <NodeLayout
-          Size="129.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Lookup FK"
-          TopLeft="267.999992012978,256.666659871737" />
-        <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Converted date_key"
-          TopLeft="386.999988466501,952.666647593181" />
-        <NodeLayout
-          Size="146.666666666667,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\UPDATE FACT"
-          TopLeft="192.999994248152,1134.33330820998" />
-        <NodeLayout
-          Size="184,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Value Log Information"
-          TopLeft="501.999985039234,135.999995946884" />
-        <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Check AQI conclusion"
-          TopLeft="389.999988377095,690.999988347292" />
-        <NodeLayout
-          Size="230.666666666667,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\AQI Conclusion Log Information"
-          TopLeft="687.958315230285,693.349992991686" />
-        <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\Data Conversion 1 1"
-          TopLeft="971.708305972939,696.299995849132" />
-        <NodeLayout
-          Size="150,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1"
-          TopLeft="1035.99996912479,258.666664282481" />
-        <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\category_key sorted"
-          TopLeft="251.999992489815,469.999992728234" />
-        <NodeLayout
-          Size="165.333333333334,42.6666666666667"
-          Id="Package\ETL FACT_AIR_QUALITY\AQI_REPORT NDS"
-          TopLeft="251.99999241531,23.3333339293798" />
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Data Conversion"
+          TopLeft="622.972205653377,136.555554491944" />
         <NodeLayout
           Size="221.333333333334,42.6666666666667"
           Id="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information"
-          TopLeft="520.99998447299,257.666661332051" />
+          TopLeft="386.972212686721,256.222216956483" />
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\category_key sorted"
+          TopLeft="117.972220703546,468.555548352666" />
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG"
+          TopLeft="898.972197427934,135.555554521746" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Converted date_key"
+          TopLeft="252.972216680232,899.222205697166" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 1"
+          TopLeft="901.972197338524,257.222219906913" />
+        <NodeLayout
+          Size="113.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Lookup"
+          TopLeft="282.097215840179,1141.77220432983" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 3"
+          TopLeft="1000.84718803089,996.438887644083" />
+        <NodeLayout
+          Size="136,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Check value"
+          TopLeft="130.972220316116,134.555551571316" />
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Value Log Information"
+          TopLeft="367.972213252965,134.555551571316" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\DIM_CATEGORY"
+          TopLeft="388.972212627117,378.55555175013" />
+        <NodeLayout
+          Size="131.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Merge Join"
+          TopLeft="276.972215964977,565.222216986285" />
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\date_key column"
+          TopLeft="260.972216441813,812.638874599006" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\EVENT_LOG 2"
+          TopLeft="990.111087174883,712.838883949385" />
+        <NodeLayout
+          Size="165.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\AQI_REPORT NDS"
+          TopLeft="117.972220629041,21.8888895538118" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\INSERT INTO FACT"
+          TopLeft="465.472210309988,1243.77220129" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Data Conversion 3"
+          TopLeft="802.097192668879,997.738887582093" />
+        <NodeLayout
+          Size="146.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\UPDATE FACT"
+          TopLeft="57.0972225457017,1243.77220129" />
+        <NodeLayout
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Lookup FK"
+          TopLeft="133.972220226709,255.222215496169" />
+        <NodeLayout
+          Size="230.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\AQI Conclusion Log Information"
+          TopLeft="533.236099924688,714.438880874978" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Check AQI conclusion"
+          TopLeft="255.277772177426,713.388876168596" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\ETL FACT_AIR_QUALITY\Data Conversion 2"
+          TopLeft="794.48609167317,714.788883856402" />
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[invalid]"
+          TopLeft="266.972220316116,155.888884904649">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.999992936849,0"
+              Start="0,0"
+              End="93.499992936849,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="93.499992936849,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.2884144371745,5,28.9231640625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output4]"
+          TopLeft="665.555533834634,1040.70555123634">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="219.874992167579,-0.29999698758138"
+              Start="0,0"
+              End="219.874992167579,7.20000301241862">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="215.874992167579,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="215.874992167579,22.5"
+                    Point2="219.874992167579,22.5"
+                    Point3="219.874992167579,18.5" />
+                  <mssgle:LineSegment
+                    End="219.874992167579,7.20000301241862" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output3]"
+          TopLeft="763.902766591355,735.947215699023">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30.5833250818154,0"
+              Start="0,0"
+              End="23.0833250818154,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="23.0833250818154,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output2]"
+          TopLeft="608.305546020057,278.055551765031">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="36.7916585548483,0"
+              Start="0,0"
+              End="29.2916585548483,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.2916585548483,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output1]"
+          TopLeft="340.305549894356,855.305541265673">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.9166644314934"
+              Start="0,0"
+              End="0,36.4166644314934">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.4166644314934" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output]"
+          TopLeft="551.972213252968,156.888886364963">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="70.999992400409,0"
+              Start="0,0"
+              End="63.499992400409,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.499992400409,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output4]"
+          TopLeft="339.368046993286,941.888872363833">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.8500107359888"
+              Start="0,0"
+              End="0,45.3500107359888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.3500107359888" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
+          TopLeft="968.763859335545,1018.42222094642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.0833286953412,0"
+              Start="0,0"
+              End="24.5833286953412,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.5833286953412,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
+          TopLeft="961.152758339837,735.147217236227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.9583288350458,0"
+              Start="0,0"
+              End="21.4583288350458,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.4583288350458,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
+          TopLeft="812.430537908239,278.555553240246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.5416594302843,0"
+              Start="0,0"
+              End="82.0416594302843,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="82.0416594302843,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output]"
+          TopLeft="780.30553898671,157.388887840178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.666658441226,0"
+              Start="0,0"
+              End="111.166658441226,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="111.166658441226,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[valid conclusion]"
+          TopLeft="343.458327642952,756.055542835262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.583331763744"
+              Start="0,0"
+              End="0,49.083331763744">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.083331763744" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.3359375,19.667154163122,70.671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[valid]"
+          TopLeft="198.805553604746,177.222218237983">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.9999972581863"
+              Start="0,0"
+              End="0,70.4999972581863">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.4999972581863" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.8219921875,30.3754869103431,21.643984375,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Sort Output1]"
+          TopLeft="469.30554503658,513.222215674983">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.111106849379,52.0000013113021"
+              Start="0,0"
+              End="-106.111106849379,44.5000013113021">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8244741975722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.8244741975722"
+                    Point2="0,30.8244741975722"
+                    Point3="-4,30.8244741975722" />
+                  <mssgle:LineSegment
+                    End="-102.111106849379,30.8244741975722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.111106849379,30.8244741975722"
+                    Point2="-106.111106849379,30.8244741975722"
+                    Point3="-106.111106849379,34.8244741975722" />
+                  <mssgle:LineSegment
+                    End="-106.111106849379,44.5000013113021" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Sort Output]"
+          TopLeft="205.305554036879,511.222215019332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.777773039208,54.0000019669533"
+              Start="0,0"
+              End="116.777773039208,46.5000019669533">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.0100312562381" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.0100312562381"
+                    Point2="0,32.0100312562381"
+                    Point3="4,32.0100312562381" />
+                  <mssgle:LineSegment
+                    End="112.777773039208,32.0100312562381" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.777773039208,32.0100312562381"
+                    Point2="116.777773039208,32.0100312562381"
+                    Point3="116.777773039208,36.0100312562381" />
+                  <mssgle:LineSegment
+                    End="116.777773039208,46.5000019669533" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[OLE DB Source Output1]"
+          TopLeft="199.805553805912,64.5555562204785">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69.9999953508376"
+              Start="0,0"
+              End="0,62.4999953508376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.4999953508376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[OLE DB Source Output]"
+          TopLeft="468.472212165183,421.222218416797">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.3333305915198"
+              Start="0,0"
+              End="0,41.8333305915198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8333305915198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Merge Join Output]"
+          TopLeft="344.291660737868,607.888883652952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,105.499992515644"
+              Start="0,0"
+              End="0,97.9999925156438">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,97.9999925156438" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output2]"
+          TopLeft="419.097210639674,1017.72221716808">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="131.124989861626,0"
+              Start="0,0"
+              End="123.624989861626,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="123.624989861626,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="6.00610821206299,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
+          TopLeft="356.319438062401,1184.4388709965">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="195.152772247585,59.3333302935032"
+              Start="0,0"
+              End="195.152772247585,51.8333302935032">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2289237393425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2289237393425"
+                    Point2="0,24.2289237393425"
+                    Point3="4,24.2289237393425" />
+                  <mssgle:LineSegment
+                    End="191.152772247585,24.2289237393425" />
+                  <mssgle:CubicBezierSegment
+                    Point1="191.152772247585,24.2289237393425"
+                    Point2="195.152772247585,24.2289237393425"
+                    Point3="195.152772247585,28.2289237393425" />
+                  <mssgle:LineSegment
+                    End="195.152772247585,51.8333302935032" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="41.7699994050425,29.2289237393425,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
-          TopLeft="397.333325346311,278.499993935227">
+          TopLeft="263.305553560042,277.055549559659">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8874,37 +9877,37 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="2.27694284458936,5,111.6127734375,11.609375"
+              BoundingBox="2.27694284458951,5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
-          TopLeft="335.999992251397,299.333326538404">
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output2]"
+          TopLeft="338.93054657326,1037.40554976649">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,170.66666618983"
+              EndConnector="0,104.366654563342"
               Start="0,0"
-              End="0,163.16666618983">
+              End="0,96.8666545633419">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,163.16666618983" />
+                    End="0,96.8666545633419" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,75.778645594915,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,42.6286397816709,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
-          TopLeft="457.11109865374,1074.99997791648">
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
+          TopLeft="321.20832695129,1184.4388709965">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8939,445 +9942,51 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[invalid]"
-          TopLeft="400.999992102385,157.333329280217">
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
+          TopLeft="201.972220465128,297.888882162836">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100.999992936849,0"
+              EndConnector="0,170.66666618983"
               Start="0,0"
-              End="93.4999929368489,0">
+              End="0,163.16666618983">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="93.4999929368489,0" />
+                    End="0,163.16666618983" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="32.2884144371745,5,28.9231640625,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output3]"
-          TopLeft="918.624981896952,716.158327753742">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="53.0833240759878,0"
-              Start="0,0"
-              End="45.5833240759878,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="45.5833240759878,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output2]"
-          TopLeft="742.333317806323,279.499996140599">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="36.7916585548483,0"
-              Start="0,0"
-              End="29.2916585548483,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="29.2916585548483,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output1]"
-          TopLeft="474.333321680625,908.749983161688">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.9166644314934"
-              Start="0,0"
-              End="0,36.4166644314934">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.4166644314934" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Derived Column Output]"
-          TopLeft="685.999985039234,158.333330740531">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="70.999992400409,0"
-              Start="0,0"
-              End="63.499992400409,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="63.499992400409,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output2]"
-          TopLeft="474.166654671232,995.333314259848">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.999996989965"
-              Start="0,0"
-              End="0,29.499996989965">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.499996989965" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output1]"
-          TopLeft="1146.37497263961,716.98332921346">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="35.9583281644907,0"
-              Start="0,0"
-              End="28.4583281644907,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="28.4583281644907,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output]"
-          TopLeft="914.333310772976,158.833332215746">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.666658441226,0"
-              Start="0,0"
-              End="111.166658441226,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="111.166658441226,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[valid conclusion]"
-          TopLeft="477.833321635922,733.666655013959">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,132.416661481062"
-              Start="0,0"
-              End="0,124.916661481062">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,124.916661481062" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.3359375,57.583819021781,70.671875,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[valid]"
-          TopLeft="332.833325391015,178.666662613551">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,77.9999972581863"
-              Start="0,0"
-              End="0,70.4999972581863">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.4999972581863" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-10.8219921875,30.3754869103431,21.643984375,9.7490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Sort Output1]"
-          TopLeft="603.333316822847,514.666660050551">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-106.111106849379,52.0000013113021"
-              Start="0,0"
-              End="-106.111106849379,44.5000013113021">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.8244741975722" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.8244741975722"
-                    Point2="0,30.8244741975722"
-                    Point3="-4,30.8244741975722" />
-                  <mssgle:LineSegment
-                    End="-102.111106849379,30.8244741975722" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-102.111106849379,30.8244741975722"
-                    Point2="-106.111106849379,30.8244741975722"
-                    Point3="-106.111106849379,34.8244741975722" />
-                  <mssgle:LineSegment
-                    End="-106.111106849379,44.5000013113021" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Sort Output]"
-          TopLeft="339.333325823148,512.6666593949">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="116.777773039208,54.0000019669533"
-              Start="0,0"
-              End="116.777773039208,46.5000019669533">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.0100312562381" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.0100312562381"
-                    Point2="0,32.0100312562381"
-                    Point3="4,32.0100312562381" />
-                  <mssgle:LineSegment
-                    End="112.777773039208,32.0100312562381" />
-                  <mssgle:CubicBezierSegment
-                    Point1="112.777773039208,32.0100312562381"
-                    Point2="116.777773039208,32.0100312562381"
-                    Point3="116.777773039208,36.0100312562381" />
-                  <mssgle:LineSegment
-                    End="116.777773039208,46.5000019669533" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[OLE DB Source Output1]"
-          TopLeft="333.833325592181,66.0000005960465">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,69.9999953508376"
-              Start="0,0"
-              End="0,62.4999953508376">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,62.4999953508376" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[OLE DB Source Output]"
-          TopLeft="602.49998395145,422.666662792365">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.3333305915198"
-              Start="0,0"
-              End="0,41.8333305915198">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.8333305915198" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Merge Join Output]"
-          TopLeft="478.666654730837,609.33332802852">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,81.6666603187722"
-              Start="0,0"
-              End="0,74.1666603187722">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.1666603187722" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output1]"
-          TopLeft="492.222209764851,1074.99997791648">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="190.777772443162,59.3333302934966"
-              Start="0,0"
-              End="190.777772443162,51.8333302934966">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2289237393397" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.2289237393397"
-                    Point2="0,24.2289237393397"
-                    Point3="4,24.2289237393397" />
-                  <mssgle:LineSegment
-                    End="186.777772443162,24.2289237393397" />
-                  <mssgle:CubicBezierSegment
-                    Point1="186.777772443162,24.2289237393397"
-                    Point2="190.777772443162,24.2289237393397"
-                    Point3="190.777772443162,28.2289237393397" />
-                  <mssgle:LineSegment
-                    End="190.777772443162,51.8333302934966" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="39.582499502831,29.2289237393397,111.6127734375,11.609375"
+              BoundingBox="-48.19138671875,75.778645594915,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\ETL FACT_AIR_QUALITY.Paths[invalid conclusion]"
-          TopLeft="571.333321710428,713.508324002822">
+          TopLeft="436.611105510759,735.24721185512">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="116.624993519857,0"
+              EndConnector="96.6249944139295,0"
               Start="0,0"
-              End="109.124993519857,0">
+              End="89.1249944139295,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="109.124993519857,0" />
+                    End="89.1249944139295,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="15.5869694161784,5,77.9510546875,9.7490234375"
+              BoundingBox="5.58696986321473,5,77.9510546875,9.7490234375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Data Conversion Output3]"
-          TopLeft="946.458309694505,279.999997615814">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="89.5416594302849,0"
-              Start="0,0"
-              End="82.0416594302849,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="82.0416594302849,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9397,6 +10006,29 @@ WHERE fact_air_quality_sk = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\ETL FACT_AIR_QUALITY\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\ETL FACT_AIR_QUALITY\DIM_CATEGORY">
     <Properties>
       <Property>
@@ -9410,7 +10042,20 @@ WHERE fact_air_quality_sk = ?
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\ETL FACT_AIR_QUALITY\Lookup">
+    design-time-name="Package\ETL FACT_AIR_QUALITY\AQI_REPORT NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL FACT_AIR_QUALITY\Lookup date_key">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -9465,19 +10110,6 @@ WHERE fact_air_quality_sk = ?
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\ETL FACT_AIR_QUALITY\AQI_REPORT NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
