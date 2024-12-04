@@ -1,0 +1,100 @@
+
+-- Câu 1: Report the min and max of AQI value for each State during each quarter of years.
+WITH
+    MEMBER [Measures].[Min Aqi] AS
+        MIN(
+            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+            [DIM DATE].[Year].[Year].Members * 
+            [DIM DATE].[Quarter].[Quarter].Members, 
+            [Measures].[Aqi Value]
+        )
+    MEMBER [Measures].[Max Aqi] AS
+        MAX(
+            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+            [DIM DATE].[Year].[Year].Members * 
+            [DIM DATE].[Quarter].[Quarter].Members, 
+            [Measures].[Aqi Value]
+        )
+SELECT
+    {[Measures].[Min Aqi], [Measures].[Max Aqi]} ON COLUMNS,
+    NONEMPTY(
+        CROSSJOIN(
+            [DIM COUNTY].[State Name].[State Name].Members,
+            CROSSJOIN(
+                [DIM DATE].[Year].[Year].Members,
+                [DIM DATE].[Quarter].[Quarter].Members
+            )
+        )
+    ) ON ROWS
+FROM 
+    [US AQI DDS];
+
+
+/* Câu 2: Report the mean and the standard deviation of AQI value for each State during
+each quarter of years. Analysis hints: How do the AQI values fluctuate during the
+year? Pay attention to the values (mean, std, max, min). Are any unusually large or
+small? 
+*/
+WITH
+    -- Calculate Mean AQI
+    MEMBER [Measures].[Mean AQI] AS
+        AVG(
+            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+            [DIM DATE].[Year].[Year].Members * 
+            [DIM DATE].[Quarter].[Quarter].Members, 
+            [Measures].[Aqi Value]
+        )
+
+    -- Calculate Standard Deviation of AQI (only if more than 1 value exists)
+    MEMBER [Measures].[Std Dev AQI] AS
+        IIF(
+            COUNT(
+                EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+                [DIM DATE].[Year].[Year].Members * 
+                [DIM DATE].[Quarter].[Quarter].Members
+            ) > 1,
+            STDDEV(
+                EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+                [DIM DATE].[Year].[Year].Members * 
+                [DIM DATE].[Quarter].[Quarter].Members, 
+                [Measures].[Aqi Value]
+            ),
+            NULL
+        )
+
+    -- Calculate Min AQI
+    MEMBER [Measures].[Min AQI] AS
+        MIN(
+            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+            [DIM DATE].[Year].[Year].Members * 
+            [DIM DATE].[Quarter].[Quarter].Members, 
+            [Measures].[Aqi Value]
+        )
+
+    -- Calculate Max AQI
+    MEMBER [Measures].[Max AQI] AS
+        MAX(
+            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
+            [DIM DATE].[Year].[Year].Members * 
+            [DIM DATE].[Quarter].[Quarter].Members, 
+            [Measures].[Aqi Value]
+        )
+
+SELECT
+    {[Measures].[Mean AQI], [Measures].[Std Dev AQI], [Measures].[Min AQI], [Measures].[Max AQI]} ON COLUMNS,
+    NONEMPTY(
+        CROSSJOIN(
+            [DIM COUNTY].[State Name].[State Name].Members,
+            CROSSJOIN(
+                [DIM DATE].[Year].[Year].Members,
+                [DIM DATE].[Quarter].[Quarter].Members
+            )
+        )
+    ) ON ROWS
+FROM 
+    [US AQI DDS];
+
+-- Câu 3:
+
+
+-- Câu 4: 
