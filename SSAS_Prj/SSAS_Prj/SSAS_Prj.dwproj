@@ -35,10 +35,6 @@
       <Name>DIM CATEGORY.dim</Name>
       <FullPath>DIM CATEGORY.dim</FullPath>
     </ProjectItem>
-    <ProjectItem>
-      <Name>FACT AIR QUALITY.dim</Name>
-      <FullPath>FACT AIR QUALITY.dim</FullPath>
-    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
