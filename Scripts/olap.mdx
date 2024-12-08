@@ -1,36 +1,26 @@
 
--- Câu 1: Report the min and max of AQI value for each State during each quarter of years.
-WITH
-    MEMBER [Measures].[Min Aqi] AS
-        MIN(
-            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-            [DIM DATE].[Year].[Year].Members * 
-            [DIM DATE].[Quarter].[Quarter].Members, 
-            [Measures].[Aqi Value]
-        )
-    MEMBER [Measures].[Max Aqi] AS
-        MAX(
-            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-            [DIM DATE].[Year].[Year].Members * 
-            [DIM DATE].[Quarter].[Quarter].Members, 
-            [Measures].[Aqi Value]
-        )
-SELECT
-    {[Measures].[Min Aqi], [Measures].[Max Aqi]} ON COLUMNS,
+-- 1: Report the min and max of AQI value for each State during each quarter of years.
+SELECT 
+    {[Measures].[Min Aqi Value], [Measures].[Max Aqi Value]} ON COLUMNS,
     NONEMPTY(
-        CROSSJOIN(
-            [DIM COUNTY].[State Name].[State Name].Members,
+        ORDER(
             CROSSJOIN(
-                [DIM DATE].[Year].[Year].Members,
-                [DIM DATE].[Quarter].[Quarter].Members
-            )
-        )
+                [DIM COUNTY].[State Name].Members,
+                CROSSJOIN(
+                    [DIM DATE].[Hierarchy].[Year].Members,
+                    [DIM DATE].[Quarter].[Quarter].Members
+                )
+            ),
+            [DIM COUNTY].[State Name].CurrentMember.Name,
+			ASC
+        ),
+        {[Measures].[Min Aqi Value], [Measures].[Max Aqi Value]}
     ) ON ROWS
 FROM 
     [US AQI DDS];
 
 
-/* Câu 2: Report the mean and the standard deviation of AQI value for each State during
+/* 2: Report the mean and the standard deviation of AQI value for each State during
 each quarter of years. Analysis hints: How do the AQI values fluctuate during the
 year? Pay attention to the values (mean, std, max, min). Are any unusually large or
 small? 
@@ -94,7 +84,7 @@ SELECT
 FROM 
     [US AQI DDS];
 
--- Câu 3:
+-- 3:
 
 
--- Câu 4: 
+-- 4: 
