@@ -88,3 +88,23 @@ FROM
 
 
 -- 4: 
+
+WITH 
+MEMBER [Measures].[Number of Reports Adjusted] AS
+    COALESCEEMPTY([Measures].[Number of Reports], 0)
+SELECT 
+    NON EMPTY { [Measures].[Number of Reports Adjusted] } ON COLUMNS, 
+    { ([DIM COUNTY].[State Name].[State Name].ALLMEMBERS * 
+       [DIM CATEGORY].[Level Of Concern].[Level Of Concern].ALLMEMBERS) } 
+    DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+FROM 
+    ( SELECT 
+        ( { [DIM COUNTY].[State Name].&[Alaska], 
+            [DIM COUNTY].[State Name].&[Illinois], 
+            [DIM COUNTY].[State Name].&[Hawaii], 
+            [DIM COUNTY].[State Name].&[Delaware] } ) ON COLUMNS 
+      FROM [US AQI DDS]) 
+CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+
+
+-- 5: 
