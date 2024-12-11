@@ -89,3 +89,4 @@ node_modules/
 *_staging.*
 
 Scripts/TEST.sql
+Scripts/TEST_OLAP.mdx
