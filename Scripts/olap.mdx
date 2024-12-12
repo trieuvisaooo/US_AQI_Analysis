@@ -1,5 +1,4 @@
-
--- 1: Report the min and max of AQI value for each State during each quarter of years.
+-- 1. Report the min and max of AQI value for each State during each quarter of years.
 SELECT 
     {[Measures].[Min Aqi Value], [Measures].[Max Aqi Value]} ON COLUMNS,
     NONEMPTY(
@@ -20,99 +19,127 @@ FROM
     [US AQI DDS];
 
 
-/* 2: Report the mean and the standard deviation of AQI value for each State during
-each quarter of years. Analysis hints: How do the AQI values fluctuate during the
-year? Pay attention to the values (mean, std, max, min). Are any unusually large or
-small? 
-*/
-WITH
-    -- Calculate Mean AQI
-    MEMBER [Measures].[Mean AQI] AS
-        AVG(
-            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-            [DIM DATE].[Year].[Year].Members * 
-            [DIM DATE].[Quarter].[Quarter].Members, 
-            [Measures].[Aqi Value]
-        )
-
-    -- Calculate Standard Deviation of AQI (only if more than 1 value exists)
-    MEMBER [Measures].[Std Dev AQI] AS
-        IIF(
-            COUNT(
-                EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-                [DIM DATE].[Year].[Year].Members * 
-                [DIM DATE].[Quarter].[Quarter].Members
-            ) > 1,
-            STDDEV(
-                EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-                [DIM DATE].[Year].[Year].Members * 
-                [DIM DATE].[Quarter].[Quarter].Members, 
-                [Measures].[Aqi Value]
-            ),
-            NULL
-        )
-
-    -- Calculate Min AQI
-    MEMBER [Measures].[Min AQI] AS
-        MIN(
-            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-            [DIM DATE].[Year].[Year].Members * 
-            [DIM DATE].[Quarter].[Quarter].Members, 
-            [Measures].[Aqi Value]
-        )
-
-    -- Calculate Max AQI
-    MEMBER [Measures].[Max AQI] AS
-        MAX(
-            EXISTING [DIM COUNTY].[State Name].[State Name].Members * 
-            [DIM DATE].[Year].[Year].Members * 
-            [DIM DATE].[Quarter].[Quarter].Members, 
-            [Measures].[Aqi Value]
-        )
-
-SELECT
-    {[Measures].[Mean AQI], [Measures].[Std Dev AQI], [Measures].[Min AQI], [Measures].[Max AQI]} ON COLUMNS,
-    NONEMPTY(
-        CROSSJOIN(
-            [DIM COUNTY].[State Name].[State Name].Members,
+-- 2. Report the mean and the standard deviation of AQI value for each State during each quarter of years.
+WITH 
+  MEMBER [Measures].[Mean AQI] AS 
+	AVG(
+      EXISTING [Date].[Date].MEMBERS, 
+      [Measures].[Daily Average AQI]
+    )
+  MEMBER [Measures].[Std Dev AQI] AS 
+	ROUND(
+      STDEV(
+          EXISTING [Date].[Date].MEMBERS, 
+          [Measures].[Daily Average AQI]
+      ), 4
+    )
+SELECT 
+    {[Measures].[Mean AQI], [Measures].[Std Dev AQI]} ON COLUMNS,
+    FILTER(
+        NONEMPTY(
             CROSSJOIN(
-                [DIM DATE].[Year].[Year].Members,
-                [DIM DATE].[Quarter].[Quarter].Members
-            )
-        )
+                [DIM COUNTY].[State Name].Members,
+                CROSSJOIN(
+                    [DIM DATE].[Hierarchy].[Year].Members,
+                    [DIM DATE].[Quarter].[Quarter].Members
+                )
+            ),
+            {[Measures].[Mean AQI], [Measures].[Std Dev AQI]}
+        ),
+        NOT ISEMPTY([Measures].[Mean AQI]) 
+        AND NOT ISEMPTY([Measures].[Std Dev AQI])
     ) ON ROWS
 FROM 
     [US AQI DDS];
 
--- 3:
 
-
--- 4: 
-
+-- 3. Report the number of days, and the mean AQI value where the air quality is rated as "very unhealthy" or worse for each State and County.
 WITH 
-MEMBER [Measures].[Number of Reports Adjusted] AS
-    COALESCEEMPTY([Measures].[Number of Reports], 0)
+    MEMBER [Measures].[Days Very Unhealthy] AS
+        COUNT(
+            FILTER(
+                EXISTING [Date].[Date].MEMBERS,
+                [Measures].[Daily Average AQI] > 200
+            )
+        )
+    MEMBER [Measures].[Mean Very Unhealthy AQI] AS
+        AVG(
+            FILTER(
+                EXISTING [Date].[Date].MEMBERS,
+                [Measures].[Daily Average AQI] > 200
+            ),
+            [Measures].[Daily Average AQI]
+        )
 SELECT 
-    NON EMPTY { [Measures].[Number of Reports Adjusted] } ON COLUMNS, 
-    { ([DIM COUNTY].[State Name].[State Name].ALLMEMBERS * 
-       [DIM CATEGORY].[Level Of Concern].[Level Of Concern].ALLMEMBERS) } 
-    DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+    {[Measures].[Days Very Unhealthy], [Measures].[Mean Very Unhealthy AQI]} ON COLUMNS,
+    NON EMPTY
+    FILTER(
+        CROSSJOIN(
+            [DIM COUNTY].[Hierarchy].[State Name].MEMBERS,
+            [DIM COUNTY].[County Name].[County Name].MEMBERS
+        ),
+        NOT ISEMPTY([Measures].[Days Very Unhealthy]) 
+        AND NOT ISEMPTY([Measures].[Mean Very Unhealthy AQI])
+    ) ON ROWS
 FROM 
-    ( SELECT 
-        ( { [DIM COUNTY].[State Name].&[Alaska], 
-            [DIM COUNTY].[State Name].&[Illinois], 
-            [DIM COUNTY].[State Name].&[Hawaii], 
-            [DIM COUNTY].[State Name].&[Delaware] } ) ON COLUMNS 
-      FROM [US AQI DDS]) 
-CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+    [US AQI DDS];
 
 
--- 5: 
+-- 4. For the four following states: Hawaii, Alaska, Illinois and Delaware, count the number of days in each air quality Category (Good, Moderate,etc.) by County.
+WITH 
+    MEMBER [Measures].[Number of Reports Adjusted] AS
+        COALESCEEMPTY([Measures].[Number of Reports], 0)
 SELECT 
-    NON EMPTY { [Measures].[Average AQI Value] } ON COLUMNS, 
-    NON EMPTY { ([DIM COUNTY].[State Name].[State Name].ALLMEMBERS 
-        * [DIM DATE].[Year].[Year].ALLMEMBERS 
-        * [DIM DATE].[Quarter].[Quarter].ALLMEMBERS ) } 
-        DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
-FROM [US AQI DDS] 
-CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS
+    NON EMPTY 
+        { [Measures].[Number of Reports Adjusted] } ON COLUMNS, 
+    NON EMPTY 
+        { 
+            [DIM COUNTY].[State Name].[State Name].ALLMEMBERS * 
+            [DIM CATEGORY].[Level Of Concern].[Level Of Concern].ALLMEMBERS 
+        } ON ROWS
+FROM 
+    (
+        SELECT 
+            { 
+                [DIM COUNTY].[State Name].&[Alaska], 
+                [DIM COUNTY].[State Name].&[Illinois], 
+                [DIM COUNTY].[State Name].&[Hawaii], 
+                [DIM COUNTY].[State Name].&[Delaware] 
+            } ON COLUMNS 
+        FROM [US AQI DDS]
+    );
+
+
+-- 5. For the four following states: Hawaii, Alaska, Illinois and Delaware, compute the mean AQI value by quarters.
+WITH 
+  MEMBER [Measures].[Mean AQI] AS 
+	AVG(
+      EXISTING [Date].[Date].MEMBERS, 
+      [Measures].[Daily Average AQI]
+    )
+SELECT 
+    {[Measures].[Mean AQI]} ON COLUMNS,
+    FILTER(
+        NONEMPTY(
+            CROSSJOIN(
+                [DIM COUNTY].[State Name].Members,
+                CROSSJOIN(
+                    [DIM DATE].[Hierarchy].[Year].Members,
+                    [DIM DATE].[Quarter].[Quarter].Members
+                )
+            ),
+            {[Measures].[Mean AQI]}
+        ),
+        NOT ISEMPTY([Measures].[Mean AQI]) 
+    ) ON ROWS
+FROM 
+    (
+        SELECT 
+            { 
+                [DIM COUNTY].[State Name].&[Alaska], 
+                [DIM COUNTY].[State Name].&[Illinois], 
+                [DIM COUNTY].[State Name].&[Hawaii], 
+                [DIM COUNTY].[State Name].&[Delaware] 
+            } ON COLUMNS 
+        FROM [US AQI DDS]
+    );
