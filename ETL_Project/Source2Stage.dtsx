@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="174"
-  DTS:VersionGUID="{B1EE2B3C-0BEC-46AF-B114-29F7A9A849FE}">
+  DTS:VersionBuild="175"
+  DTS:VersionGUID="{9098E2BF-2CFD-4A5D-BAE2-BBCAD1BEFAD2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,7 +32,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\00HOCHANH\2024-2025\BI\New folder\US_AQI_Analysis\ETL_Project\">
+          DTS:ConnectionString="D:\BI\LabProject\US_AQI_Analysis\ETL_Project">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -174,7 +174,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="FilePath">
       <DTS:VariableValue
-        DTS:DataType="8">D:\00HOCHANH\2024-2025\BI\New folder\US_AQI_Analysis\ETL_Project\</DTS:VariableValue>
+        DTS:DataType="8">D:\BI\LabProject\US_AQI_Analysis\ETL_Project</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -687,7 +687,7 @@
             <DTS:ObjectData>
               <ForEachFileEnumeratorProperties>
                 <FEFEProperty
-                  Folder="D:\00HOCHANH\2024-2025\BI\New folder\US_AQI_Analysis\ETL_Project" />
+                  Folder="D:\BI\LabProject\US_AQI_Analysis\ETL_Project" />
                 <FEFEProperty
                   FileSpec="10_state_aqi_*.csv" />
                 <FEFEProperty
@@ -1871,8 +1871,8 @@ WHERE
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{F62437CF-BF05-415E-AF6A-CFAF5474C6C5}"
-              DTS:ObjectName="{F62437CF-BF05-415E-AF6A-CFAF5474C6C5}"
+              DTS:DTSID="{D23FB957-C810-4936-AEC8-FA58952DFDDC}"
+              DTS:ObjectName="{D23FB957-C810-4936-AEC8-FA58952DFDDC}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FilePath" />
           </DTS:ForEachVariableMappings>
@@ -2676,19 +2676,19 @@ WHERE
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="297.6,42.4"
+          Size="297.333333333334,42.6666666666667"
           Id="Package\AQI_CATEGORY_STAGE\Import AQI_CATEGORY table from src 2 stage"
           TopLeft="29.1851278647686,214.135648316991" />
         <NodeLayout
-          Size="237.6,42.4"
+          Size="237.333333333334,42.6666666666667"
           Id="Package\AQI_CATEGORY_STAGE\Set CET 2 and status to Metadata"
           TopLeft="59.1728739823442,13.5657436125071" />
         <NodeLayout
-          Size="242.4,42.4"
+          Size="242.666666666667,42.6666666666667"
           Id="Package\AQI_CATEGORY_STAGE\Set LSET 2 and status to Metadata"
           TopLeft="53.5556392760812,301.987167790846" />
         <NodeLayout
-          Size="243.2,41.6"
+          Size="243.333333333334,41.3333333333334"
           Id="Package\AQI_CATEGORY_STAGE\Truncate table AQI_CATEGORY_STAGE"
           TopLeft="57.5925107399894,113.236109937915" />
         <EdgeLayout
@@ -2760,35 +2760,35 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="374.4,458.4"
-          Size="374.4,501.6"
+          PanelSize="374.666666666667,458.666666666667"
+          Size="374.666666666667,501.333333333334"
           Id="Package\AQI_CATEGORY_STAGE"
           TopLeft="923.043106203892,82.5654758451408" />
         <NodeLayout
-          Size="289.6,41.6"
+          Size="289.333333333334,41.3333333333334"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage"
           TopLeft="14.4285710294333,27.8481461447989" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316.8,125.6"
-          Size="316.8,168.8"
+          PanelSize="316.666666666667,126"
+          Size="316.666666666667,168.666666666667"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container"
           TopLeft="24.6457446504367,243.651582370442" />
         <NodeLayout
-          Size="238.4,42.4"
+          Size="238.666666666667,42.6666666666667"
           Id="Package\COUNTY_AQI_STAGE\Get CET 1, LSET 1 from Metadata"
           TopLeft="66.9166404675289,90.8518518224845" />
         <NodeLayout
-          Size="234.4,41.6"
+          Size="234.666666666667,41.3333333333334"
           Id="Package\COUNTY_AQI_STAGE\Set CET 1 and status to Metadata"
           TopLeft="69.4629367612956,11.9129626618195" />
         <NodeLayout
-          Size="242.4,42.4"
+          Size="242.666666666667,42.6666666666667"
           Id="Package\COUNTY_AQI_STAGE\Set LSET 1 and status to Metadata"
           TopLeft="64.4133338262244,460.822807278979" />
         <NodeLayout
-          Size="253.6,42.4"
+          Size="253.333333333334,42.6666666666667"
           Id="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE"
           TopLeft="56.4999815598137,169.349991352559" />
         <EdgeLayout
@@ -2882,24 +2882,24 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="369.6,558.4"
-          Size="369.6,601.6"
+          PanelSize="369.333333333334,558.666666666667"
+          Size="369.333333333334,601.333333333334"
           Id="Package\COUNTY_AQI_STAGE"
           TopLeft="480.843133271674,80.2363077187231" />
         <NodeLayout
-          Size="256.8,41.6"
+          Size="256.666666666667,41.3333333333334"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage"
           TopLeft="33.9027763811387,208.537037719584" />
         <NodeLayout
-          Size="229.6,42.4"
+          Size="229.333333333334,42.6666666666667"
           Id="Package\COUNTY_STAGE\Set CET and status to Metadata"
           TopLeft="53.2166295772642,9.78333279954064" />
         <NodeLayout
-          Size="233.6,42.4"
+          Size="233.333333333334,42.6666666666667"
           Id="Package\COUNTY_STAGE\Set LSET and status to Metadata"
           TopLeft="49.0243014312625,305.294434967615" />
         <NodeLayout
-          Size="241.6,42.4"
+          Size="241.333333333334,42.6666666666667"
           Id="Package\COUNTY_STAGE\Truncate table COUNTY_STAGE"
           TopLeft="49.0916302881734,104.683331027694" />
         <EdgeLayout
@@ -2971,8 +2971,8 @@ WHERE
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="339.2,464"
-          Size="339.2,506.4"
+          PanelSize="339.333333333334,464"
+          Size="339.333333333334,506.666666666667"
           Id="Package\COUNTY_STAGE"
           TopLeft="72.5520793615019,81.9916663842728" />
         <EdgeLayout

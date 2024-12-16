@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{124DEABF-387F-40F8-8D5D-4A1DC0E8481B}">
+  DTS:VersionBuild="64"
+  DTS:VersionGUID="{9D5BE274-8F4A-49D8-B04B-AC21FBF454DC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -815,32 +815,10 @@ WHERE category_key = ?</property>
                       cachedName="county_name"
                       lineageId="Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_name]" />
                     <inputColumn
-                      refId="Package\ETL DIM_COUNTY\Check value.Inputs[Conditional Split Input].Columns[county_fips]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="county_fips"
-                      lineageId="Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_fips]" />
-                    <inputColumn
                       refId="Package\ETL DIM_COUNTY\Check value.Inputs[Conditional Split Input].Columns[state_sk]"
                       cachedDataType="i4"
                       cachedName="state_sk"
                       lineageId="Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[state_sk]" />
-                    <inputColumn
-                      refId="Package\ETL DIM_COUNTY\Check value.Inputs[Conditional Split Input].Columns[lat]"
-                      cachedDataType="r8"
-                      cachedName="lat"
-                      lineageId="Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[lat]" />
-                    <inputColumn
-                      refId="Package\ETL DIM_COUNTY\Check value.Inputs[Conditional Split Input].Columns[lng]"
-                      cachedDataType="r8"
-                      cachedName="lng"
-                      lineageId="Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[lng]" />
-                    <inputColumn
-                      refId="Package\ETL DIM_COUNTY\Check value.Inputs[Conditional Split Input].Columns[population]"
-                      cachedDataType="i4"
-                      cachedName="population"
-                      lineageId="Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[population]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -860,13 +838,13 @@ WHERE category_key = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">[ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_name]}) || [ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_fips]}) || [ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[state_sk]}) || [ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[lat]}) || [ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[lng]}) || [ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[population]})</property>
+                      name="Expression">[ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_name]}) || [ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[state_sk]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">ISNULL(county_name) || ISNULL(county_fips) || ISNULL(state_sk) || ISNULL(lat) || ISNULL(lng) || ISNULL(population)</property>
+                      name="FriendlyExpression">ISNULL(county_name) || ISNULL(state_sk)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -888,13 +866,13 @@ WHERE category_key = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_name]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_fips]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[state_sk]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[lat]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[lng]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[population]})</property>
+                      name="Expression">![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[county_name]}) &amp;&amp; ![ISNULL](#{Package\ETL DIM_COUNTY\COUNTY NDS.Outputs[OLE DB Source Output].Columns[state_sk]})</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(county_name) &amp;&amp; !ISNULL(county_fips) &amp;&amp; !ISNULL(state_sk) &amp;&amp; !ISNULL(lat) &amp;&amp; !ISNULL(lng) &amp;&amp; !ISNULL(population)</property>
+                      name="FriendlyExpression">!ISNULL(county_name) &amp;&amp; !ISNULL(state_sk)</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -8036,19 +8014,19 @@ WHERE fact_air_quality_sk = ?
               startId="Package\ETL FACT_AIR_QUALITY\Check AQI conclusion.Outputs[invalid conclusion]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output2]"
+              endId="Package\ETL FACT_AIR_QUALITY\UPDATE FACT.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
               endId="Package\ETL FACT_AIR_QUALITY\Lookup.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup date_key.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
+              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
               endId="Package\ETL FACT_AIR_QUALITY\category_key sorted.Inputs[Sort Input]"
               name="Lookup Match Output"
               startId="Package\ETL FACT_AIR_QUALITY\Lookup FK.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
-              endId="Package\ETL FACT_AIR_QUALITY\UPDATE FACT.Inputs[OLE DB Command Input]"
-              name="Lookup Match Output"
-              startId="Package\ETL FACT_AIR_QUALITY\Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\ETL FACT_AIR_QUALITY.Paths[Lookup No Match Output]"
               endId="Package\ETL FACT_AIR_QUALITY\FK Constraint Log Information.Inputs[Derived Column Input]"
@@ -9882,7 +9860,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output2]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
           TopLeft="338.93054657326,1037.40554976649">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9906,7 +9884,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output2]"
           TopLeft="321.20832695129,1184.4388709965">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9942,7 +9920,7 @@ WHERE fact_air_quality_sk = ?
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output]"
+          Id="Package\ETL FACT_AIR_QUALITY.Paths[Lookup Match Output1]"
           TopLeft="201.972220465128,297.888882162836">
           <EdgeLayout.Curve>
             <mssgle:Curve
