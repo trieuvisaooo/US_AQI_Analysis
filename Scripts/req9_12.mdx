@@ -1,0 +1,88 @@
+-- 9. Report the mean, the standard deviation, min and max of AQI value group by State and County during each quarter of the year.
+with
+member [Measures].[Mean AQI] as
+	avg(
+		existing [Date].[Date].members,
+		[Measures].[Daily Average AQI]
+	)
+member [Measures].[Std Dev AQI] as
+	stdev(
+		existing [Date].[Date].members, 
+		[Measures].[Daily Average AQI]
+	)	
+select 
+	{[Measures].[Mean AQI], [Measures].[Std Dev AQI],
+	[Measures].[Max Aqi Value], [Measures].[Min Aqi Value]} on columns,
+	filter(
+		nonempty(
+			{([DIM COUNTY].[Hierarchy].[State Name].members,
+			[DIM COUNTY].[County Name].[County Name].members,
+			[DIM DATE].[Hierarchy].[Year].members,
+			[DIM DATE].[Quarter].[Quarter].members)}
+		),
+		not isempty([Measures].[Mean AQI])
+		and not isempty([Measures].[Std Dev AQI])
+	) on rows
+from [US AQI DDS];
+
+--10. Report the mean AQI value by State, Category, DayLightSaving over years.
+with 
+member [DIM DATE].[Day Light Saving].[Day Light Saving] as
+	iif(
+		[DIM DATE].[Date].currentmember >= '2023-03-12'
+		and [DIM DATE].[Date].currentmember <= '2023-11-05',
+		'True', 'False'
+	)
+member [Measures].[Mean AQI] as
+	avg(
+		existing [Date].[Date].members,
+		[Measures].[Daily Average AQI]
+	)
+select 
+	filter(
+		crossjoin(
+			[Measures].[Mean AQI],
+			[DIM DATE].[Year].[Year].members 
+		),
+		not isempty([Measures].[Mean AQI])
+	) on columns,
+	nonemptycrossjoin(
+		[DIM COUNTY].[State Name].[State Name].members,
+		[DIM CATEGORY].[Daily Aqi Color].[Daily Aqi Color].members
+	) on rows
+from [US AQI DDS]
+where [DIM DATE].[Day Light Saving].&[False];
+
+
+--11. Count the number of days by State, Category in each month.
+with member [Measures].[Days Count per Month] as
+	count(
+		nonempty(
+			existing [Date].[Date].members,
+			[Measures].[Aqi Value]
+		)
+	)
+select 
+	nonemptycrossjoin(
+		[DIM DATE].[Hierarchy].[Year].members,
+		[DIM DATE].[Month].[Month].members) on columns,
+	nonemptycrossjoin(
+		[DIM COUNTY].[State Name].[State Name].members,
+		[DIM CATEGORY].[Daily Aqi Color].members
+	) on rows
+from [US AQI DDS]
+where [Measures].[Days Count per Month];
+
+--12. Report the number of days by Category and Defining Parameter.
+with member [Measures].[Number of days] as
+	count(
+		nonempty(
+			existing [Date].[Date].members,
+			[Measures].[Aqi Value]
+		)
+	)
+select 
+	[DIM CATEGORY].[Daily Aqi Color].members on columns,
+	[DIM PARAMETER].[Parameter Name].members on rows
+from [US AQI DDS]
+where [Measures].[Number of days];

@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1252"
-      DTS:ConnectionString="C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project\(2B)uscounties.csv">
+      DTS:ConnectionString="D:\BI\LabProject\US_AQI_Analysis\ETL_Project\(2B)uscounties.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;county&quot;"
-          DTS:DTSID="{DDE08F50-B880-4DD9-AE00-EC49A8FB90D3}"
+          DTS:DTSID="{CF650848-AA41-4003-AC2F-5FCEB4812C5F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;county_ascii&quot;"
-          DTS:DTSID="{B142D9CC-9A7A-42B1-8DDD-0D11AB2501A5}"
+          DTS:DTSID="{3DBC36ED-A2B7-46B8-A7EF-38F4DE7E0F3C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;county_full&quot;"
-          DTS:DTSID="{7274BCF1-C6FA-4A8D-9060-62C041620BBB}"
+          DTS:DTSID="{10B1930B-0AAD-4AD5-9220-106358AEBB86}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;county_fips&quot;"
-          DTS:DTSID="{AC33A361-73B1-4630-8421-60A1BE6D4DFE}"
+          DTS:DTSID="{A22AC931-D317-45F1-A681-7F5796117CA7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;state_id&quot;"
-          DTS:DTSID="{CB944253-C5C2-48B9-B890-BA1553C0E211}"
+          DTS:DTSID="{FEF03E1D-DF78-4DFB-A962-5C5B0843FA16}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;state_name&quot;"
-          DTS:DTSID="{DA73D4F8-BC60-4467-8C25-608097DED918}"
+          DTS:DTSID="{3A038ABF-02F8-4343-A9AC-C1F190513253}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -75,7 +75,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;lat&quot;"
-          DTS:DTSID="{774FE467-7909-4E2F-8517-301C4612827E}"
+          DTS:DTSID="{79182DF5-0184-4FD2-8123-71A88B9DBBE9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -84,7 +84,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;lng&quot;"
-          DTS:DTSID="{1B62EFE5-C88C-4488-A8F6-E53D93BC7B9D}"
+          DTS:DTSID="{CB0D72CF-3877-4E37-A4B5-9381969C8EB5}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -93,7 +93,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="&quot;population&quot;"
-          DTS:DTSID="{7AD37008-8BF1-4DCE-B92A-78E751911518}"
+          DTS:DTSID="{68D3B316-9810-412C-9713-FC61B0B3173E}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

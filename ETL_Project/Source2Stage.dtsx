@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="168"
-  DTS:VersionGUID="{0DB6E5AC-AC33-44B8-9DD6-0BE6ED849FFB}">
+  DTS:VersionBuild="175"
+  DTS:VersionGUID="{9098E2BF-2CFD-4A5D-BAE2-BBCAD1BEFAD2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,7 +41,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State Name"
-              DTS:DTSID="{5ABCF0A2-2CAA-4F1A-81E7-F6F723BC5392}"
+              DTS:DTSID="{1E27FAC8-F7C4-4511-B316-CCA87F5A7A27}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="county Name"
-              DTS:DTSID="{3111F0B5-E8F1-4392-AA70-831512F35712}"
+              DTS:DTSID="{599F07DE-9FA5-4419-B9F6-08A296E60461}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="State Code"
-              DTS:DTSID="{C2061770-8602-4B96-9D1A-DC04C1E5A28F}"
+              DTS:DTSID="{E6665596-7388-4223-98F8-B7726582C519}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="County Code"
-              DTS:DTSID="{8198F506-E7C4-4C36-8C26-C16377EDC3A7}"
+              DTS:DTSID="{E731F4D7-DC45-425A-B860-4B24DB605854}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -77,7 +77,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{B1006443-9A2B-4B16-89D8-F60A3662AEBB}"
+              DTS:DTSID="{49CFB348-9113-4FBE-80B9-328FDABBA33D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="AQI"
-              DTS:DTSID="{0628E74F-25BC-442E-A2A0-3D81DE1F177D}"
+              DTS:DTSID="{952C14D3-F00C-4FC8-8E0A-9FC24AF99B77}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Category"
-              DTS:DTSID="{5C6A091C-2D85-4B0C-9581-064804C30AFE}"
+              DTS:DTSID="{DC4FB698-109C-4122-BAF0-77816CF1CD98}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Defining Parameter"
-              DTS:DTSID="{A7C14974-9C8D-4555-BFF1-0EC134B993A3}"
+              DTS:DTSID="{94601F08-B0D2-4879-87B9-864C4B927A36}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +113,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Defining Site"
-              DTS:DTSID="{1D6631A8-004C-4F21-9085-B00FC031757D}"
+              DTS:DTSID="{B349E867-D4A2-4F84-9788-906EC339FBEB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -122,7 +122,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Number of Sites Reporting"
-              DTS:DTSID="{5745A9BF-2935-4D36-8865-06850A539B21}"
+              DTS:DTSID="{0AC5973B-661A-4B60-A247-FFB31B8A6764}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -131,7 +131,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Created"
-              DTS:DTSID="{D00CCAD6-DB68-40EE-917C-EC7B05E83450}"
+              DTS:DTSID="{64CA8785-88EE-4AFC-A7EC-7C9507B4F6BB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -140,7 +140,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Last Updated"
-              DTS:DTSID="{14C92C9C-301D-475F-881B-0046F13758C1}"
+              DTS:DTSID="{4E7E55A2-6008-4538-863F-9419EBD6370C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1871,8 +1871,8 @@ WHERE
           <DTS:ForEachVariableMappings>
             <DTS:ForEachVariableMapping
               DTS:CreationName=""
-              DTS:DTSID="{DB6FD387-556E-4100-BE43-DAE932DD6B16}"
-              DTS:ObjectName="{DB6FD387-556E-4100-BE43-DAE932DD6B16}"
+              DTS:DTSID="{D23FB957-C810-4936-AEC8-FA58952DFDDC}"
+              DTS:ObjectName="{D23FB957-C810-4936-AEC8-FA58952DFDDC}"
               DTS:ValueIndex="0"
               DTS:VariableName="User::FilePath" />
           </DTS:ForEachVariableMappings>
@@ -2765,14 +2765,14 @@ WHERE
           Id="Package\AQI_CATEGORY_STAGE"
           TopLeft="923.043106203892,82.5654758451408" />
         <NodeLayout
-          Size="290.666666666667,42.6666666666667"
+          Size="289.333333333334,41.3333333333334"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage"
           TopLeft="14.4285710294333,27.8481461447989" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="316.666666666667,125.333333333334"
-          Size="316.666666666667,168"
+          PanelSize="316.666666666667,126"
+          Size="316.666666666667,168.666666666667"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container"
           TopLeft="24.6457446504367,243.651582370442" />
         <NodeLayout
@@ -2787,6 +2787,10 @@ WHERE
           Size="242.666666666667,42.6666666666667"
           Id="Package\COUNTY_AQI_STAGE\Set LSET 1 and status to Metadata"
           TopLeft="64.4133338262244,460.822807278979" />
+        <NodeLayout
+          Size="253.333333333334,42.6666666666667"
+          Id="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE"
+          TopLeft="56.4999815598137,169.349991352559" />
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint]"
           TopLeft="186.389788614412,53.5129626618195">
@@ -2809,32 +2813,6 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 3]"
-          TopLeft="184.362872571664,411.651582370442">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49.1712249085379"
-              Start="0,0"
-              End="0,41.6712249085379">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.6712249085379" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="253.333333333334,42.6666666666667"
-          Id="Package\COUNTY_AQI_STAGE\Truncate table COUNTY_AQI_STAGE"
-          TopLeft="56.4999815598137,169.349991352559" />
         <EdgeLayout
           Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 1]"
           TopLeft="184.708311013671,133.518518489151">
@@ -2871,6 +2849,28 @@ WHERE
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,24.1349243512164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\COUNTY_AQI_STAGE.PrecedenceConstraints[Constraint 3]"
+          TopLeft="184.362872571664,411.651582370442">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.1712249085379"
+              Start="0,0"
+              End="0,41.6712249085379">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.6712249085379" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3105,19 +3105,19 @@ WHERE
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="249.333333333334,42.6666666666667"
+          Size="249.6,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\INSERT INTO COUNTY_AQI_STAGE"
           TopLeft="97.9999970793727,264.999992817641" />
         <NodeLayout
-          Size="151.333333333334,41.3333333333334"
+          Size="151.2,41.6"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\Flat File Source"
           TopLeft="307.291664834031,65.8833320354086" />
         <NodeLayout
-          Size="224,42.6666666666667"
+          Size="224,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\UPDATE COUNTY_AQI_STAGE"
           TopLeft="487.999985456468,266.333326091369" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,42.4"
           Id="Package\COUNTY_AQI_STAGE\Foreach Loop Container\Import COUNTY_AQI tables from src 2 stage\Conditional Split"
           TopLeft="306.999990850687,146.849995751381" />
         <EdgeLayout
@@ -3221,7 +3221,7 @@ WHERE
     design-time-name="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,41.6"
           Id="Package\COUNTY_STAGE\Import COUNTY table from src 2 stage\COUNTY STAGE"
@@ -3249,9 +3249,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

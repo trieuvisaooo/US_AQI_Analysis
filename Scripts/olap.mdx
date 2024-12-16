@@ -1,0 +1,122 @@
+-- 1. Report the min and max of AQI value for each State during each quarter of years.
+SELECT 
+    {[Measures].[Min Aqi Value], [Measures].[Max Aqi Value]} ON COLUMNS,
+    NONEMPTY(
+        ORDER(
+            CROSSJOIN(
+                [DIM COUNTY].[State Name].Members,
+                CROSSJOIN(
+                    [DIM DATE].[Hierarchy].[Year].Members,
+                    [DIM DATE].[Quarter].[Quarter].Members
+                )
+            ),
+            [DIM COUNTY].[State Name].CurrentMember.Name,
+			ASC
+        ),
+        {[Measures].[Min Aqi Value], [Measures].[Max Aqi Value]}
+    ) ON ROWS
+FROM 
+    [US AQI DDS];
+
+
+-- 2. Report the mean and the standard deviation of AQI value for each State during each quarter of years.
+SELECT 
+    {[Measures].[Mean AQI], [Measures].[Std Dev AQI]} ON COLUMNS,
+    FILTER(
+        NONEMPTY(
+            CROSSJOIN(
+                [DIM COUNTY].[State Name].Members,
+                CROSSJOIN(
+                    [DIM DATE].[Hierarchy].[Year].Members,
+                    [DIM DATE].[Quarter].[Quarter].Members
+                )
+            ),
+            {[Measures].[Mean AQI], [Measures].[Std Dev AQI]}
+        ),
+        NOT ISEMPTY([Measures].[Mean AQI]) 
+        AND NOT ISEMPTY([Measures].[Std Dev AQI])
+    ) ON ROWS
+FROM 
+    [US AQI DDS];
+
+
+-- 3. Report the number of days, and the mean AQI value where the air quality is rated as "very unhealthy" or worse for each State and County.
+WITH 
+    MEMBER [Measures].[Days Very Unhealthy] AS
+        COUNT(
+            FILTER(
+                EXISTING [Date].[Date].MEMBERS,
+                [Measures].[Daily Average AQI] > 200
+            )
+        )
+    MEMBER [Measures].[Mean Very Unhealthy AQI] AS
+        AVG(
+            FILTER(
+                EXISTING [Date].[Date].MEMBERS,
+                [Measures].[Daily Average AQI] > 200
+            ),
+            [Measures].[Daily Average AQI]
+        )
+SELECT 
+    {[Measures].[Days Very Unhealthy], [Measures].[Mean Very Unhealthy AQI]} ON COLUMNS,
+    NON EMPTY
+    FILTER(
+        CROSSJOIN(
+            [DIM COUNTY].[Hierarchy].[State Name].MEMBERS,
+            [DIM COUNTY].[County Name].[County Name].MEMBERS
+        ),
+        NOT ISEMPTY([Measures].[Days Very Unhealthy]) 
+        AND NOT ISEMPTY([Measures].[Mean Very Unhealthy AQI])
+    ) ON ROWS
+FROM 
+    [US AQI DDS];
+
+-- 4. For the four following states: Hawaii, Alaska, Illinois and Delaware, count the number of days in each air quality Category (Good, Moderate,etc.) by County.
+SELECT 
+    NON EMPTY 
+        { [Measures].[Number of Reports Adjusted] } ON COLUMNS, 
+    NON EMPTY 
+        { 
+            [DIM COUNTY].[State Name].[State Name].ALLMEMBERS * 
+            [DIM CATEGORY].[Level Of Concern].[Level Of Concern].ALLMEMBERS 
+        } ON ROWS
+FROM 
+    (
+        SELECT 
+            { 
+                [DIM COUNTY].[State Name].&[Alaska], 
+                [DIM COUNTY].[State Name].&[Illinois], 
+                [DIM COUNTY].[State Name].&[Hawaii], 
+                [DIM COUNTY].[State Name].&[Delaware] 
+            } ON COLUMNS 
+        FROM [US AQI DDS]
+    );
+
+
+-- 5. For the four following states: Hawaii, Alaska, Illinois and Delaware, compute the mean AQI value by quarters.
+SELECT 
+    {[Measures].[Mean AQI]} ON COLUMNS,
+    FILTER(
+        NONEMPTY(
+            CROSSJOIN(
+                [DIM COUNTY].[State Name].Members,
+                CROSSJOIN(
+                    [DIM DATE].[Hierarchy].[Year].Members,
+                    [DIM DATE].[Quarter].[Quarter].Members
+                )
+            ),
+            {[Measures].[Mean AQI]}
+        ),
+        NOT ISEMPTY([Measures].[Mean AQI]) 
+    ) ON ROWS
+FROM 
+    (
+        SELECT 
+            { 
+                [DIM COUNTY].[State Name].&[Alaska], 
+                [DIM COUNTY].[State Name].&[Illinois], 
+                [DIM COUNTY].[State Name].&[Hawaii], 
+                [DIM COUNTY].[State Name].&[Delaware] 
+            } ON COLUMNS 
+        FROM [US AQI DDS]
+    );
