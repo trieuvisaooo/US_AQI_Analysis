@@ -20,19 +20,6 @@ FROM
 
 
 -- 2. Report the mean and the standard deviation of AQI value for each State during each quarter of years.
-WITH 
-  MEMBER [Measures].[Mean AQI] AS 
-	AVG(
-      EXISTING [Date].[Date].MEMBERS, 
-      [Measures].[Daily Average AQI]
-    )
-  MEMBER [Measures].[Std Dev AQI] AS 
-	ROUND(
-      STDEV(
-          EXISTING [Date].[Date].MEMBERS, 
-          [Measures].[Daily Average AQI]
-      ), 4
-    )
 SELECT 
     {[Measures].[Mean AQI], [Measures].[Std Dev AQI]} ON COLUMNS,
     FILTER(
@@ -84,11 +71,7 @@ SELECT
 FROM 
     [US AQI DDS];
 
-
 -- 4. For the four following states: Hawaii, Alaska, Illinois and Delaware, count the number of days in each air quality Category (Good, Moderate,etc.) by County.
-WITH 
-    MEMBER [Measures].[Number of Reports Adjusted] AS
-        COALESCEEMPTY([Measures].[Number of Reports], 0)
 SELECT 
     NON EMPTY 
         { [Measures].[Number of Reports Adjusted] } ON COLUMNS, 
@@ -111,12 +94,6 @@ FROM
 
 
 -- 5. For the four following states: Hawaii, Alaska, Illinois and Delaware, compute the mean AQI value by quarters.
-WITH 
-  MEMBER [Measures].[Mean AQI] AS 
-	AVG(
-      EXISTING [Date].[Date].MEMBERS, 
-      [Measures].[Daily Average AQI]
-    )
 SELECT 
     {[Measures].[Mean AQI]} ON COLUMNS,
     FILTER(
