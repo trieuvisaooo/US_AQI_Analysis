@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LAPTOP-QHS1R0BJ</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAABqDzbfsKRk+0m+jVza70/gAAAAACAAAAAAAQZgAAAAEAACAAAAB5mC8CiAecIwRjsT8fHlMm4qB0wwEnleAr2VlL/9UNUgAAAAAOgAAAAAIAACAAAAAAlby93VSjwpltMk+Qzfn1JAizxeqkghO8ui3QXXQl/pAAAADax6lMmKhXReUh/z2Fesx+07oNgPHcE4p0CRgVAoptZ0VXlE9KQ3fF9aJ6DVH6U6VPb2QFRmbNmJ4pN3vgCsgkH+29qWwL9qdZFMpYMJZao+NCppj/ALbBzmlEP3g2pLUWeJN7RsWE6tlxY9DMyfJWlbBC1y8iTIHHSEcjyH3bplwtmy+SBS4KnKf8oF9CtbdAAAAAvm8rqxqGVqNlaCJ9BG1S0yXV1MLhOYY9Zk1ThrxvTmZ5BnI9yGsZVAJhjyTmegLDCwIBUyqWL0hBoH2vBwB73Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAsm/8sEnDGEKPIhUZJUJAfAAAAAACAAAAAAAQZgAAAAEAACAAAACV3BW7wwcCCR6BVFbMUJ9JjTXlzGH1N/xdyb5i09elmwAAAAAOgAAAAAIAACAAAAD/YFzjko2Pzlr+fnpek+ngcGs5kBxij5OJ0VHtRArqGJAAAABxtg8MBUvhN37r0UKfuHYo7RLrtWIi3PykG41A32EC0i91z9FEinXF2LW4xfSRc4Rqw01xBV07nq3hILutRBhpn38CdmbUDofMkTmOq6TrF32iQVVIlGFyTqbDYiAaXza3Svw2tA+YUUtMfL0Jcd4hOStTtKsBX+Q6uoFXG+iClZAPDdJ5RDMTwE/NSqqawmhAAAAAruoJY/PvdV0qbaNaObZuyVfZe6TxZOatMAvNC7/p3CVcxSGAX2gmzZaw5P37qwMkf0xgHKjXm0WiUTsr+kcoXA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -412,7 +412,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project\(2B)uscounties.csv</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">D:\00HOCHANH\2024-2025\BI\New folder\US_AQI_Analysis\ETL_Project\(2B)uscounties.csv</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -609,7 +609,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\trieu\OneDrive - VNU-HCMUS\UNI\Semester7\BI\Project\US_AQI_Analysis\ETL_Project\aqi_category.csv</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">D:\00HOCHANH\2024-2025\BI\New folder\US_AQI_Analysis\ETL_Project\aqi_category.csv</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1039,10 +1039,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">167</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">173</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{7AB32DFC-472E-4A47-9C14-1F295880EDE1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EADCBB32-14E2-4784-A0C0-8A96F993A5DE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

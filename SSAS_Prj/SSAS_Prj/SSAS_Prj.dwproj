@@ -35,10 +35,6 @@
       <Name>DIM CATEGORY.dim</Name>
       <FullPath>DIM CATEGORY.dim</FullPath>
     </ProjectItem>
-    <ProjectItem>
-      <Name>DIM DATE 1.dim</Name>
-      <FullPath>DIM DATE 1.dim</FullPath>
-    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
