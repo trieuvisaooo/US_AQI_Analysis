@@ -1,0 +1,89 @@
+-- CALCULATIONS BUILT IN OLAP CUBE FOR MDX REQUIREMENTS
+/*
+	CREATE MEMBER CURRENTCUBE.[Measures].[Daily Average AQI]
+		 AS IIF(
+			[Measures].[Number of Reports] > 0, 
+			[Measures].[Aqi Value] / [Measures].[Number of Reports], 
+			NULL
+		 ), 
+	FORMAT_STRING = "#,##0.00;-#,##0.00", 
+	VISIBLE = 1; 
+
+	CREATE MEMBER CURRENTCUBE.[Measures].[Mean AQI]
+		 AS AVG(
+				EXISTING [DIM DATE].[Date].[Date].MEMBERS, 
+				[Measures].[Daily Average AQI]
+			), 
+	VISIBLE = 1;   
+		
+
+	CREATE MEMBER CURRENTCUBE.[Measures].[Std Dev AQI]
+		 AS ROUND(
+				STDEV(
+					EXISTING [DIM DATE].[Date].[Date].MEMBERS, 
+					[Measures].[Daily Average AQI]
+				), 2
+			), 
+	VISIBLE = 1;
+
+
+	CREATE MEMBER CURRENTCUBE.[Measures].[Category by Daily Average]
+		 AS CASE 
+				WHEN ISEMPTY([Measures].[Daily Average AQI]) OR [Measures].[Daily Average AQI] IS NULL THEN "Unknown"  
+				WHEN [Measures].[Daily Average AQI] >= 0 AND [Measures].[Daily Average AQI] <= 50 THEN "Good"
+				WHEN [Measures].[Daily Average AQI] >= 51 AND [Measures].[Daily Average AQI] <= 100 THEN "Moderate"
+				WHEN [Measures].[Daily Average AQI] >= 101 AND [Measures].[Daily Average AQI] <= 150 THEN "Unhealthy for Sensitive Groups"
+				WHEN [Measures].[Daily Average AQI] >= 151 AND [Measures].[Daily Average AQI] <= 200 THEN "Unhealthy"
+				WHEN [Measures].[Daily Average AQI] >= 201 AND [Measures].[Daily Average AQI] <= 300 THEN "Very Unhealthy"
+				WHEN [Measures].[Daily Average AQI] >= 301 THEN "Hazardous"
+				ELSE "Unknown"
+			END, 
+	VISIBLE = 1  ;
+	
+	CREATE MEMBER CURRENTCUBE.[Measures].[Days of Month]
+		 AS COUNT(
+				NONEMPTY(
+					EXISTING [Date].[Date].MEMBERS,
+					[Measures].[Aqi Value]
+				)
+			), 
+	VISIBLE = 1  ; 	
+*/
+
+-------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------
+
+-- CALCULATIONS BUILT IN OLAP CUBE FOR POWER BI REPORT REQUIREMENTS
+/*
+	CREATE MEMBER CURRENTCUBE.[Measures].[Number of Days] AS
+			COUNT(
+				FILTER(
+					EXISTING [DIM DATE].[Date].[Date].MEMBERS,
+					[Measures].[Category by Daily Average] = [DIM CATEGORY].[Level Of Concern].CURRENTMEMBER.MEMBER_VALUE
+				)
+			),
+	VISIBLE = 1;
+
+	CREATE MEMBER CURRENTCUBE.[Measures].[Days Very Unhealthy]
+		 AS COUNT(
+				FILTER(
+					EXISTING [DIM DATE].[Date].[Date].MEMBERS,
+					[Measures].[Daily Average AQI] > 200
+				)
+			), 
+	FORMAT_STRING = "#,##0.00;-#,##0.00", 
+	VISIBLE = 1;           
+
+
+	CREATE MEMBER CURRENTCUBE.[Measures].[Mean Very Unhealthy AQI]
+		 AS AVG(
+				FILTER(
+					EXISTING [DIM DATE].[Date].[Date].MEMBERS,
+					[Measures].[Daily Average AQI] > 200
+				),
+				[Measures].[Daily Average AQI]
+			), 
+	FORMAT_STRING = "#,##0.00;-#,##0.00", 
+	VISIBLE = 1;
+
+*/
