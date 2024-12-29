@@ -90,3 +90,4 @@ node_modules/
 
 Scripts/TEST.sql
 Scripts/TEST_OLAP.mdx
+Mining/.env
