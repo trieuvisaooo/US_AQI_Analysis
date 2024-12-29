@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="170"
-  DTS:VersionGUID="{52DD100E-2C6C-4E0D-AB08-CE32D77B8F35}">
+  DTS:VersionBuild="188"
+  DTS:VersionGUID="{D3A647E8-6564-4077-8AEA-16D0E8A6D7A1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -232,9 +232,9 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select county_code, date, aqi, category,defining_parameter, defining_site, number_of_sites_rep
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select county_name, state_name, date, aqi, category,defining_parameter, defining_site, number_of_sites_rep
 from COUNTY_AQI_STAGE
-group by county_code, date, aqi, category,defining_parameter, defining_site, number_of_sites_rep
+group by county_name, state_name, date, aqi, category, defining_parameter, defining_site, number_of_sites_rep
 having count(*) = 1;</property>
                 <property
                   dataType="System.String"
@@ -271,6 +271,28 @@ having count(*) = 1;</property>
                   refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[state_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[state_name]"
+                      length="255"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[state_name]"
+                      name="state_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[county_name]"
+                      length="255"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_name]"
+                      name="county_name"
+                      truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[date]"
                       dataType="dbDate"
@@ -331,22 +353,21 @@ having count(*) = 1;</property>
                       lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[number_of_sites_rep]"
                       name="number_of_sites_rep"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_code]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[county_code]"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_code]"
-                      name="county_code"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[county_code]"
-                      dataType="i4"
-                      name="county_code" />
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[state_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="state_name" />
+                    <externalMetadataColumn
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[county_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="county_name" />
                     <externalMetadataColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].ExternalColumns[date]"
                       dataType="dbDate"
@@ -385,17 +406,19 @@ having count(*) = 1;</property>
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[state_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[state_name]"
+                      name="state_name" />
                     <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[county_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[county_name]"
+                      name="county_name" />
                     <outputColumn
                       refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[date]"
                       dataType="dbDate"
@@ -433,10 +456,17 @@ having count(*) = 1;</property>
                       lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[number_of_sites_rep]"
                       name="number_of_sites_rep" />
                     <outputColumn
-                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[county_code]"
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[county_code]"
-                      name="county_code" />
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -710,7 +740,7 @@ where [refTable].[level_of_concern] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[category]};</property>
+                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\Remove trailing spaces};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -869,7 +899,7 @@ where [refTable].[date] = ? and [refTable].[county_sk] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[date]};#{Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Outputs[Lookup Match Output].Columns[county_sk]};</property>
+                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input]};#{Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Outputs[Lookup Match Output].Columns[county_sk]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1006,7 +1036,7 @@ where [refTable].[date] = ? and [refTable].[county_sk] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[COUNTY_NDS]) [refTable]
-where [refTable].[county_code] = ?</property>
+where [refTable].[county_name] = ? and [refTable].[state_sk] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -1042,7 +1072,7 @@ where [refTable].[county_code] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_code]};</property>
+                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_name]};#{Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Match Output].Columns[state_sk]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1066,15 +1096,33 @@ where [refTable].[county_code] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Inputs[Lookup Input].Columns[county_code]"
-                      cachedDataType="i4"
-                      cachedName="county_code"
-                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_code]">
+                      refId="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Inputs[Lookup Input].Columns[county_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="county_name"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_name]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">county_code</property>
+                          name="JoinToReferenceColumn">county_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Inputs[Lookup Input].Columns[state_sk]"
+                      cachedDataType="i4"
+                      cachedName="state_sk"
+                      lineageId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Match Output].Columns[state_sk]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">state_sk</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -1294,6 +1342,266 @@ where [refTable].[parameter_name] = ?</property>
                       refId="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup STATE_NDS"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[STATE_NDS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[STATE_NDS]) [refTable]
+where [refTable].[state_name] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="state_sk" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state_id" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="state_code" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="state_name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="source_id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[state_name]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Connections[OleDbConnection]"
+                  connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Inputs[Lookup Input].Columns[state_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="state_name"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[state_name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">state_name</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Match Output].Columns[state_sk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Match Output].Columns[state_sk]"
+                      name="state_sk"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">state_sk</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Remove trailing spaces"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input].Columns[state_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="state_name"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[state_name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RTRIM](#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[state_name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RTRIM(state_name)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input].Columns[county_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="county_name"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RTRIM](#{Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output].Columns[county_name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RTRIM(county_name)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1707,25 +2015,35 @@ WHERE report_sk = ?</property>
               name="Derived Column Output"
               startId="Package\AQIStage_AQIReportNDS\Add source_id column.Outputs[Derived Column Output]" />
             <path
+              refId="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output3]"
+              endId="Package\AQIStage_AQIReportNDS\Add source_id column.Inputs[Derived Column Input]"
+              name="Derived Column Output"
+              startId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Outputs[Derived Column Output]" />
+            <path
               refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output]"
-              endId="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output1]"
-              endId="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output2]"
               endId="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output3]"
+              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output1]"
               endId="Package\AQIStage_AQIReportNDS\updated_date.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output2]"
+              endId="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output3]"
+              endId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output4]"
+              endId="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\AQIStage_AQIReportNDS.Paths[Lookup No Match Output]"
               endId="Package\AQIStage_AQIReportNDS\updated_date, inserted_date.Inputs[Derived Column Input]"
@@ -1733,7 +2051,7 @@ WHERE report_sk = ?</property>
               startId="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\AQIStage_AQIReportNDS.Paths[OLE DB Source Output]"
-              endId="Package\AQIStage_AQIReportNDS\Add source_id column.Inputs[Derived Column Input]"
+              endId="Package\AQIStage_AQIReportNDS\Remove trailing spaces.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
               startId="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE.Outputs[OLE DB Source Output]" />
           </paths>
@@ -2261,7 +2579,6 @@ WHERE report_sk = ?</property>
                       refId="Package\AQIStage_CountyNDS\Insert into County_NDS.Inputs[OLE DB Destination Input].Columns[county_code]"
                       cachedDataType="i4"
                       cachedName="county_code"
-                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\AQIStage_CountyNDS\Insert into County_NDS.Inputs[OLE DB Destination Input].ExternalColumns[county_code]"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_code]" />
                     <inputColumn
@@ -2270,6 +2587,7 @@ WHERE report_sk = ?</property>
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="county_name"
+                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\AQIStage_CountyNDS\Insert into County_NDS.Inputs[OLE DB Destination Input].ExternalColumns[county_name]"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_name]" />
                     <inputColumn
@@ -2451,6 +2769,7 @@ where [refTable].[county_name] = ? and [refTable].[state_sk] = ?</property>
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="county_name"
+                      cachedSortKeyPosition="2"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_name]">
                       <properties>
                         <property
@@ -2545,7 +2864,7 @@ where [refTable].[county_name] = ? and [refTable].[state_sk] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[STATE_NDS]) [refTable]
-where [refTable].[state_code] = ?</property>
+where [refTable].[state_name] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -2581,7 +2900,7 @@ where [refTable].[state_code] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_code]};</property>
+                  name="ParameterMap">#{Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_name]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2605,16 +2924,18 @@ where [refTable].[state_code] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\AQIStage_CountyNDS\Lookup State SK in StateNDS.Inputs[Lookup Input].Columns[state_code]"
-                      cachedDataType="i4"
-                      cachedName="state_code"
+                      refId="Package\AQIStage_CountyNDS\Lookup State SK in StateNDS.Inputs[Lookup Input].Columns[state_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="state_name"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_code]">
+                      lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_name]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">state_code</property>
+                          name="JoinToReferenceColumn">state_name</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -2683,6 +3004,83 @@ where [refTable].[state_code] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Remove trailing spaces at county_name"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Inputs[Derived Column Input].Columns[county_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="county_name"
+                      cachedSortKeyPosition="2"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RTRIM](#{Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RTRIM(county_name)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2720,7 +3118,7 @@ where [refTable].[state_code] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2736,7 +3134,7 @@ where [refTable].[state_code] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">2</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2886,7 +3284,7 @@ where [refTable].[state_code] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">1</property>
+                          name="NewSortKeyPosition">0</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -2904,7 +3302,7 @@ where [refTable].[state_code] = ?</property>
                         <property
                           dataType="System.Int32"
                           description="Specifies the sort order of the column."
-                          name="NewSortKeyPosition">0</property>
+                          name="NewSortKeyPosition">1</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -2923,7 +3321,8 @@ where [refTable].[state_code] = ?</property>
                       dataType="str"
                       length="255"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_name]"
-                      name="county_name">
+                      name="county_name"
+                      sortKeyPosition="2">
                       <properties>
                         <property
                           containsID="true"
@@ -2936,8 +3335,7 @@ where [refTable].[state_code] = ?</property>
                       refId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_code]"
                       dataType="i4"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_code]"
-                      name="county_code"
-                      sortKeyPosition="2">
+                      name="county_code">
                       <properties>
                         <property
                           containsID="true"
@@ -3060,8 +3458,7 @@ where [refTable].[state_code] = ?</property>
                       refId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_code]"
                       dataType="i4"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_code]"
-                      name="state_code"
-                      sortKeyPosition="1">
+                      name="state_code">
                       <properties>
                         <property
                           containsID="true"
@@ -3076,7 +3473,8 @@ where [refTable].[state_code] = ?</property>
                       dataType="str"
                       length="255"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[state_name]"
-                      name="state_name">
+                      name="state_name"
+                      sortKeyPosition="1">
                       <properties>
                         <property
                           containsID="true"
@@ -3136,7 +3534,6 @@ WHERE county_sk = ?</property>
                       refId="Package\AQIStage_CountyNDS\Update County_NDS.Inputs[OLE DB Command Input].Columns[county_code]"
                       cachedDataType="i4"
                       cachedName="county_code"
-                      cachedSortKeyPosition="2"
                       externalMetadataColumnId="Package\AQIStage_CountyNDS\Update County_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties.Outputs[Sort Output].Columns[county_code]" />
                     <inputColumn
@@ -3213,13 +3610,18 @@ WHERE county_sk = ?</property>
               name="Derived Column Output"
               startId="Package\AQIStage_CountyNDS\Add column source_id.Outputs[Derived Column Output]" />
             <path
+              refId="Package\AQIStage_CountyNDS.Paths[Derived Column Output1]"
+              endId="Package\AQIStage_CountyNDS\Lookup County_sk in CountyNDS.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Outputs[Derived Column Output]" />
+            <path
               refId="Package\AQIStage_CountyNDS.Paths[Lookup Match Output]"
               endId="Package\AQIStage_CountyNDS\Update County_NDS.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\AQIStage_CountyNDS\Lookup County_sk in CountyNDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\AQIStage_CountyNDS.Paths[Lookup Match Output1]"
-              endId="Package\AQIStage_CountyNDS\Lookup County_sk in CountyNDS.Inputs[Lookup Input]"
+              endId="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\AQIStage_CountyNDS\Lookup State SK in StateNDS.Outputs[Lookup Match Output]" />
             <path
@@ -4404,6 +4806,83 @@ where [refTable].[state_name] = ?</property>
               </outputs>
             </component>
             <component
+              refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Remove trailing spaces at state_name"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Inputs[Derived Column Input].Columns[state_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="state_name"
+                      cachedSortKeyPosition="1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\AQIStage_StateNDS\Sort and remove duplicate State.Outputs[Sort Output].Columns[state_name]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[RTRIM](#{Package\AQIStage_StateNDS\Sort and remove duplicate State.Outputs[Sort Output].Columns[state_name]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">RTRIM(state_name)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\AQIStage_StateNDS\Sort and remove duplicate State"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -4651,9 +5130,14 @@ WHERE state_sk= ?</property>
           <paths>
             <path
               refId="Package\AQIStage_StateNDS.Paths[Derived Column Output]"
-              endId="Package\AQIStage_StateNDS\Lookup State_sk in StateNDS.Inputs[Lookup Input]"
+              endId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Inputs[Derived Column Input]"
               name="Derived Column Output"
               startId="Package\AQIStage_StateNDS\Add column source_id.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\AQIStage_StateNDS.Paths[Derived Column Output1]"
+              endId="Package\AQIStage_StateNDS\Lookup State_sk in StateNDS.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\AQIStage_StateNDS\Remove trailing spaces at state_name.Outputs[Derived Column Output]" />
             <path
               refId="Package\AQIStage_StateNDS.Paths[Lookup Match Output]"
               endId="Package\AQIStage_StateNDS\Update State_NDS.Inputs[OLE DB Command Input]"
@@ -7228,11 +7712,11 @@ WHERE county_sk = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS"
+              refId="Package\CountyStage_StateNDS\Lookup in State_NDS"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-              name="Lookup in Stafe_NDS"
+              name="Lookup in State_NDS"
               usesDispositions="true"
               version="6">
               <properties>
@@ -7248,7 +7732,7 @@ WHERE county_sk = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[STATE_NDS]) [refTable]
-where [refTable].[state_id] = ?</property>
+where [refTable].[state_name] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the type of connection used to access the reference dataset."
@@ -7284,7 +7768,7 @@ where [refTable].[state_id] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\CountyStage_StateNDS\DISTINCT state_id, state_name.Outputs[Sort Output].Columns[state_id]};</property>
+                  name="ParameterMap">#{Package\CountyStage_StateNDS\DISTINCT state_id, state_name.Outputs[Sort Output].Columns[state_name]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7296,7 +7780,7 @@ where [refTable].[state_id] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Connections[OleDbConnection]"
+                  refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Connections[OleDbConnection]"
                   connectionManagerID="{365A18E0-8A27-4704-802B-F8836F5C842C}:external"
                   connectionManagerRefId="Project.ConnectionManagers[(local).US_AQI_NDS]"
                   description="Connection manager used to access lookup data."
@@ -7304,22 +7788,22 @@ where [refTable].[state_id] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Inputs[Lookup Input]"
+                  refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Inputs[Lookup Input].Columns[state_id]"
+                      refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Inputs[Lookup Input].Columns[state_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="5"
-                      cachedName="state_id"
-                      cachedSortKeyPosition="1"
-                      lineageId="Package\CountyStage_StateNDS\DISTINCT state_id, state_name.Outputs[Sort Output].Columns[state_id]">
+                      cachedLength="255"
+                      cachedName="state_name"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\CountyStage_StateNDS\DISTINCT state_id, state_name.Outputs[Sort Output].Columns[state_name]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table that a column joins."
-                          name="JoinToReferenceColumn">state_id</property>
+                          name="JoinToReferenceColumn">state_name</property>
                         <property
                           dataType="System.Null"
                           description="Specifies the column in the reference table from which a column is copied."
@@ -7332,17 +7816,17 @@ where [refTable].[state_id] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Match Output]"
+                  refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\CountyStage_StateNDS\Lookup in State_NDS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Match Output].Columns[state_sk]"
+                      refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Match Output].Columns[state_sk]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Match Output].Columns[state_sk]"
+                      lineageId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Match Output].Columns[state_sk]"
                       name="state_sk"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -7356,30 +7840,30 @@ where [refTable].[state_id] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup No Match Output]"
+                  refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\CountyStage_StateNDS\Lookup in State_NDS.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Error Output]"
+                  refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\CountyStage_StateNDS\Lookup in State_NDS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -7443,7 +7927,7 @@ WHERE state_sk = ?</property>
                       cachedDataType="i4"
                       cachedName="state_sk"
                       externalMetadataColumnId="Package\CountyStage_StateNDS\Update State_NDS.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Match Output].Columns[state_sk]" />
+                      lineageId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Match Output].Columns[state_sk]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -7510,19 +7994,19 @@ WHERE state_sk = ?</property>
           <paths>
             <path
               refId="Package\CountyStage_StateNDS.Paths[Derived Column Output]"
-              endId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Inputs[Lookup Input]"
+              endId="Package\CountyStage_StateNDS\Lookup in State_NDS.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\CountyStage_StateNDS\add column source_id.Outputs[Derived Column Output]" />
             <path
               refId="Package\CountyStage_StateNDS.Paths[Lookup Match Output]"
               endId="Package\CountyStage_StateNDS\Update State_NDS.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
-              startId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup Match Output]" />
+              startId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup Match Output]" />
             <path
               refId="Package\CountyStage_StateNDS.Paths[Lookup No Match Output]"
               endId="Package\CountyStage_StateNDS\Insert into State_NDS.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
-              startId="Package\CountyStage_StateNDS\Lookup in Stafe_NDS.Outputs[Lookup No Match Output]" />
+              startId="Package\CountyStage_StateNDS\Lookup in State_NDS.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\CountyStage_StateNDS.Paths[OLE DB Source Output]"
               endId="Package\CountyStage_StateNDS\DISTINCT state_id, state_name.Inputs[Sort Input]"
@@ -7621,7 +8105,7 @@ WHERE state_sk = ?</property>
           Id="Package\CategoryStage_CategoryNDS"
           TopLeft="361.666646856401,369.416664124263" />
         <NodeLayout
-          Size="199.333333333334,41.3333333333334"
+          Size="198.666666666667,42.6666666666667"
           Id="Package\CountyStage_CountyNDS"
           TopLeft="65.8333297363583,149.066665630075" />
         <NodeLayout
@@ -7630,18 +8114,18 @@ WHERE state_sk = ?</property>
           TopLeft="67.9999965851502,41.8999997468789" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="164.316663160754,83.4999997468789">
+          TopLeft="164.249996494088,83.2333330802122">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.5666658831961"
+              EndConnector="0,65.8333325498628"
               Start="0,0"
-              End="0,58.0666658831961">
+              End="0,58.3333325498628">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.0666658831961" />
+                    End="0,58.3333325498628" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7652,18 +8136,18 @@ WHERE state_sk = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="166.099996038774,190.666665630075">
+          TopLeft="165.999996038774,191.733332296742">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.399999367198"
+              EndConnector="0,48.3333327005314"
               Start="0,0"
-              End="0,41.899999367198">
+              End="0,40.8333327005314">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.899999367198" />
+                    End="0,40.8333327005314" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7769,212 +8253,220 @@ WHERE state_sk = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="146,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\updated_date"
-          TopLeft="156.704543187198,436.13181235377" />
-        <NodeLayout
-          Size="187.333333333334,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS"
-          TopLeft="431.999993562699,343.181813095103" />
+          Size="221.333333333334,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS"
+          TopLeft="782.386351662942,660.65756394078" />
         <NodeLayout
           Size="209.333333333334,41.3333333333334"
           Id="Package\AQIStage_AQIReportNDS\Update AQI_REPORT_NDS"
-          TopLeft="123.499998159707,527.381810994039" />
-        <NodeLayout
-          Size="224.666666666667,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS"
-          TopLeft="408.999993905425,250.181814480911" />
-        <NodeLayout
-          Size="187.333333333334,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE"
-          TopLeft="433.909084429795,7.00000064074989" />
-        <NodeLayout
-          Size="221.333333333334,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS"
-          TopLeft="778.63635183058,527.840901954269" />
+          TopLeft="127.249997992069,660.198472980551" />
         <NodeLayout
           Size="263.333333333334,41.3333333333334"
           Id="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS"
-          TopLeft="387.090903336352,146.545452145013" />
-        <NodeLayout
-          Size="256,41.3333333333334"
-          Id="Package\AQIStage_AQIReportNDS\updated_date, inserted_date"
-          TopLeft="769.249988537282,431.481813937018" />
+          TopLeft="390.840903168714,215.495448952588" />
         <NodeLayout
           Size="209.333333333334,41.3333333333334"
           Id="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS"
-          TopLeft="427.999993622303,436.381811992417" />
+          TopLeft="427.999993622303,569.198473978928" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE"
+          TopLeft="433.909084429795,7.00000064074989" />
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS"
+          TopLeft="433.749980609865,390.049981496334" />
+        <NodeLayout
+          Size="187.333333333334,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS"
+          TopLeft="434.49999345094,475.998475081613" />
+        <NodeLayout
+          Size="224.666666666667,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\Lookup AQI_CATEGORY_NDS"
+          TopLeft="408.374993933365,293.948480713656" />
         <NodeLayout
           Size="184,42.6666666666667"
           Id="Package\AQIStage_AQIReportNDS\Add source_id column"
-          TopLeft="429.090896303004,79.9999976158142" />
-        <EdgeLayout
-          Id="Package\AQIStage_AQIReportNDS.Paths[OLE DB Source Output]"
-          TopLeft="524.333323699733,48.3333339740832">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.666663641731"
-              Start="0,0"
-              End="0,24.166663641731">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.166663641731" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="429.090896303004,149.599994392395" />
+        <NodeLayout
+          Size="256,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\updated_date, inserted_date"
+          TopLeft="772.999988369644,564.298475923529" />
+        <NodeLayout
+          Size="146,41.3333333333334"
+          Id="Package\AQIStage_AQIReportNDS\updated_date"
+          TopLeft="160.45454301956,568.948474340281" />
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Lookup No Match Output]"
-          TopLeft="637.333326955636,454.598479631384">
+          TopLeft="637.333326955636,587.415141617895">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="131.916661581646,0"
+              EndConnector="135.666661414008,0"
               Start="0,0"
-              End="124.416661581646,0">
+              End="128.166661414008,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="124.416661581646,0" />
+                    End="128.166661414008,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.40194407207286,5,111.6127734375,11.609375"
+              BoundingBox="-21.313407574246,5,170.7934765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output4]"
+          TopLeft="524.291653697069,432.716648163001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.2818269186118"
+              Start="0,0"
+              End="0,35.7818269186118">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7818269186118" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-83.24173828125,12.0862259593059,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output3]"
-          TopLeft="427.999993622303,456.92347883976">
+          TopLeft="520.562487271615,335.281814046989">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-125.295450435105,0"
+              EndConnector="0,54.7681674493455"
               Start="0,0"
-              End="-117.795450435105,0">
+              End="0,47.2681674493455">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-117.795450435105,0" />
+                    End="0,47.2681674493455" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-107.089111936303,5,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,17.8293962246727,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output2]"
-          TopLeft="529.199993592501,384.781813095103">
+          TopLeft="521.607948551039,256.828782285921">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.5999988973141"
+              EndConnector="0,37.1196984277342"
               Start="0,0"
-              End="0,44.0999988973141">
+              End="0,29.6196984277342">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.0999988973141" />
+                    End="0,29.6196984277342" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.2453119486571,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,9.0051617138671,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output1]"
-          TopLeft="523.499993734062,291.781814480911">
+          TopLeft="427.999993622303,589.740140826271">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.3999986141922"
+              EndConnector="-121.545450602743,0"
               Start="0,0"
-              End="0,43.8999986141922">
+              End="-114.045450602743,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.8999986141922" />
+                    End="-114.045450602743,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.1453118070961,96.3827734375,11.609375"
+              BoundingBox="-140.264463582622,5,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Lookup Match Output]"
-          TopLeft="520.045448620888,187.878785478347">
+          TopLeft="530.416660203288,517.331808414946">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.3030290025648"
+              EndConnector="0,51.8666655639806"
               Start="0,0"
-              End="0,54.8030290025648">
+              End="0,44.3666655639806">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.8030290025648" />
+                    End="0,44.3666655639806" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,21.5968270012824,96.3827734375,11.609375"
+              BoundingBox="-83.24173828125,16.3786452819903,166.4834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output2]"
-          TopLeft="519.924233153011,122.666664282481">
+          TopLeft="521.799233069192,192.266661059062">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,23.8787878625323"
+              EndConnector="0,23.2287878935266"
               Start="0,0"
-              End="0,16.3787878625323">
+              End="0,15.7287878935266">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.3787878625323" />
+                    End="0,15.7287878935266" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-30.26947265625,2.25013613426331,60.5389453125,11.228515625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output1]"
-          TopLeft="893.276503517264,472.815147270352">
+          TopLeft="897.026503349626,605.631809256864">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7991,34 +8483,185 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-25.26357421875,18.1510609357088,50.5271484375,11.2236328125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output]"
-          TopLeft="228.935604006786,477.465145687104">
+          TopLeft="232.685603839148,610.281807673616">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.9166653069357"
+              EndConnector="0,49.9166653069358"
               Start="0,0"
-              End="0,42.4166653069357">
+              End="0,42.4166653069358">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.4166653069357" />
+                    End="0,42.4166653069358" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-27.92765625,15.5867506222179,55.8553125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="188,42.6666666666667"
+          Id="Package\AQIStage_AQIReportNDS\Remove trailing spaces"
+          TopLeft="428.124980861322,81.9499961876871" />
+        <EdgeLayout
+          Id="Package\AQIStage_AQIReportNDS.Paths[OLE DB Source Output]"
+          TopLeft="523.350365978892,49.6666673074166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.2833288802705"
+              Start="0,0"
+              End="0,24.7833288802705">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7833288802705" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.26947265625,6.77740662763526,60.5389453125,11.228515625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQIStage_AQIReportNDS.Paths[Derived Column Output3]"
+          TopLeft="521.607938582163,124.616662854354">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.9833315380414"
+              Start="0,0"
+              End="0,17.4833315380414">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4833315380414" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.26947265625,3.1274079565207,60.5389453125,11.228515625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DEFINING_PARAMETER_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[AQI_REPORT_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AQIStage_AQIReportNDS\Lookup STATE_NDS">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[STATE_NDS]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\AQIStage_AQIReportNDS\Lookup COUNTY_NDS">
     <Properties>
@@ -8065,78 +8708,6 @@ WHERE state_sk = ?</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\COUNTY_AQI_STAGE">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\Insert into AQI_REPORT_NDS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\Lookup DEFINING_PARAMETER_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DEFINING_PARAMETER_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AQIStage_AQIReportNDS\Lookup AQI_REPORT_NDS">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[AQI_REPORT_NDS]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\AQIStage_CountyNDS">
     <LayoutInfo>
@@ -8145,174 +8716,206 @@ WHERE state_sk = ?</property>
         <NodeLayout
           Size="201.333333333334,41.3333333333334"
           Id="Package\AQIStage_CountyNDS\Insert into County_NDS"
-          TopLeft="565.166645959848,504.616662498" />
+          TopLeft="562.166646049255,577.949994043194" />
         <NodeLayout
-          Size="250,41.3333333333334"
-          Id="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties"
-          TopLeft="293.846149467505,95.3076908874971" />
+          Size="266.666666666667,42.6666666666667"
+          Id="Package\AQIStage_CountyNDS\Remove trailing spaces at county_name"
+          TopLeft="280.999991625548,359.666663716237" />
         <NodeLayout
-          Size="187.333333333334,41.3333333333334"
+          Size="181.333333333334,42.6666666666667"
           Id="Package\AQIStage_CountyNDS\COUNTY_AQI_STAGE"
           TopLeft="326.99999032418,22.0000005811452" />
         <NodeLayout
-          Size="241.333333333334,41.3333333333334"
+          Size="234.666666666667,42.6666666666667"
           Id="Package\AQIStage_CountyNDS\Lookup County_sk in CountyNDS"
-          TopLeft="299.083322585043,388.783330059565" />
+          TopLeft="296.08332267445,462.116661604759" />
         <NodeLayout
-          Size="175.333333333334,41.3333333333334"
-          Id="Package\AQIStage_CountyNDS\Update County_NDS"
-          TopLeft="104.249999340623,505.183329130925" />
+          Size="250,41.3333333333334"
+          Id="Package\AQIStage_CountyNDS\Sort and remove duplicate Counties"
+          TopLeft="297.846149348296,102.307690678881" />
         <NodeLayout
-          Size="216,41.3333333333334"
+          Size="216,42.6666666666667"
           Id="Package\AQIStage_CountyNDS\Lookup State SK in StateNDS"
-          TopLeft="309.499995388091,270.74999596551" />
+          TopLeft="310.499995358289,270.74999596551" />
         <NodeLayout
           Size="195.333333333334,41.3333333333334"
           Id="Package\AQIStage_CountyNDS\Add column source_id"
           TopLeft="324.833322996068,180.066665545636" />
+        <NodeLayout
+          Size="175.333333333334,41.3333333333334"
+          Id="Package\AQIStage_CountyNDS\Update County_NDS"
+          TopLeft="101.24999943003,578.516660676119" />
         <EdgeLayout
           Id="Package\AQIStage_CountyNDS.Paths[Sort Output]"
-          TopLeft="420.67306956512,136.64102422083">
+          TopLeft="422.673069505515,143.641024012214">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.4256413248056"
+              EndConnector="0,36.4256415334218"
               Start="0,0"
-              End="0,35.9256413248056">
+              End="0,28.9256415334218">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.9256413248056" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\AQIStage_CountyNDS.Paths[OLE DB Source Output]"
-          TopLeft="419.756403229176,63.3333339144785">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.9743569730186"
-              Start="0,0"
-              End="0,24.4743569730186">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.4743569730186" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\AQIStage_CountyNDS.Paths[Lookup No Match Output]"
-          TopLeft="458.638878140599,430.116663392898">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="207.194434485916,74.4999991051021"
-              Start="0,0"
-              End="207.194434485916,66.9999991051021">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.0944013948162" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0944013948162"
-                    Point2="0,30.0944013948162"
-                    Point3="4,30.0944013948162" />
-                  <mssgle:LineSegment
-                    End="203.194434485916,30.0944013948162" />
-                  <mssgle:CubicBezierSegment
-                    Point1="203.194434485916,30.0944013948162"
-                    Point2="207.194434485916,30.0944013948162"
-                    Point3="207.194434485916,34.0944013948162" />
-                  <mssgle:LineSegment
-                    End="207.194434485916,66.9999991051021" />
+                    End="0,28.9256415334218" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="47.790830524208,35.0944013948162,111.6127734375,11.609375"
+              BoundingBox="-20.8501171875,9.6761996729609,41.700234375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQIStage_CountyNDS.Paths[OLE DB Source Output]"
+          TopLeft="420.256403169571,64.6666672478119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.641023431069"
+              Start="0,0"
+              End="0,30.141023431069">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.141023431069" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.26947265625,9.4586953092845,60.5389453125,11.2236328125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQIStage_CountyNDS.Paths[Lookup No Match Output]"
+          TopLeft="451.194433785561,504.783328271426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="211.638878930361,73.1666657717681"
+              Start="0,0"
+              End="211.638878930361,65.6666657717681">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5639575014593" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5639575014593"
+                    Point2="0,29.5639575014593"
+                    Point3="4,29.5639575014593" />
+                  <mssgle:LineSegment
+                    End="207.638878930361,29.5639575014593" />
+                  <mssgle:CubicBezierSegment
+                    Point1="207.638878930361,29.5639575014593"
+                    Point2="211.638878930361,29.5639575014593"
+                    Point3="211.638878930361,33.5639575014593" />
+                  <mssgle:LineSegment
+                    End="211.638878930361,65.6666657717681" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="50.0130527464303,34.5639575014593,151.3834765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_CountyNDS.Paths[Lookup Match Output1]"
-          TopLeft="418.624992319901,312.083329298843">
+          TopLeft="416.416660158585,313.416662632177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,76.7000007607217"
+              EndConnector="0,46.2500010840602"
               Start="0,0"
-              End="0,69.2000007607217">
+              End="0,38.7500010840602">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,69.2000007607217" />
+                    End="0,38.7500010840602" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,28.7953128803608,96.3827734375,11.609375"
+              BoundingBox="-73.53673828125,13.5703130420301,147.0734765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_CountyNDS.Paths[Lookup Match Output]"
-          TopLeft="380.861100362821,430.116663392898">
+          TopLeft="375.638878230006,504.783328271426">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-188.944434355532,75.0666657380266"
+              EndConnector="-186.722212133309,73.7333324046931"
               Start="0,0"
-              End="-188.944434355532,67.5666657380266">
+              End="-186.722212133309,66.2333324046931">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.323307345328" />
+                    End="0,25.7929266375622" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.323307345328"
-                    Point2="0,30.323307345328"
-                    Point3="-4,30.323307345328" />
+                    Point1="0,25.7929266375622"
+                    Point2="0,29.7929266375622"
+                    Point3="-4,29.7929266375622" />
                   <mssgle:LineSegment
-                    End="-184.944434355532,30.323307345328" />
+                    End="-182.722212133309,29.7929266375622" />
                   <mssgle:CubicBezierSegment
-                    Point1="-184.944434355532,30.323307345328"
-                    Point2="-188.944434355532,30.323307345328"
-                    Point3="-188.944434355532,34.323307345328" />
+                    Point1="-182.722212133309,29.7929266375622"
+                    Point2="-186.722212133309,29.7929266375622"
+                    Point3="-186.722212133309,33.7929266375622" />
                   <mssgle:LineSegment
-                    End="-188.944434355532,67.5666657380266" />
+                    End="-186.722212133309,66.2333324046931" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-142.663603896516,35.323307345328,96.3827734375,11.609375"
+              BoundingBox="-166.897844347905,34.7929266375622,147.0734765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQIStage_CountyNDS.Paths[Derived Column Output1]"
+          TopLeft="413.874990483332,402.333330382904">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.7833312218555"
+              Start="0,0"
+              End="0,52.2833312218555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.2833312218555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.8501171875,21.3550445171777,41.700234375,9.5732421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_CountyNDS.Paths[Derived Column Output]"
-          TopLeft="419.999992525413,221.399998878969">
+          TopLeft="420.499992510512,221.399998878969">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8329,7 +8932,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-20.8501171875,16.1383774495203,41.700234375,9.5732421875"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8447,7 +9052,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8493,14 +9100,16 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text=""
           ParentId="Package\AQIStage_DefiningParameterNDS"
           FontInfo="{assembly:Null}"
-          Size="28.6666666666667,40"
+          Size="28.6666666666667,NaN"
           Id="3fc39ba3-7cc1-4d66-aa9b-a87d0ad25be5"
           TopLeft="878.99998690188,275.99999588728" />
       </GraphLayout>
@@ -8565,25 +9174,29 @@ WHERE state_sk = ?</property>
           Id="Package\AQIStage_StateNDS\Add column source_id"
           TopLeft="311.666651335029,168.566664995121" />
         <NodeLayout
-          Size="166.666666666667,41.3333333333334"
-          Id="Package\AQIStage_StateNDS\Update State_NDS"
-          TopLeft="127.999993721644,378.599996961952" />
-        <NodeLayout
           Size="184.666666666667,41.3333333333334"
           Id="Package\AQIStage_StateNDS\Insert into State_NDS"
-          TopLeft="492.999975014065,382.366663627591" />
+          TopLeft="492.999975014065,460.033328416711" />
         <NodeLayout
           Size="187.333333333334,41.3333333333334"
           Id="Package\AQIStage_StateNDS\COUNTY_AQI_STAGE"
           TopLeft="311.999985416731,13.6666666352087" />
         <NodeLayout
+          Size="258.666666666667,42.6666666666667"
+          Id="Package\AQIStage_StateNDS\Remove trailing spaces at state_name"
+          TopLeft="276.999991744757,254.333330323299" />
+        <NodeLayout
           Size="236.666666666667,41.3333333333334"
           Id="Package\AQIStage_StateNDS\Sort and remove duplicate State"
           TopLeft="291.999995723367,93.9999985992909" />
         <NodeLayout
-          Size="216,41.3333333333334"
+          Size="217.333333333334,42.6666666666667"
           Id="Package\AQIStage_StateNDS\Lookup State_sk in StateNDS"
-          TopLeft="299.333316973514,257.199997965097" />
+          TopLeft="301.333316913909,333.866662784019" />
+        <NodeLayout
+          Size="166.666666666667,41.3333333333334"
+          Id="Package\AQIStage_StateNDS\Update State_NDS"
+          TopLeft="127.999993721644,456.266661751072" />
         <EdgeLayout
           Id="Package\AQIStage_StateNDS.Paths[Sort Output]"
           TopLeft="408.333323529198,135.333331932624">
@@ -8603,7 +9216,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8625,101 +9240,129 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_StateNDS.Paths[Lookup No Match Output]"
-          TopLeft="441.999983640181,298.53333129843">
+          TopLeft="444.888872469465,376.533329450686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="143.333324707218,83.8333323291607"
+              EndConnector="140.444435877934,83.4999989660253"
               Start="0,0"
-              End="143.333324707218,76.3333323291607">
+              End="140.444435877934,75.9999989660253">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.9031858684106" />
+                    End="0,29.7661384369311" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.9031858684106"
-                    Point2="0,33.9031858684106"
-                    Point3="4,33.9031858684106" />
+                    Point1="0,29.7661384369311"
+                    Point2="0,33.7661384369311"
+                    Point3="4,33.7661384369311" />
                   <mssgle:LineSegment
-                    End="139.333324707218,33.9031858684106" />
+                    End="136.444435877934,33.7661384369311" />
                   <mssgle:CubicBezierSegment
-                    Point1="139.333324707218,33.9031858684106"
-                    Point2="143.333324707218,33.9031858684106"
-                    Point3="143.333324707218,37.9031858684106" />
+                    Point1="136.444435877934,33.7661384369311"
+                    Point2="140.444435877934,33.7661384369311"
+                    Point3="140.444435877934,37.7661384369311" />
                   <mssgle:LineSegment
-                    End="143.333324707218,76.3333323291607" />
+                    End="140.444435877934,75.9999989660253" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="15.860275634859,38.9031858684106,111.6127734375,11.609375"
+              BoundingBox="14.4158312202169,38.7661384369311,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\AQIStage_StateNDS.Paths[Lookup Match Output]"
-          TopLeft="372.666650306847,298.53333129843">
+          TopLeft="375.111094691687,376.533329450686">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-161.33332325187,80.0666656635217"
+              EndConnector="-163.777767636709,79.7333323003863"
               Start="0,0"
-              End="-161.33332325187,72.5666656635217">
+              End="-163.777767636709,72.2333323003863">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.3799015551007" />
+                    End="0,28.2429553273182" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.3799015551007"
-                    Point2="0,32.3799015551007"
-                    Point3="-4,32.3799015551007" />
+                    Point1="0,28.2429553273182"
+                    Point2="0,32.2429553273182"
+                    Point3="-4,32.2429553273182" />
                   <mssgle:LineSegment
-                    End="-157.33332325187,32.3799015551007" />
+                    End="-159.777767636709,32.2429553273182" />
                   <mssgle:CubicBezierSegment
-                    Point1="-157.33332325187,32.3799015551007"
-                    Point2="-161.33332325187,32.3799015551007"
-                    Point3="-161.33332325187,36.3799015551007" />
+                    Point1="-159.777767636709,32.2429553273182"
+                    Point2="-163.777767636709,32.2429553273182"
+                    Point3="-163.777767636709,36.2429553273182" />
                   <mssgle:LineSegment
-                    End="-161.33332325187,72.5666656635217" />
+                    End="-163.777767636709,72.2333323003863" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-128.858048344685,37.3799015551007,96.3827734375,11.609375"
+              BoundingBox="-130.080270537105,37.2429553273182,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\AQIStage_StateNDS.Paths[Derived Column Output]"
-          TopLeft="406.833317487605,209.899998328454">
+          Id="Package\AQIStage_StateNDS.Paths[Derived Column Output1]"
+          TopLeft="408.166654329333,296.999996989965">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.2999996366427"
+              EndConnector="0,36.8666657940539"
               Start="0,0"
-              End="0,39.7999996366427">
+              End="0,29.3666657940539">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.7999996366427" />
+                    End="0,29.3666657940539" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\AQIStage_StateNDS.Paths[Derived Column Output]"
+          TopLeft="406.333321539893,209.899998328454">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.4333319948445"
+              Start="0,0"
+              End="0,36.9333319948445">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.9333319948445" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8818,7 +9461,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8912,7 +9557,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8977,7 +9624,7 @@ WHERE state_sk = ?</property>
           Id="Package\CountyStage_CountyNDS\Insert into CountyNDS"
           TopLeft="567.999991789461,488.999993339182" />
         <NodeLayout
-          Size="236.666666666667,41.3333333333334"
+          Size="236,42.6666666666667"
           Id="Package\CountyStage_CountyNDS\Lookup County_SK in CountyNDS"
           TopLeft="359.999995276332,391.999994158745" />
         <NodeLayout
@@ -9019,84 +9666,86 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CountyStage_CountyNDS.Paths[Lookup No Match Output]"
-          TopLeft="516.444439720776,433.333327492078">
+          TopLeft="515.999995276332,434.666660825412">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.222218735351,55.6666658471033"
+              EndConnector="146.666663179796,54.3333325137704"
               Start="0,0"
-              End="146.222218735351,48.1666658471033">
+              End="146.666663179796,46.8333325137704">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.4909528492494" />
+                    End="0,17.9528616217254" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.4909528492494"
-                    Point2="0,22.4909528492494"
-                    Point3="4,22.4909528492494" />
+                    Point1="0,17.9528616217254"
+                    Point2="0,21.9528616217254"
+                    Point3="4,21.9528616217254" />
                   <mssgle:LineSegment
-                    End="142.222218735351,22.4909528492494" />
+                    End="142.666663179796,21.9528616217254" />
                   <mssgle:CubicBezierSegment
-                    Point1="142.222218735351,22.4909528492494"
-                    Point2="146.222218735351,22.4909528492494"
-                    Point3="146.222218735351,26.4909528492494" />
+                    Point1="142.666663179796,21.9528616217254"
+                    Point2="146.666663179796,21.9528616217254"
+                    Point3="146.666663179796,25.9528616217254" />
                   <mssgle:LineSegment
-                    End="146.222218735351,48.1666658471033" />
+                    End="146.666663179796,46.8333325137704" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="17.3047226489255,27.4909528492494,111.6127734375,11.609375"
+              BoundingBox="17.5269448711478,26.9528616217254,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CountyStage_CountyNDS.Paths[Lookup Match Output1]"
-          TopLeft="440.222217498554,433.333327492078">
+          TopLeft="439.999995276332,434.666660825412">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-131.555553499196,46.6666656086841"
+              EndConnector="-131.333331276973,45.3333322753504"
               Start="0,0"
-              End="-131.555553499196,39.1666656086841">
+              End="-131.333331276973,37.8333322753504">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.8546908614829" />
+                    End="0,14.3164978890304" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.8546908614829"
-                    Point2="0,18.8546908614829"
-                    Point3="-4,18.8546908614829" />
+                    Point1="0,14.3164978890304"
+                    Point2="0,18.3164978890304"
+                    Point3="-4,18.3164978890304" />
                   <mssgle:LineSegment
-                    End="-127.555553499196,18.8546908614829" />
+                    End="-127.333331276973,18.3164978890304" />
                   <mssgle:CubicBezierSegment
-                    Point1="-127.555553499196,18.8546908614829"
-                    Point2="-131.555553499196,18.8546908614829"
-                    Point3="-131.555553499196,22.8546908614829" />
+                    Point1="-127.333331276973,18.3164978890304"
+                    Point2="-131.333331276973,18.3164978890304"
+                    Point3="-131.333331276973,22.3164978890304" />
                   <mssgle:LineSegment
-                    End="-131.555553499196,39.1666656086841" />
+                    End="-131.333331276973,37.8333322753504" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-113.969163468348,23.8546908614829,96.3827734375,11.609375"
+              BoundingBox="-113.858052357237,23.3164978890304,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CountyStage_CountyNDS.Paths[Lookup Match Output]"
-          TopLeft="479.999995261431,344.333328818281">
+          TopLeft="479.833328594764,344.333328818281">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9114,7 +9763,7 @@ WHERE state_sk = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,14.2786451702319,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,14.2786451702318,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9137,7 +9786,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9159,7 +9810,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9243,8 +9896,8 @@ WHERE state_sk = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="178.666666666667,41.3333333333334"
-          Id="Package\CountyStage_StateNDS\Lookup in Stafe_NDS"
+          Size="178.666666666667,42.6666666666667"
+          Id="Package\CountyStage_StateNDS\Lookup in State_NDS"
           TopLeft="284.166651140485,257.399998210073" />
         <NodeLayout
           Size="163.333333333334,41.3333333333334"
@@ -9255,7 +9908,7 @@ WHERE state_sk = ?</property>
           Id="Package\CountyStage_StateNDS\DISTINCT state_id, state_name"
           TopLeft="250.833319553899,93.5999993491173" />
         <NodeLayout
-          Size="178.666666666667,41.3333333333334"
+          Size="182.666666666667,42.6666666666667"
           Id="Package\CountyStage_StateNDS\Insert into State_NDS"
           TopLeft="481.309497511932,417.361901859622" />
         <NodeLayout
@@ -9285,7 +9938,9 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9307,78 +9962,80 @@ WHERE state_sk = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CountyStage_StateNDS.Paths[Lookup No Match Output]"
-          TopLeft="401.766651140485,298.999998210073">
+          TopLeft="401.944428918263,300.06666487674">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="168.742846371447,118.36190364955"
+              EndConnector="170.698401927003,117.295236982882"
               Start="0,0"
-              End="168.742846371447,110.86190364955">
+              End="170.698401927003,109.795236982882">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.9760249459507" />
+                    End="0,43.542743984186" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,43.9760249459507"
-                    Point2="0,47.9760249459507"
-                    Point3="4,47.9760249459507" />
+                    Point1="0,43.542743984186"
+                    Point2="0,47.542743984186"
+                    Point3="4,47.542743984186" />
                   <mssgle:LineSegment
-                    End="164.742846371447,47.9760249459507" />
+                    End="166.698401927003,47.542743984186" />
                   <mssgle:CubicBezierSegment
-                    Point1="164.742846371447,47.9760249459507"
-                    Point2="168.742846371447,47.9760249459507"
-                    Point3="168.742846371447,51.9760249459507" />
+                    Point1="166.698401927003,47.542743984186"
+                    Point2="170.698401927003,47.542743984186"
+                    Point3="170.698401927003,51.542743984186" />
                   <mssgle:LineSegment
-                    End="168.742846371447,110.86190364955" />
+                    End="170.698401927003,109.795236982882" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="28.5650364669735,52.9760249459507,111.6127734375,11.609375"
+              BoundingBox="29.5428142447513,52.542743984186,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\CountyStage_StateNDS.Paths[Lookup Match Output]"
-          TopLeft="344.966651140485,298.999998210073">
+          TopLeft="345.055540029374,300.06666487674">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-150.933323862818,118.733332218395"
+              EndConnector="-150.888879418374,117.666665551728"
               Start="0,0"
-              End="-150.933323862818,111.233332218395">
+              End="-150.888879418374,110.166665551728">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,44.1265773258561" />
+                    End="0,43.6932934336887" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,44.1265773258561"
-                    Point2="0,48.1265773258561"
-                    Point3="-4,48.1265773258561" />
+                    Point1="0,43.6932934336887"
+                    Point2="0,47.6932934336887"
+                    Point3="-4,47.6932934336887" />
                   <mssgle:LineSegment
-                    End="-146.933323862818,48.1265773258561" />
+                    End="-146.888879418374,47.6932934336887" />
                   <mssgle:CubicBezierSegment
-                    Point1="-146.933323862818,48.1265773258561"
-                    Point2="-150.933323862818,48.1265773258561"
-                    Point3="-150.933323862818,52.1265773258561" />
+                    Point1="-146.888879418374,47.6932934336887"
+                    Point2="-150.888879418374,47.6932934336887"
+                    Point3="-150.888879418374,51.6932934336887" />
                   <mssgle:LineSegment
-                    End="-150.933323862818,111.233332218395" />
+                    End="-150.888879418374,110.166665551728" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-123.658048650159,53.1265773258561,96.3827734375,11.609375"
+              BoundingBox="-123.635826427937,52.6932934336887,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9388,27 +10045,29 @@ WHERE state_sk = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.9333328029846"
+              EndConnector="0,34.9333328029847"
               Start="0,0"
-              End="0,27.4333328029846">
+              End="0,27.4333328029847">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.4333328029846" />
+                    End="0,27.4333328029847" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\CountyStage_StateNDS\Lookup in Stafe_NDS">
+    design-time-name="Package\CountyStage_StateNDS\Lookup in State_NDS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>

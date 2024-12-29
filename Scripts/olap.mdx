@@ -45,14 +45,14 @@ WITH
     MEMBER [Measures].[Days Very Unhealthy] AS
         COUNT(
             FILTER(
-                EXISTING [Date].[Date].MEMBERS,
+                EXISTING [DIM DATE].[Date].[Date].MEMBERS,
                 [Measures].[Daily Average AQI] > 200
             )
         )
     MEMBER [Measures].[Mean Very Unhealthy AQI] AS
         AVG(
             FILTER(
-                EXISTING [Date].[Date].MEMBERS,
+                EXISTING [DIM DATE].[Date].[Date].MEMBERS,
                 [Measures].[Daily Average AQI] > 200
             ),
             [Measures].[Daily Average AQI]
@@ -71,16 +71,25 @@ SELECT
 FROM 
     [US AQI DDS];
 
+
 -- 4. For the four following states: Hawaii, Alaska, Illinois and Delaware, count the number of days in each air quality Category (Good, Moderate,etc.) by County.
+WITH 
+	MEMBER [Measures].[Number of Days] AS
+		COUNT(
+			FILTER(
+				EXISTING [DIM DATE].[Date].[Date].MEMBERS,
+				[Measures].[Category by Daily Average] = [DIM CATEGORY].[Level Of Concern].CURRENTMEMBER.MEMBER_VALUE
+			)
+		)
 SELECT 
     NON EMPTY 
-        { [Measures].[Number of Reports Adjusted] } ON COLUMNS, 
+        { [Measures].[Number of Days] } ON COLUMNS, 
     NON EMPTY 
         { 
             [DIM COUNTY].[State Name].[State Name].ALLMEMBERS * 
             [DIM CATEGORY].[Level Of Concern].[Level Of Concern].ALLMEMBERS 
         } ON ROWS
-FROM 
+FROM
     (
         SELECT 
             { 
@@ -91,7 +100,7 @@ FROM
             } ON COLUMNS 
         FROM [US AQI DDS]
     );
-
+	
 
 -- 5. For the four following states: Hawaii, Alaska, Illinois and Delaware, compute the mean AQI value by quarters.
 SELECT 
@@ -120,3 +129,74 @@ FROM
             } ON COLUMNS 
         FROM [US AQI DDS]
     );
+
+-- 9. Report the mean, the standard deviation, min and max of AQI value group by State and County during each quarter of the year.
+SELECT 
+	{[Measures].[Mean AQI], [Measures].[Std Dev AQI],
+	[Measures].[Max Aqi Value], [Measures].[Min Aqi Value]} ON COLUMNS,
+	FILTER(
+		NONEMPTY(
+			{([DIM COUNTY].[Hierarchy].[State Name].MEMBERS,
+			[DIM COUNTY].[County Name].[County Name].MEMBERS,
+			[DIM DATE].[Hierarchy].[Year].MEMBERS,
+			[DIM DATE].[Quarter].[Quarter].MEMBERS)}
+		),
+		NOT ISEMPTY([Measures].[Mean AQI])
+		AND NOT ISEMPTY([Measures].[Std Dev AQI])
+	) ON ROWS
+FROM [US AQI DDS]
+
+
+-- 10. Create a new attribute, DayLightSaving, in a suitable table. DayLightSaving may have two values: True: Between March 12, 2023, and November 5, 2023 | False: Otherwise
+WITH MEMBER [DIM DATE].[Day Light Saving].[Day Light Saving] as
+	IIF(
+		[DIM DATE].[Date].CURRENTMEMBER.MEMBERVALUE > [DIM DATE].[Date].&[2023-03-11T00:00:00]
+		and [DIM DATE].[Date].CURRENTMEMBER.MEMBERVALUE < [DIM DATE].[Date].&[2023-11-06T00:00:00],
+		'True',
+		'False'
+	)
+SELECT 
+	FILTER(
+		[DIM DATE].[Day Light Saving].MEMBERS,
+		NOT ISEMPTY([Measures].[Mean AQI])
+	) ON COLUMNS,
+	NONEMPTYCROSSJOIN(
+		[DIM COUNTY].[State Name].[State Name].MEMBERS,
+		[DIM CATEGORY].[Level Of Concern].[Level Of Concern].MEMBERS
+	) ON ROWS
+FROM [US AQI DDS]
+WHERE [Measures].[Mean AQI];
+
+
+-- 11. Count the number of days by State, Category in each month.
+WITH MEMBER [Measures].[Days Count per Month] AS
+	COUNT(
+		NONEMPTY(
+			EXISTING [Date].[Date].MEMBERS,
+			[Measures].[Aqi Value]
+		)
+	)
+SELECT 
+	NONEMPTYCROSSJOIN(
+		[DIM DATE].[Hierarchy].[Year].MEMBERS,
+		[DIM DATE].[Month].[Month].MEMBERS) ON COLUMNS,
+	NONEMPTYCROSSJOIN(
+		[DIM COUNTY].[State Name].[State Name].MEMBERS,
+		[DIM CATEGORY].[Level Of Concern].MEMBERS
+	) ON ROWS
+FROM [US AQI DDS]
+WHERE [Measures].[Days Count per Month];
+
+-- 12. Report the number of days by Category and Defining Parameter.
+WITH MEMBER [Measures].[Number of days] AS
+	COUNT(
+		NONEMPTY(
+			EXISTING [Date].[Date].MEMBERS,
+			[Measures].[Aqi Value]
+		)
+	)
+SELECT 
+	[DIM CATEGORY].[Level Of Concern].MEMBERS ON COLUMNS,
+	[DIM PARAMETER].[Parameter Name].MEMBERS ON ROWS
+FROM [US AQI DDS]
+WHERE [Measures].[Number of days];

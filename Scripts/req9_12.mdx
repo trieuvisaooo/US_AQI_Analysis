@@ -26,33 +26,24 @@ select
 from [US AQI DDS];
 
 --10. Report the mean AQI value by State, Category, DayLightSaving over years.
-with 
-member [DIM DATE].[Day Light Saving].[Day Light Saving] as
+with member [DIM DATE].[Day Light Saving].[Day Light Saving] as
 	iif(
-		[DIM DATE].[Date].currentmember >= '2023-03-12'
-		and [DIM DATE].[Date].currentmember <= '2023-11-05',
-		'True', 'False'
-	)
-member [Measures].[Mean AQI] as
-	avg(
-		existing [Date].[Date].members,
-		[Measures].[Daily Average AQI]
+		[DIM DATE].[Date].currentmember.membervalue > [DIM DATE].[Date].&[2023-03-11T00:00:00]
+		and [DIM DATE].[Date].currentmember.membervalue < [DIM DATE].[Date].&[2023-11-06T00:00:00],
+		'True',
+		'False'
 	)
 select 
 	filter(
-		crossjoin(
-			[Measures].[Mean AQI],
-			[DIM DATE].[Year].[Year].members 
-		),
+		[DIM DATE].[Day Light Saving].members,
 		not isempty([Measures].[Mean AQI])
 	) on columns,
 	nonemptycrossjoin(
 		[DIM COUNTY].[State Name].[State Name].members,
-		[DIM CATEGORY].[Daily Aqi Color].[Daily Aqi Color].members
+		[DIM CATEGORY].[Level Of Concern].[Level Of Concern].members
 	) on rows
 from [US AQI DDS]
-where [DIM DATE].[Day Light Saving].&[False];
-
+where [Measures].[Mean AQI];
 
 --11. Count the number of days by State, Category in each month.
 with member [Measures].[Days Count per Month] as
@@ -68,7 +59,7 @@ select
 		[DIM DATE].[Month].[Month].members) on columns,
 	nonemptycrossjoin(
 		[DIM COUNTY].[State Name].[State Name].members,
-		[DIM CATEGORY].[Daily Aqi Color].members
+		[DIM CATEGORY].[Level Of Concern].members
 	) on rows
 from [US AQI DDS]
 where [Measures].[Days Count per Month];
@@ -82,7 +73,7 @@ with member [Measures].[Number of days] as
 		)
 	)
 select 
-	[DIM CATEGORY].[Daily Aqi Color].members on columns,
+	[DIM CATEGORY].[Level Of Concern].members on columns,
 	[DIM PARAMETER].[Parameter Name].members on rows
 from [US AQI DDS]
 where [Measures].[Number of days];
